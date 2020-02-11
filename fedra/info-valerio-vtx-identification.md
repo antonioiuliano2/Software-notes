@@ -24,3 +24,5 @@ List of variables:
 
  8\) n\_mothers --&gt; Number of mother IDs linked to the vertex \(ideal case == 1\)
 
+
+Additional info:
