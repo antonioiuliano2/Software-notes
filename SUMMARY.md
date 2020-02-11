@@ -20,6 +20,7 @@
 * [Frequently used objects](fedra/frequently-used-objects.md)
 * [Vertexing basics](fedra/untitled.md)
 * [Shower reconstruction](fedra/shower-reconstruction.md)
+* [Info Vtx Identification](fedra/info-vtx-identification.md)
 * [Passing simulation to FEDRA](fedra/passing-simulation-to-fedra.md)
 
 ## Other software
