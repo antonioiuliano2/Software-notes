@@ -16,3 +16,5 @@ List of variables:
 	6) n_charmdaug  --> Number of charm daughter tracks (mother id of the track is 1 or 2)
 	7) n_events --> Number of montecarlo events linked to the vertex (ideal case == 1)	
 	8) n_mothers --> Number of mother IDs linked to the vertex (ideal case == 1)
+	
+Updated to gitbook
