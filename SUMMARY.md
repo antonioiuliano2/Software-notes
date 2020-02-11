@@ -20,13 +20,16 @@
 * [Frequently used objects](fedra/frequently-used-objects.md)
 * [Vertexing basics](fedra/untitled.md)
 * [Shower reconstruction](fedra/shower-reconstruction.md)
-* [Info Valerio Vtx Identification](fedra/info-valerio-vtx-identification.md)
-* [Passing simulation to FEDRA](fedra/passing-simulation-to-fedra.md)
 
 ## Other software
 
 * [FLUKA](other-software/fluka.md)
 * [Useful code structures](other-software/useful-code-structures.md)
-* [Ubuntu useful commands](ubuntu-useful-commands.md)
-* [Anaconda](anaconda.md)
+* [Ubuntu useful commands](other-software/ubuntu-useful-commands.md)
+* [Anaconda](other-software/anaconda.md)
+
+## SHiPcharm Decay Search
+
+* [Passing simulation to FEDRA](shipcharm-decay-search/passing-simulation-to-fedra.md)
+* [Info Valerio Vtx Identification](shipcharm-decay-search/info-valerio-vtx-identification.md)
 
