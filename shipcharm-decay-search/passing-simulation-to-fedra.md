@@ -144,6 +144,8 @@ The aforementioned procedure gives CSV files with the following columns:
 * vz;
 * topology
 
+## Current topologies percentages \(from CH1\_charmcascade\_07\_02\_20\):
+
 The list can be read with a script to count the different MC topologies, and build a more easiliy readable vertex log:
 
 ```bash
@@ -151,8 +153,6 @@ python $MACROSSHIP/analisi_charmsim/countvertextopologies.py MCVertexlist1.csv M
 ```
 
 The number of CSV files to be passed as input can be as much as it is needed.
-
-Current topologies percentages \(from CH1\_charmcascade\_07\_02\_20\):
 
 |  | Primary | Secondary | Connected | Extra | Missing |
 | :--- | :--- | :--- | :--- | :--- | :--- |
