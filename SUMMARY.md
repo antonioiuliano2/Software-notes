@@ -25,11 +25,12 @@
 
 * [FLUKA](other-software/fluka.md)
 * [Useful code structures](other-software/useful-code-structures.md)
-* [Ubuntu useful commands](other-software/ubuntu-useful-commands.md)
-* [Anaconda](other-software/anaconda.md)
+* [Ubuntu useful commands](ubuntu-useful-commands.md)
+* [Anaconda](anaconda.md)
 
 ## SHiPcharm Decay Search
 
 * [Passing simulation to FEDRA](shipcharm-decay-search/passing-simulation-to-fedra.md)
-* [Info Valerio Vtx Identification](shipcharm-decay-search/info-valerio-vtx-identification.md)
+* [Info Valerio Vtx Identification](fedra/info-valerio-vtx-identification.md)
+* [Post decay search operations](shipcharm-decay-search/post-decay-search-operations.md)
 

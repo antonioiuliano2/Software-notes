@@ -122,3 +122,33 @@ It is launched as the following:
 python $MACROSSHIP/analisi_charmsim/extratracks.py -t $TRACKSDIR/linked_tracks.root -f $VERTEXDIR/vertextree_test.root -s $SIMDIR/inECC_ship.conical.Pythia8CharmOnly-TGeant4_dig.root -c $SIMDIR/charmlist.p -o $VERTEXDIR/MCVertexlist.csv
 ```
 
+### Current information provided in the list
+
+The aforementioned procedure gives CSV files with the following columns:
+
+* ntracks;
+* ivtx;
+* itrk;
+* MCEventID;
+* MCTrackID;
+* CharmMotherPdg;
+* CharmMotherPx;
+* CharmMotherPy;
+* CharmMotherPz;
+* MCMotherID;
+* predmolt;
+* preddecaylength;
+* quantity;
+* vx;
+* vy;
+* vz;
+* topology
+
+The list can be read with a script to count the different MC topologies, and build a more easiliy readable vertex log:
+
+```bash
+python $MACROSSHIP/analisi_charmsim/countvertextopologies.py MCVertexlist1.csv MCVertexlist2.csv MCVertexlist3.csv MCVertexlist4.csv
+```
+
+The number of CSV files to be passed as input can be as much as it is needed.
+
