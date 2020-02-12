@@ -160,7 +160,7 @@ The number of CSV files to be passed as input can be as much as it is needed.
 | Secondary | - | 13.0% | 2.2% | 8.8% | 5.6% |
 | Connected | - | - | 0.13% | 0.85% | 0.76% |
 | Extra | - | - | - | 2.4% | 4.0% |
-| Missing | - | - | - | - | 13.16% |
+| Missing | - | - | - | - | 13.2% |
 
 
 
