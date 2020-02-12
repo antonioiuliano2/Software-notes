@@ -152,3 +152,15 @@ python $MACROSSHIP/analisi_charmsim/countvertextopologies.py MCVertexlist1.csv M
 
 The number of CSV files to be passed as input can be as much as it is needed.
 
+Current topologies percentages \(from CH1\_charmcascade\_07\_02\_20\):
+
+|  | Primary | Secondary | Connected | Extra | Missing |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Primary | 10.9% | 18.5% | 1.9% | 9.7% | 8.1% |
+| Secondary | - | 13.0% | 2.2% | 8.8% | 5.6% |
+| Connected | - | - | 0.13% | 0.85% | 0.76% |
+| Extra | - | - | - | 2.4% | 4.0% |
+| Missing | - | - | - | - | 13.16% |
+
+
+
