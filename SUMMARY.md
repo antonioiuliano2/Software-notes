@@ -31,6 +31,8 @@
 ## SHiPcharm Decay Search
 
 * [Passing simulation to FEDRA](shipcharm-decay-search/passing-simulation-to-fedra.md)
-* [Info Valerio Vtx Identification](fedra/info-valerio-vtx-identification.md)
+* [Vtx Identification](shipcharm-decay-search/info-valerio-vtx-identification.md)
+* [BDT](shipcharm-decay-search/bdt.md)
+* [Decay search](shipcharm-decay-search/decay-search.md)
 * [Post decay search operations](shipcharm-decay-search/post-decay-search-operations.md)
 
