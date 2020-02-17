@@ -50,15 +50,6 @@ The next steps is to perfom tracking and vertexing according to FEDRA usual appl
 * ln -s b000001.0.0.0.trk.root linked\_tracks.root
 * root -l charm\_vertexing.C \(copied from $MACROS-SHIP/FEDRA\) 
 
-#### Vertex parameters
-
-* **DZmax = 3000.;**  // maximum z-gap in the track-vertex group
-* **ProbMinV = 0.01;** // minimum acceptable probability for chi2-distance between tracks
-* **ImpMax = 15.**; // maximal acceptable impact parameter \[microns\] \(for preliminary check\) 
-* **UseMom = false**; // use or not track momentum for vertex calculations 
-* **UseSegPar = true;** // use only the nearest measured segments for vertex fit \(as Neuchatel\) 
-* **QualityMode= 0;** // vertex quality estimation method \(0:=Prob/\(sigVX^2+sigVY^2\); 1:= inverse average track-vertex distance\) }
-
 The vertex file contain only a vtx tree. I am not saving anymore EdbVertexRec \(or EdbPVRec\) objects due to crash when the files are too big. The tree should contain all the information to analyze and draw the reconstructed vertices.
 
 Currently tracking and vertices are performed in four different quarters. Tracking is performed locally on lxplus, and is done consecutively. Tracks files are stored in subfolders reconstruction\_output/firstquarter \(secondquarter, thirdquarter,fourthquarter\), then vertexing is performed on parallel with HTCondor.
