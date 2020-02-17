@@ -144,7 +144,7 @@ The aforementioned procedure gives CSV files with the following columns:
 * vz;
 * topology
 
-## Current topologies percentages \(from CH1\_charmcascade\_07\_02\_20\):
+## Current topologies percentages 
 
 The list can be read with a script to count the different MC topologies, and build a more easiliy readable vertex log:
 
@@ -154,6 +154,8 @@ python $MACROSSHIP/analisi_charmsim/countvertextopologies.py MCVertexlist1.csv M
 
 The number of CSV files to be passed as input can be as much as it is needed.
 
+### from CH1\_charmcascade\_07\_02\_20:
+
 |  | Primary | Secondary | Connected | Extra | Missing |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Primary | 10.9% | 18.5% | 1.9% | 9.7% | 8.1% |
@@ -161,6 +163,16 @@ The number of CSV files to be passed as input can be as much as it is needed.
 | Connected | - | - | 0.13% | 0.85% | 0.76% |
 | Extra | - | - | - | 2.4% | 4.0% |
 | Missing | - | - | - | - | 13.2% |
+
+### from CH2\_charmcascade\_14\_02\_20:
+
+|  | Primary | Secondary | Connected | Extra | Missing |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Primary | 11.3% | 18.5% | 1.8% | 9.9% | 8.1% |
+| Secondary |  | 13.3% | 2.1% | 8.7% | 5.6% |
+| Connected |  |  | 0.07% | 0.8% | 0.7% |
+| Extra |  |  |  | 2.3% | 4% |
+| Missing |  |  |  |  | 12.5% |
 
 
 
