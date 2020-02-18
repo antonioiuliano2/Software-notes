@@ -30,6 +30,11 @@ The new computed variables \(that is, no simple booleans\) are the following one
 
 Additional boolean variables are provided, to select events according to the following criteria
 
+* **vtx\_2starting**: The primary vertex contains at least two tracks starting from it;
+* **vtx\_2goodtrks**: The primary vertex contains at least two tracks with at least 3 segments;
+
+
+
 * **dsvtx\_vtx2\_2starting:** The secondary vertex contains at least two tracks starting from it
 * **dsvtx\_vtx2\_2starting\_trk:** The track belongs to a secondary vertex which satifies the previous condition
 * **dsvtx\_vtx2\_2goodtrks:** The secondary vertex contains at least two tracks with at least 3 segments
