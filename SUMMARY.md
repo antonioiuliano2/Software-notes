@@ -12,6 +12,7 @@
 ## LASSO <a id="lasso-scanning-and-processing"></a>
 
 * [Scanning and processing](lasso-scanning-and-processing/scanning-and-processing.md)
+* [Add-ons](lasso-scanning-and-processing/add-ons.md)
 
 ## FEDRA
 
