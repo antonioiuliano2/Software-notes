@@ -36,3 +36,31 @@ This class is the old one. It is written to accept data in various formats, and 
 
 A tree called **Shower.root** should be produced. This contains the information about the segments contained in the shower and the ouput of the neural network
 
+### libShowRec/EdbShowRec
+
+This class has been recently \(2019\) updated by Frank Meisel. It has a larger set of options with respect to the old one, allowing to compare between different parameters and compute efficiency from MC simulations.
+
+From a practical point of view, to use it we need to:
+
+* Copy the folder $FEDRA\_ROOT/src/libShowRec/ShowRec in our user directory
+* Modify it as we need for our data/simulation, then launch make to compile it
+* Launch it with ./ShowRec/ShowRec and all the options as in the help information.
+
+Required input files:
+
+* A PVRec with the couples. It is needed to have set eEdbPVRec-&gt;eDescendingZ = 1, so the pattern with **larger number** has **lower z;**
+* A linked\_tracks.root file, to take injectors from. -LT1 takes the first segment, -LT2 takes the last segment. It is not needed if -LT0 option is used, but this option requires a lot of time, since injectors are taken directly from the couples;
+
+Additional input file:
+
+* ParameterSet tree: this allows to perform simulation with different sets of parameters \(each entry is a different set\). If the tree is not available, only one reconstruction with default values will be performed;
+* Particle Gun simulation text file: This text file contains the information from a MC simulation, to provide information about efficiency of reconstruction.
+
+Example of working command:
+
+```bash
+./ShowRec/ShowRec -ALI2 -NP29 -LP29 -MP14 -FP1 -HPLZ0 -LT1 -OUT2
+```
+
+
+
