@@ -56,11 +56,19 @@ Additional input file:
 * ParameterSet tree: this allows to perform simulation with different sets of parameters \(each entry is a different set\). If the tree is not available, only one reconstruction with default values will be performed;
 * Particle Gun simulation text file: This text file contains the information from a MC simulation, to provide information about efficiency of reconstruction.
 
-Example of working command:
+Example of working command \(parameter set from entry 0 to entry 2 of parameter set tree\):
 
 ```bash
-./ShowRec/ShowRec -ALI2 -NP29 -LP29 -MP14 -FP1 -HPLZ0 -LT1 -OUT2
+./ShowRec/ShowRec -ALI2 -NP29 -LP29 -MP14 -FP1 -HPLZ0 -LT1 -OUT2 -PASTART0 -PAEND2
 ```
+
+It will provide as output many files: a shower tree file, an efficiency tree file, a histo file, and so on...
+
+In order to the MC results to be reliable, you should provide the following variables:
+
+* MCEvt and MCTrack, as with the standard s.eMCEvt and s.MCTrack members;
+* PdgCode of the particle, as in s.Flag\(\);
+* Momentum of the particle, stored in P\(\);
 
 
 
