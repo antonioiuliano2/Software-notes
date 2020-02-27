@@ -84,4 +84,13 @@ description: Input numeric values for reconstruction
         average track-vertex distance) }</td>
     </tr>
   </tbody>
-</table>
+</table>## Current BDT values
+
+
+
+| BDT | CUT |
+| :--- | :--- |
+| BDT1 \(primary\)  | &gt; 0.15 |
+| BDT2 \(secondary\) | &gt; -0.22 |
+| BDTds \(Decay search\) | &gt; 0 |
+
