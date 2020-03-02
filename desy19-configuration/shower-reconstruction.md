@@ -21,7 +21,7 @@ A lot of variants have been designed since then, but the basic logic should stil
 
 ### libShower/EdbShowerRec
 
-This class is the old one. It is written to accept data in various formats, and then perform shower reconstruction on them. I usually pass the data by building EdbPVRec objects in them. I currently launch the following calls to this class:
+This class is the most complete one. It is written to accept data in various formats, and then perform shower reconstruction on them. I usually pass the data by building EdbPVRec objects in them. I currently launch the following calls to this class:
 
 1. Object instatiation: EdbShowerRec \* showerrec = new EdbShowerRec\(\);
 2. Reset Arrays: showerrec-&gt;ResetInBTArray\(\) and showerrec-&gt;ResetRecoShowerArray\(\);
@@ -33,6 +33,8 @@ This class is the old one. It is written to accept data in various formats, and 
 5. Set AliSub: showerrec-&gt;SetUseAliSub\(0\);
 6. Start actual reconstruction: showerrec-&gt;Execute\(\);
 7. Check output of shower reconstruction: showerrec-&gt;PrintRecoShowerArray\(\);
+
+This operations are now done from the usual ScanSet interface with shower\_reconstruction.C script.
 
 A tree called **Shower.root** should be produced. This contains the information about the segments contained in the shower and the ouput of the neural network
 
