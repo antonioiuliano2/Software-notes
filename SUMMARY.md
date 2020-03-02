@@ -20,7 +20,6 @@
 * [Basic workflow](fedra/basic-workflow.md)
 * [Frequently used objects](fedra/frequently-used-objects.md)
 * [Vertexing basics](fedra/untitled.md)
-* [Shower reconstruction](fedra/shower-reconstruction.md)
 
 ## Other software
 
@@ -37,4 +36,10 @@
 * [BDT](shipcharm-decay-search/bdt.md)
 * [Decay search](shipcharm-decay-search/decay-search.md)
 * [Post decay search operations](shipcharm-decay-search/post-decay-search-operations.md)
+
+## DESY19 configuration
+
+* [Simulation for DESY19 testbeam](desy19-configuration/simulation-for-desy19-testbeam.md)
+* [Conversion to FEDRA and track reconstruction](desy19-configuration/conversion-to-fedra-and-track-reconstruction.md)
+* [Shower reconstruction](desy19-configuration/shower-reconstruction.md)
 

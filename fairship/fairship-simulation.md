@@ -242,25 +242,7 @@ They are weighted, according to the production computing facility. The weights a
 
 An excellent example of script to produce muon flux maps is the `macro/flux_map.py` script.
 
-## Simulation for DESY19 testbeam
 
-In 2019, a testbeam with emulsion and SciFi detectors has been performed, to study electromagnetict shower reconstruction. Emulsions have been exposed to electron beams.
-
-8 Different configurations have been used, changing thickness of material and beam energy.
-
-The simulation geometry has been implemented in a new branch of my personal FairShip fork:
-
-{% embed url="https://github.com/antonioiuliano2/FairShip/tree/shipdesy" caption="shipdesy branch" %}
-
-
-
-The simulation is launched in the following way:
-
-```bash
-python $FAIRSHIP/macro/run_simScript.py --desy19 nrun --PG --pID 11 -n nevents -o outputdir
-```
-
-with nrun going from 1 to 8
 
 ## Checking geometry of a simulation
 
