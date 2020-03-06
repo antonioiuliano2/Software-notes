@@ -123,7 +123,17 @@ Scalar branches \(i.e. one number for vertex\):
 * **meanvx,meanvy,meanvz:** mean point of starting tracks \(accessed with X\(\), Y\(\),Z\(\)\);
 * **maxaperture;** maximum angle between tracks in the vertex \(computed with MaxAperture\(\)\);
 * **probability**: probability of vertex from fit \(accessed with V\(\)-&gt;prob\(\)\);
-* **flag:** a flag providing information about vertex topology \(accessed with Flag\(\)\);
+* **flag:** a flag providing information about vertex topology \(accessed with Flag\(\)\):
+
+  * flag 0: neutral \(tracks' starts attached only
+  * flag 1: charge \(tracks' ends&starts attached
+  * flag 2: back neutral \(tracks' ends attached only
+
+  The following flags are similar to the previous one, but they add the information that vertex has common tracks to at least another vertex \(if LinkedVertexes\(\) has been called\)
+
+  * flag 3: neutral, linked \(has common tracks with other vertex, only if LinkedVertexes\(\) has been called\)
+  * flag 4: charge, linked
+  * flag 5: back neutral, linked
 
 Array branches \(i.e. track properties\):
 
