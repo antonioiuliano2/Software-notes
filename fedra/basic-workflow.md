@@ -129,7 +129,7 @@ Array branches \(i.e. track properties\):
 
 * **nseg\[itrk\]:** number of found segments for each track \(accessed with track-&gt;N\(\)\);
 * **npl\[itrk\]:** number of expeceted segments for each track \(accessed with track-&gt;Npl\(\)\);
-* **incoming\[itrk\]:** tell us if track ends or start at vertex \(accessed with GetVTa\(itrk\)-&gt;ZPos\(\)\);
+* **incoming\[itrk\]:** tell us if track ends or start at vertex \(accessed with GetVTa\(itrk\)-&gt;ZPos\(\)\). 0 if starts at vertex, 1 if end at vertex;
 * **nholes\[itrk\];** number of holes for each track \(accessed with track-&gt;N0\(\)\);
 * **maxgap\[itrk\]**: maximum gap between segments of each track \(accessed with track-&gt;CheckMaxGap\(\)\);
 * **impactparameter\[itrk\]:** impact parameter of track with respect to vertex \(accessed with vertex-&gt;GetVTa\(itrk\)-&gt;Imp\(\)\);
