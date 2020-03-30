@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Personal notes](README.md)
+* [To do list](to-do-list.md)
 
 ## FairShip
 
