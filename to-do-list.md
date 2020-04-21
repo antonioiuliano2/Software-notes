@@ -14,6 +14,8 @@ description: Issues to be solved and tasks to be performed
 * Provare ad applicare machine learning alla ricerca di primari con Keras;
 * Aprire pull request per Thomas con mie modifiche charmsim. Separare opzioni --Tracking e --SmallTarget.
 * Controllare posizione fascio. I rivelatori devono essere centrati rispetto al fascio.
+* Plot qualità emulsione per vari RUN \(vedi messaggio a Dario\)
+* Test di allineamento con area superiore lungo Y. Tracciamento con allineamento.
 
 ## Varie ed eventuali
 
