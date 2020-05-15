@@ -15,6 +15,7 @@ description: Issues to be solved and tasks to be performed
 * Aprire pull request per Thomas con mie modifiche charmsim. Separare opzioni --Tracking e --SmallTarget.
 * Controllare posizione fascio. I rivelatori devono essere centrati rispetto al fascio.
 * Aggiornare plot di qualità per vari RUN, con minore soglia in npl per efficienza
+* Disattivare canali RPC non funzionanti durante il test beam
 
 ## Varie ed eventuali
 
