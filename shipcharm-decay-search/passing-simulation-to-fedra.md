@@ -38,8 +38,15 @@ We launch it with $MACROSSHIP/FEDRA/fromFairShip2Fedra\("simfile.root"\). Parame
 * **FairShip2Fedra.minkinenergy** 0.1 \#cut on kinetic energy 
 * **FairShip2Fedra.dosmearing** 1 \#applying smearing in angle
 * **FairShip2Fedra.useefficiencymap** 0 \#use angular efficiency map instead of fixed value
+* **FairShip2Fedra.maxtheta 1** \#maxangle
 * **FairShip2Fedra.emuefficiency** 0.85 \#fixed value of efficiency in plates
 * **FairShip2Fedra.angres** 0.003 \#angular resolution
+
+**Additional .rootrc parameters for ship-charm beam movement:**
+
+* **FairShip2Fedra.neventsxspill** 7000 \#how many events to simulate for spill
+
+For simplicity, all spills in the simulation have the same number of protons, even if in the real data there are slight differences
 
 ### FEDRA reconstruction
 
