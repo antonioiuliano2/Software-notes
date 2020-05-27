@@ -11,11 +11,11 @@ description: Issues to be solved and tasks to be performed
 
 ## SHiP-charm experiment
 
-* Provare ad applicare machine learning alla ricerca di primari con Keras;
 * Aprire pull request per Thomas con mie modifiche charmsim. Separare opzioni --Tracking e --SmallTarget.
 * Controllare posizione fascio. I rivelatori devono essere centrati rispetto al fascio.
 * Aggiornare plot di qualità per vari RUN, con minore soglia in npl per efficienza
 * Disattivare canali RPC non funzionanti durante il test beam
+* Assistere Filips nel suo lavoro di Machine Learning vertexing -&gt; Fornirgli MC Start e P
 
 ## Varie ed eventuali
 
