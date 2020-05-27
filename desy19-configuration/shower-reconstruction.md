@@ -34,7 +34,21 @@ This class is the most complete one. It is written to accept data in various for
 6. Start actual reconstruction: showerrec-&gt;Execute\(\);
 7. Check output of shower reconstruction: showerrec-&gt;PrintRecoShowerArray\(\);
 
-This operations are now done from the usual ScanSet interface with shower\_reconstruction.C script.
+This operations are now done from the usual ScanSet interface with shower\_reconstruction.C script. The parameters are set in a rootrc file, called showerrec.rootrc. 
+
+**Default parameters:**
+
+* **showerrec.nbrick**: 1
+* **showerrec.cpcut:** 1
+* **showerrec.trkcut:** nseg&gt;3 && s\[nseg-1\].ePID==52
+* **showerrec.ConeRadius:** 800 
+* **showerrec.ConeAngle:** 0.1 
+* **showerrec.ConnectionDR:** 150
+* **showerrec.ConnectionDT:** 0.15
+* **showerrec.NPropagation:** 3 
+* **showerrec.outdir: ..** 
+* **showerrec.env:** showerrec.rootrc
+* **showerrec.EdbDebugLevel:** 1
 
 A tree called **Shower.root** should be produced. This contains the information about the segments contained in the shower and the ouput of the neural network
 

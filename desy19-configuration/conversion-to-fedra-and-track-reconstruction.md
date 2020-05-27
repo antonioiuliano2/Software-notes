@@ -18,11 +18,12 @@ We launch it with $MACROSSHIP/FEDRA/fromFairShip2Fedra\("simfile.root"\). Parame
 * **FairShip2Fedra.ngrains** 70 \#placeholder value, it cannot be 0 because it will not read the couples
 * **FairShip2Fedra.minkinenergy** 0.1 \#cut on kinetic energy 
 * **FairShip2Fedra.dosmearing** 1 \#applying smearing in angle
+* **FairShip2Fedra.maxtheta 1** \#maxangle
 * **FairShip2Fedra.useefficiencymap** 0 \#use angular efficiency map instead of fixed value
 * **FairShip2Fedra.emuefficiency** 0.85 \#fixed value of efficiency in plates
 * **FairShip2Fedra.angres** 0.003 \#angular resolution
 
-Then, Track reconstruction is performed with **emtra**, as usual by FEDRA. A text file is also produced, to be used as input for the ShowRec shower reconstruction interface. See next section for details.
+Then, Track reconstruction is performed with **emtra**, as usual by FEDRA. A text file is also produced, to be used as input for the shower reconstruction interface. See next section for details.
 
 
 
