@@ -107,6 +107,8 @@ Also, it is not an option, but it uses the fraction of proton in nucleus to simu
 
 Moreover, in very small targets the cascade leads to unphysical peaks at the end of the target \(in the following FairShip simulation\). To avoid that, I select only primary charm `k==1` from the produced tree, given `k` an integer number representing cascade depth
 
+The script `macro/makeDecay.py` makes the charm hadron decays, to save muon and neutrino spectra. I have added a modified version to compare the spectra with `k==1` and `k>1`. Attention: Ds are not correctly handled by Pythia6, which produces more hadrons than expected, makeDecay will report the difference at the end, usually a factor 7.7/10.6.
+
 ### Simulations for muon flux measurements
 
 * For full simulation, proton \(400 GeV\) on SHiP muflux target, plus detector setup:
