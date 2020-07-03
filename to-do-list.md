@@ -14,10 +14,9 @@ description: Issues to be solved and tasks to be performed
 
 * Aprire pull request per Thomas con mie modifiche charmsim. Separare opzioni --Tracking e --SmallTarget.
 * Controllare posizione fascio. I rivelatori devono essere centrati rispetto al fascio.
-* Aggiornare plot di qualità per vari RUN, con minore soglia in npl per efficienza
 * Disattivare canali RPC non funzionanti durante il test beam
-* Assistere Filips nel suo lavoro di Machine Learning vertexing -&gt; Fornirgli MC Start e P
-* Valerio vuole il confronto vertici primari e secondari MCTrue con taglio in energia
+* Testare codice allineamento trackan \(vedere nuova sezione\)
+* Caricare note vertici e test allineamento su Teams
 
 ## Varie ed eventuali
 
