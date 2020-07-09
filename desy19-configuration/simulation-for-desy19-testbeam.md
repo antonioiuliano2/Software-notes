@@ -32,7 +32,7 @@ Here there is a review of the emulsion geometry and electron energy in the 8 con
 | 4 | 15 | 6 |  |
 | 5 | 29 | 2 |  |
 | 6 | 29 | 4 |  |
-| 7 | 19 | 6 |  |
+| 7 | 19 | 6 | Passive Material is tungsten, not lead |
 | 8 | 15 | 6 | Second ECC with 29 films downstream |
 
 ## Checking geometry of a simulation
