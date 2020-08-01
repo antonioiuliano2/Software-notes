@@ -28,5 +28,29 @@ List of parameters for emtra:
 
 \*NCPmin: number of minimum couples to find alignment
 
+### Development of alignment map with usual alignment
+
+On Friday the 31, I was 'reminded' of the need of an alignment map procedure to be designed anew, so it is better to start taking notes here \(other that in my paper notebook\), for important steps.
+
+#### Current alignment procedure
+
+First, a list of all the files to checked for alignment: we use the command
+
+$FEDRA\_ROOT/bin/emalign -set=1.0.0.0 -new -v=2
+
+List of files called:
+
+1. $FEDRA\_ROOT/src/appl/emrec/emalign.cpp \(options do\_set and do\_new\);
+2. $FEDRA\_ROOT/src/libScan/EdbScanProc.cxx \(function AlignSetNewNopar\(\) and AlignNewNopar\(\)\); AlignSet reads the identifiers from the sets, actual alignment launched by AlignNewNoPar\(\)
+3. $FEDRA\_ROOT/src/libAlignment/EdbPlateAlignment.cxx \(function Align\(\)\)
+
+\(There are of course other classes involved, but these are the most important files to have in mind and to follow\).
+
+Basic steps: 
+
+* Get the patterns with couples from plates of the pair, if Affine transformation is present transform them
+* Check if patterns are actual filled, than launch CoarseAl\(\) and FineAl\(\) \(if both coarse and fine alignment have been activated in align.rootrc, as by defaults\)
+* RankCouples
+
 
 
