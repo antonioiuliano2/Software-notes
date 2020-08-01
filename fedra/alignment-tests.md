@@ -50,7 +50,11 @@ Basic steps:
 
 * Get the patterns with couples from plates of the pair, if Affine transformation is present transform them
 * Check if patterns are actual filled, than launch CoarseAl\(\) and FineAl\(\) \(if both coarse and fine alignment have been activated in align.rootrc, as by defaults\)
-* RankCouples
+* RankCouples, sort them by CHI2P
+
+#### **Tentative proposal**
+
+First, try to keep all the structure, but  instead of launching Align 1 time, launching it multiples times, in the section \(I should easily be able to build the patterns from the map\)
 
 
 
