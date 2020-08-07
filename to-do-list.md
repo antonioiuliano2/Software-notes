@@ -7,7 +7,7 @@ description: Issues to be solved and tasks to be performed
 ## SHiP experiment
 
 * Aggiornare spettri di neutrino, provando a generarli come suggerito da Antonia;
-* Simulazione con TUNGSTENO ECC, valutare efficienza nu\_tau
+* Simulazione valutare efficienza nu\_tau
 * Spettri di neutrino da charm primario e cascata da controllare e mandare ad Antonia
 * Yield nu\_mu charm
 

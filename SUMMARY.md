@@ -44,4 +44,5 @@
 * [Simulation for DESY19 testbeam](desy19-configuration/simulation-for-desy19-testbeam.md)
 * [Conversion to FEDRA and track reconstruction](desy19-configuration/conversion-to-fedra-and-track-reconstruction.md)
 * [Shower reconstruction](desy19-configuration/shower-reconstruction.md)
+* [Preparing dataset for ML studies](desy19-configuration/preparing-dataset-for-ml-studies.md)
 
