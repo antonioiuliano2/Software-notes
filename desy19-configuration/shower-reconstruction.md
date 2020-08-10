@@ -14,7 +14,8 @@ _Electron/pion separation with an Emulsion Cloud Chamber by using Neural Network
 
 A lot of variants have been designed since then, but the basic logic should still be valid. The algorithm follows these two steps:
 
-* Research for segments in a cone of given aperture angle \(default 20 mrad\), according to acceptance in position DR and angle DT;
+* Research for segments in a cone of given aperture angle \(default 20 mrad\), within also a cilynder of a given radius \(default 800 micron\). Basically there are both an angular and radial ranges.
+* The segments are accpeted according to acceptance in position DR and angle DT;
 * Application of Neural Network for electron/pion identification
 
 ## Libraries
