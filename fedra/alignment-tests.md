@@ -52,9 +52,13 @@ Basic steps:
 * Check if patterns are actual filled, than launch CoarseAl\(\) and FineAl\(\) \(if both coarse and fine alignment have been activated in align.rootrc, as by defaults\)
 * RankCouples, sort them by CHI2P
 
-#### **Tentative proposal**
+### Alignment map couples
 
-First, try to keep all the structure, but  instead of launching Align 1 time, launching it multiples times, in the section \(I should easily be able to build the patterns from the map\)
+The alignment algorithm of emalign is kept but, instead of doing it for the whole surface, an EdbCorrectionMap instance is created, then I loop over all the cells and I align the patterns belonging to each cell from the two plates.
+
+The code prototype is on /ship/CHARM2018/fedra\_test/. Remember always to set it up before testing this alignment procedure!
+
+After the align, the map is stored to the plate with makescanset. This needs to be done by taking into account the cumulation of many plates.
 
 
 
