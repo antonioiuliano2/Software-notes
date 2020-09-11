@@ -28,7 +28,7 @@ List of parameters for emtra:
 
 \*NCPmin: number of minimum couples to find alignment
 
-### Development of alignment map with usual alignment
+## Development of alignment map with usual alignment
 
 On Friday the 31, I was 'reminded' of the need of an alignment map procedure to be designed anew, so it is better to start taking notes here \(other that in my paper notebook\), for important steps.
 
