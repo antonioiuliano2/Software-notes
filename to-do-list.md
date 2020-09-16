@@ -13,10 +13,12 @@ description: Issues to be solved and tasks to be performed
 
 ## SHiP-charm experiment
 
+* Assistere Antonia nel documento SHiP-charm: preparare display aggiornati
+* Inviare lista tracce buone a Chris per matching CH1-R2 e CH2-R2
 * Aprire pull request per Thomas con mie modifiche charmsim. Separare opzioni --Tracking e --SmallTarget.
 * Controllare posizione fascio. I rivelatori devono essere centrati rispetto al fascio.
 * Disattivare canali RPC non funzionanti durante il test beam
-* Mappa di allineamento nella  procedura standard
+* Mappa di allineamento nella  procedura standard -&gt; Controllare tracciamento
 
 ## Varie ed eventuali
 
