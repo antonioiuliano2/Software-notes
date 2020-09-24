@@ -18,3 +18,24 @@ Then we can choose it with configure
 update-alternatives --config python
 ```
 
+## Analyzing multiple ROOT files
+
+Usually simulations and data analysis process a lot of separate files with the same structure. To handle them, we can merge them in a single file with the user-friendly command hadd:
+
+```text
+hadd outputfile file1 file2 ... fileN
+```
+
+which will automatically merge histograms and tree with the same name.
+
+Alternatively, we can analyze them without merging them, with a TChain:
+
+```text
+TChain chain ("treename");
+chain.Add("file0.root"); //each file contains a TTree called treename
+chain.Add("file1.root");
+TTreeReader myreader(&chain);
+```
+
+
+

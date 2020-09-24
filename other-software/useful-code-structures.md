@@ -26,3 +26,13 @@ It is often useful to sort a TTree according to a particular branch, instead of 
 
 mytree-&gt;BuildIndex\("mybranch"\) creates an index according to mybranch, which identifies in a unique way an entry \(if that is not a case, a minor second branch can be added\). To the get the entry, then use mytree-&gt;GetEntryWithIndex\("mybranch"\)
 
+## TEfficiency
+
+The recommended way to produce a plot with the acceptances from the ratio of two histograms. Instead of the more intuitive TH1::Divide, this class automatically computes the errors in the expected binomial way. It is built with using:
+
+```text
+TEfficiency *peff = new TEfficiency(&hpassed, &hall)
+```
+
+ROOT reference guide recommends to check consistency between histograms when using this class. All details can be found there \(I want to have this page as clear as possible, just as a reminder of class names to look them in the ROOT reference\).
+
