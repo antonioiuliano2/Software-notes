@@ -46,3 +46,7 @@
 * [Shower reconstruction](desy19-configuration/shower-reconstruction.md)
 * [Preparing dataset for ML studies](desy19-configuration/preparing-dataset-for-ml-studies.md)
 
+## Software installation
+
+* [PulseUI](software-installation/pulseui.md)
+
