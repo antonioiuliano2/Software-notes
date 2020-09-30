@@ -48,5 +48,6 @@
 
 ## Software installation
 
+* [FEDRA](software-installation/fedra.md)
 * [PulseUI](software-installation/pulseui.md)
 
