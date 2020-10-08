@@ -27,6 +27,8 @@ Most of these identifications \(apart from the bold warnings\), are not iron-cla
 
 Before preparing the scanning of a new brick, it should be checked that the **number of images** collected is enough to cover the emulsion thickness \* dzgap, leaving at least 10-20 micrometers of tolerance. Otherwise the emulsion thickness cannot be accurately measured by the microscope.
 
+Naturally, another fundamental parameter is the **scanning area** which is defined by setting the intervals \[xmin,xmax\] and \[ymin,ymax\].
+
 There is a **threshold** in par\_corr for the number of clusters to be required to accept the view. surf\_threshold\_top should be equal to surf\_threshold\_bottom and to overall threshold. During the scan, it might be useful to check the scanning log to see if the number of clusters is larger than this threshold in most of the emulsion layers, but not in the borders. Otherwise, it would be necessary to set a different threshold. This is particularly necessary when starting the scan of a new brick.
 
 ## Processing
