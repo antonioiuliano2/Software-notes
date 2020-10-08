@@ -23,7 +23,11 @@ Scanning is automatic, but the following preparatory steps need to be performed 
 Most of these identifications \(apart from the bold warnings\), are not iron-clad rules, but they are mostly good working habits we have dediced to follow in the current scans. Other scanning runs may follow a different workflow \(i.e. they might not reset the z and/or measure the thicknesss each time\). Always ask experts and people currently work in that scan for details.
 {% endhint %}
 
-During the scan, it might be useful to check the scanning log to see if the number of clusters is larger than the threshold \(set in par geom\), in most of the emulsion layers, but not in the borders. Otherwise, it would be necessary to set a different threshold. This is particularly necessary when starting the scan of a new brick.
+## Fundamental parameters
+
+Before preparing the scanning of a new brick, it should be checked that the **number of images** collected is enough to cover the emulsion thickness \* dzgap, leaving at least 10-20 micrometers of tolerance. Otherwise the emulsion thickness cannot be accurately measured by the microscope.
+
+There is a **threshold** in par\_corr for the number of clusters to be required to accept the view. surf\_threshold\_top should be equal to surf\_threshold\_bottom and to overall threshold. During the scan, it might be useful to check the scanning log to see if the number of clusters is larger than this threshold in most of the emulsion layers, but not in the borders. Otherwise, it would be necessary to set a different threshold. This is particularly necessary when starting the scan of a new brick.
 
 ## Processing
 
@@ -34,5 +38,5 @@ Processing emulsion data allows to reconstruct the tracks in the single emulsion
 
 Processing can be done with GPU or CPU. Using GPU is faster, but it should be avoided when scanning large angles \(larger than 0.78 rad\), otherwise it might lose efficiency. Check the angle parameters each time, and take into accounts that parameters from GPU and CPU are defined in different fields.
 
-Other important parameter is the threshold, with must be the same used during the scan. Remember to check that.
+Other important parameter is the **threshold, with must be the same** used during the scan. Remember to check that.
 
