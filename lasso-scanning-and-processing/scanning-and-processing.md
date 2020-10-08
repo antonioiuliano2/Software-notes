@@ -29,6 +29,13 @@ Before preparing the scanning of a new brick, it should be checked that the **nu
 
 Naturally, another fundamental parameter is the **scanning area** which is defined by setting the intervals \[xmin,xmax\] and \[ymin,ymax\].
 
+### Thresholds in par\_corr
+
+There are three thresholds in par\_corr, related to the number of clusters required to accept the view:
+
+* **surf\_thres\_min** and surf\_thres\_max are related to the profile of clusters along z. surf\_thres\_min is for zmin \(left side\), **surf\_thres\_max** is for zmax \(right side\). They should be no more than half the number of clusters at that edge. They can be set to the same value, but naturally it should match the previous condition for both edges. Each of surf\_thres\_min and surf\_thres\_max has two numbers, for bottom and top emulsion layers.
+* **min\_clust** is the parameter used by LASSO to know if a view is good enough to follow the emulsion. It can be set to the lowest between surf\_thres\_min and surf\_thres\_max. 
+
 There is a **threshold** in par\_corr for the number of clusters to be required to accept the view. surf\_threshold\_top should be equal to surf\_threshold\_bottom and to overall threshold. During the scan, it might be useful to check the scanning log to see if the number of clusters is larger than this threshold in most of the emulsion layers, but not in the borders. Otherwise, it would be necessary to set a different threshold. This is particularly necessary when starting the scan of a new brick.
 
 ## Processing
