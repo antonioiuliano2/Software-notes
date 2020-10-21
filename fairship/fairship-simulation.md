@@ -151,7 +151,9 @@ Starting from the 2018 spectra produced by Thomas, they can be found in:
 * /eos/experiment/ship/data/Mbias/background-prod-2018/pythia8\_Geant4\_charm\_nu\_1.0.root
 * /eos/experiment/ship/data/Mbias/background-prod-2018/pythia8\_Geant4\_charm\_nu\_10.0.root
 
-Thomas suggested to use the 1 GeV file untile 10 GeV, then the 10 GeV files. So I created a neutino\_merged.root file with these features.
+The neutrino spectra in these files are weighted to 5E13 pot, which roughly amount to a SPS spill. ShipSoft presentation of March 2018 explain the details of this production.
+
+Thomas has updated the files, so now they match correctly. I can use the 1.0 file without any issue.
 
 In this file you can find 1D histogram of neutrino momentum, along with 2D histograms of pt vs p. The 1D histograms are the input for GENIE, while the 2D ones will be used by FairShip generator to generate in the transverse plane.
 
