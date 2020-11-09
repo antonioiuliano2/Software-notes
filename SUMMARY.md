@@ -50,4 +50,5 @@
 
 * [FEDRA](software-installation/fedra.md)
 * [PulseUI](software-installation/pulseui.md)
+* [Software branches and versions](software-installation/software-branches-and-versions.md)
 
