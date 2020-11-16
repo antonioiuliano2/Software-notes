@@ -37,5 +37,9 @@ chain.Add("file1.root");
 TTreeReader myreader(&chain);
 ```
 
+To merge instead TXT or CSV files, simply use the linux built-in command **cat:**
 
+```text
+cat file1.csv file2.csv > allfiles.csv
+```
 
