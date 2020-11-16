@@ -53,6 +53,8 @@ This operations are now done from the usual ScanSet interface with shower\_recon
 
 A tree called **Shower.root** should be produced. This contains the information about the segments contained in the shower and the ouput of the neural network
 
+
+
 ### libShowRec/EdbShowRec
 
 This class has been recently \(2019\) updated by Frank Meisel. It has a larger set of options with respect to the old one, allowing to compare between different parameters and compute efficiency from MC simulations.
@@ -87,5 +89,17 @@ In order to the MC results to be reliable, you should provide the following vari
 * PdgCode of the particle, as in s.Flag\(\);
 * Momentum of the particle, stored in P\(\);
 
+## Iniector track selection
 
+Current shower reconstruction algorithms heavily depend on the choice of starter base-track \(injiector of the shower\). These candidate base-tracks are usually chosen as the first \(or last\) segment of the volume tracks in **linked\_tracks.root** input file, according to our information.
+
+For DESY19 testbeam, we have electron beam impinging on the start of the target. Therefore, we can ask the injector to be the first segment of the following subsample of tracks:
+
+```bash
+s[0].Plate()<4 && s[0].Theta()<0.05
+```
+
+{% hint style="info" %}
+Note: sf\[0\].Theta\(\) is the angle of the track projection, s\[0\].Theta\(\) is the angle of the base-track. There is no significant difference on which one is used for this condition. However, DO NOT require sf\[0\].Plate\(\)&lt;4, since it has no effect at all \(sf.Plate\(\) always returns 0 for all segments!\)
+{% endhint %}
 
