@@ -35,6 +35,7 @@
 
 * [Passing simulation to FEDRA](shipcharm-decay-search/passing-simulation-to-fedra.md)
 * [Reconstruction used values](shipcharm-decay-search/reconstruction-used-values.md)
+* [Proton beam](shipcharm-decay-search/proton-beam.md)
 * [Vtx Identification](shipcharm-decay-search/info-valerio-vtx-identification.md)
 * [BDT](shipcharm-decay-search/bdt.md)
 * [Decay search](shipcharm-decay-search/decay-search.md)
