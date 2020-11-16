@@ -43,3 +43,11 @@ To merge instead TXT or CSV files, simply use the linux built-in command **cat:*
 cat file1.csv file2.csv > allfiles.csv
 ```
 
+## Syncronizing
+
+Without copying symbolic links:
+
+```text
+rsync --progress -avhe ssh /usr/local/  XXX.XXX.XXX.XXX:/BackUp/usr/local/
+```
+
