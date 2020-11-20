@@ -2,7 +2,7 @@
 description: List of selections
 ---
 
-# Selections for Matching with Pixel from Chris
+# Selections for Matching with Pixel from Christopher Betancourt
 
 ## Track selection
 
