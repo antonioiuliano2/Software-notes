@@ -40,10 +40,10 @@ This operations are now done from the usual ScanSet interface with shower\_recon
 **Default parameters:**
 
 * **showerrec.nbrick**: 1
-* **showerrec.cpcut:** 1
-* **showerrec.trkcut:** nseg&gt;3 && s\[nseg-1\].ePID==52
-* **showerrec.ConeRadius:** 800 
-* **showerrec.ConeAngle:** 0.1 
+* **showerrec.cpcut:** eN1==1&&eN2==1&&s1.eFlag&gt;=0&&s2.eFlag&gt;=0
+* **showerrec.trkcu**s\[0\].Plate\(\)&lt;4 && s\[0\].Theta\(\)&lt;0.05
+* **showerrec.ConeRadius:** 1000 
+* **showerrec.ConeAngle:** 0.04 
 * **showerrec.ConnectionDR:** 150
 * **showerrec.ConnectionDT:** 0.15
 * **showerrec.NPropagation:** 3 
@@ -51,7 +51,11 @@ This operations are now done from the usual ScanSet interface with shower\_recon
 * **showerrec.env:** showerrec.rootrc
 * **showerrec.EdbDebugLevel:** 1
 
-A tree called **Shower.root** should be produced. This contains the information about the segments contained in the shower and the ouput of the neural network
+A tree called **Shower.root** should be produced. This contains the information about the segments contained in the shower and the ouput of the neural network.
+
+{% hint style="info" %}
+The condition "eN1==1&&eN2==1&&s1.eFlag&gt;=0&&s2.eFlag&gt;=0" is necessary to select the best ranked base-tracks. Otherwise we have multiple base-tracks for the same micro-track, increasing unphysically our data sample with the combinations!
+{% endhint %}
 
 
 
