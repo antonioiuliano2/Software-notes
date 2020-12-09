@@ -14,7 +14,7 @@ Now ROOT itself supports an user-friendly conversion, by passing through a RData
 
 `energydata = {"Erec": Ehad_rec, "Etrue": y_test, "HitsTreeEntry": entrylist}`
 
-`energydf = r.RDF.MakeNumpyDataFrame(energydata) energydf.Snapshot("energytree","energyfile.root")`
+`energydf = ROOT.RDF.MakeNumpyDataFrame(energydata) energydf.Snapshot("energytree","energyfile.root")`
 
 ### Formatting variables to string
 
