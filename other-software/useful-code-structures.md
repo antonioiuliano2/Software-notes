@@ -6,6 +6,16 @@ description: Commonly searched for
 
 I will report here both the C++ and the python equivalent, when different
 
+### Quickly converting numpy arrays to ROOT TTrees
+
+When working with a python numpy script, often we want to store the numbers in a ROOT TTree for easy sharing. Before, it was done with external libraries, such as uproot, rootpy, etc. 
+
+Now ROOT itself supports an user-friendly conversion, by passing through a RDataframe:
+
+`energydata = {"Erec": Ehad_rec, "Etrue": y_test, "HitsTreeEntry": entrylist}`
+
+`energydf = r.RDF.MakeNumpyDataFrame(energydata) energydf.Snapshot("energytree","energyfile.root")`
+
 ### Formatting variables to string
 
 Commonly used for nice printouts. We pass variables, with information about decimals and scientific notations. %d for integer, %.2f for floats with 2 decimals, %.2e etc
