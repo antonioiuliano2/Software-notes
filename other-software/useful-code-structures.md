@@ -16,6 +16,23 @@ Now ROOT itself supports an user-friendly conversion, by passing through a RData
 
 `energydf = ROOT.RDF.MakeNumpyDataFrame(energydata) energydf.Snapshot("energytree","energyfile.root")`
 
+### Plotting numpy arrays in ROOT histograms
+
+Another common conversion problem is plotting scipy variables into ROOT TH1, TGraph, etc. usually for fitting, or sharing issues. 
+
+The most straightforward way to do this is to use the **root\_numpy** library, which implements general functions, to fill histograms, profile histograms, and graphs. See for example 
+
+{% embed url="http://scikit-hep.org/root\_numpy/reference/generated/root\_numpy.fill\_hist.htm" %}
+
+Note: for more than 1D plots, variables need to have the proper dimension. Remember how to increase dimension in python:
+
+```text
+x = x[:, np.newsize]
+y = y[:, np.newsize]
+xy = np.concatenate([x,y], axis=1)
+root_numpy.fill_hist(h,xy)
+```
+
 ### Formatting variables to string
 
 Commonly used for nice printouts. We pass variables, with information about decimals and scientific notations. %d for integer, %.2f for floats with 2 decimals, %.2e etc
@@ -45,4 +62,6 @@ TEfficiency *peff = new TEfficiency(&hpassed, &hall)
 ```
 
 ROOT reference guide recommends to check consistency between histograms when using this class. All details can be found there \(I want to have this page as clear as possible, just as a reminder of class names to look them in the ROOT reference\).
+
+
 
