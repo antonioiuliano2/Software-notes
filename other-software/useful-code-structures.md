@@ -6,6 +6,8 @@ description: Commonly searched for
 
 I will report here both the C++ and the python equivalent, when different
 
+## ROOT
+
 ### Quickly converting numpy arrays to ROOT TTrees
 
 When working with a python numpy script, often we want to store the numbers in a ROOT TTree for easy sharing. Before, it was done with external libraries, such as uproot, rootpy, etc. 
@@ -53,7 +55,7 @@ It is often useful to sort a TTree according to a particular branch, instead of 
 
 mytree-&gt;BuildIndex\("mybranch"\) creates an index according to mybranch, which identifies in a unique way an entry \(if that is not a case, a minor second branch can be added\). To the get the entry, then use mytree-&gt;GetEntryWithIndex\("mybranch"\)
 
-## TEfficiency
+### TEfficiency
 
 The recommended way to produce a plot with the acceptances from the ratio of two histograms. Instead of the more intuitive TH1::Divide, this class automatically computes the errors in the expected binomial way. It is built with using:
 
@@ -62,6 +64,34 @@ TEfficiency *peff = new TEfficiency(&hpassed, &hall)
 ```
 
 ROOT reference guide recommends to check consistency between histograms when using this class. All details can be found there \(I want to have this page as clear as possible, just as a reminder of class names to look them in the ROOT reference\).
+
+## BASH
+
+### Loops
+
+Bash uses a list loop, like for example:
+
+
+
+```text
+for VARIABLE in file1 file2 file3
+do
+	command1 on $VARIABLE
+	command2
+	commandN
+done
+```
+
+a numerical loop can be done with seq, which uses the syntax FIRST INCREMENT LAST \(see man seq\):
+
+
+
+```text
+for alpha in $(seq 0.02 0.01 0.08)
+do
+ echo $alpha
+done
+```
 
 
 
