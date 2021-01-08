@@ -305,7 +305,11 @@ python -i $FAIRSHIP/macro/ShipAna.py -f ship.conical.Pythia8-TGeant4_rec.root -g
 python $FAIRSHIP/macro/ShipReco.py -f ship.conical.Pythia8-TGeant4.root -g geofile_full.conical.Pythia8-TGeant4.root
 ```
 
+## Behaviour of neutral particles
 
+Usually, you do not want to analyze hits from neutral particles, since they are not detected. Concerning the simulation, no charge check is applied. Instead, particle hits are excluded only if **ELoss==0** , that means the particle hits are stored only if they leave a fraction of their energy in the detector. This is reasonable, since this is how in general a particle detector works. However, if the particle **stops** in the detector volume, it seems that all its energy is given to the volume, and ELoss is not 0 \(probably to avoid violating energy conservation?\). 
+
+This means that you will encounter a small number of neutral \(photons, pi0, etc.\) MCPoint in your simulation. That common rule is to exclude them at the analysis, by using TPDGDatabase interface.
 
 
 
