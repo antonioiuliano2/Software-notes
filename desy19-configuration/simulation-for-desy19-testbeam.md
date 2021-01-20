@@ -35,6 +35,12 @@ Here there is a review of the emulsion geometry and electron energy in the 8 con
 | 7 | 19 | 6 | Passive Material is tungsten, not lead |
 | 8 | 15 | 6 | Second ECC with 29 films downstream |
 
+### Multiple simulations
+
+As the analysis marches on, larger statistics samples are needed. However, the recommended way is not to have a single simulation with more events, but many different simulations with the same number of electrons expected on data \(360\). This way, the reconstruction can be performed separately for each simulation session, with the same density of real data.
+
+Of course, the **seed** should be different for each sample. In this case, this is already provided within $FAIRSHIP/macro/run\_simScript.py code, which by default uses ROOT.gRandom.SetSeed\(0\). This, as explained in TRandom::SetSeed reference, ensures a different value for each simulation. Therefore, the 360 electrons are fired at different positions in each simulation sample.
+
 ## Checking geometry of a simulation
 
 Every FairShip simulation produces a geometry file \(named \`geofile\*.root\`\), along with the simulation tree file. This allows to check the status of the geometry at the time the simulation has been performed.

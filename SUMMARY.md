@@ -10,6 +10,11 @@
 * [FairShip simulation](fairship/fairship-simulation.md)
 * [Geant4 interface](fairship/geant4-interface.md)
 
+## SND@LHC
+
+* [Introduction to sndswd](snd-lhc/introduction-to-sndswd.md)
+* [Simulation Instructions](snd-lhc/simulation-instructions.md)
+
 ## LASSO <a id="lasso-scanning-and-processing"></a>
 
 * [Scanning and processing](lasso-scanning-and-processing/scanning-and-processing.md)
