@@ -203,6 +203,10 @@ Input neutrino fluxes have been produced by Thomas, in the main proton on target
 
 Both files are weighted to correspond to 1 proton spill \( $$4 \times 10^{13}$$ protons on target\).
 
+{% hint style="info" %}
+2021 Update: I am currently producing the interactions in a tungsten target. Since tungsten was not in the official splines, I have produced the splines manually.
+{% endhint %}
+
 ### FairShip GenieGen simulation
 
 FairShip run\_simScript.py simulation with `-Genie` option launchs the `GenieGen` class in shipgen. The syntax is the following:
