@@ -23,6 +23,7 @@ It will show the tunnel with the detector and all components:
 * Go to Clipping -&gt; select plane -&gt; select Edit in Viewer;
 * Set aX+ = -1.0 , bX+ = 0.
 * Set d = -220 and click Apply
+* ROOT.gGeoManager.SetNsegments\(80\) to make picture more smooth
 
 Something like this should appear:
 
