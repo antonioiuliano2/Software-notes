@@ -23,6 +23,10 @@ FairShip used cuts are shown in gconfig/SetCuts.C. Energy thresholds for interac
 Charm production simulations are done from `macro/run_simScript.py`. Example syntax:  
 `python $FAIRSHIP/macro/run_simScript.py --charm 1 -A charmonly --CharmdetSetup 1 -f Cascadefile -n 1000 -o outputfolder`
 
+My **current** simulation configuration \(charsim branch\):
+
+`python /afs/cern.ch/work/a/aiuliano/public/SHIPBuild/FairShip/macro/run_simScript.py --charm 1 -A charmonly --CharmdetSetup 1 -f $INPUTFILE --CharmTarget 1 --TrackingCharm -n $NEVENTS -i $STARTEVENT -o $OUTPUTDIR/simulation/$ProcId`
+
 Useful options:
 
 * `--charm 1`: activates `charmdet` configuration instead of SHiP standard \(both
@@ -47,6 +51,10 @@ Useful options:
 General POT simulations are done from `muonShieldOptimization/run_MufluxfixedTarget.py`. Example of syntax:
 
 `python $FAIRSHIP/muonShieldOptimization/run_MufluxfixedTarget.py --CharmdetSetup 1 -G -e 0.001 -n 1000 -o outputfolder`
+
+My **current** simulation configuration \(charsim branch\):
+
+`python $FAIRSHIP/muonShieldOptimization/run_MufluxfixedTarget.py --CharmdetSetup 1 --CharmTarget 1 -G -e 0.1 -n $NEVENTS -o $OUTPUTFOLDER/$ProcId`
 
 It is a derivation of the fixed target simulation used in SHiP, applied to `charmdet` geometry.
 
