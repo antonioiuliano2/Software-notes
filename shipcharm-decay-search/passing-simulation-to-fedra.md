@@ -32,13 +32,14 @@ We launch it with $MACROSSHIP/FEDRA/fromFairShip2Fedra\("simfile.root"\). Parame
 #### Default .rootrc parameters:
 
 * **FairShip2Fedra.nevents** 10000 \#how many events to convert
+* **FairShip2Fedra.neventsxspill** 1000\# for SHiP-charm target mover
 * **FairShip2Fedra.nbrick** 1 \#it will set the brick numbers in the IDs 
 * **FairShip2Fedra.nplates** 29 
 * **FairShip2Fedra.ngrains** 70 \#placeholder value, it cannot be 0 because it will not read the couples
-* **FairShip2Fedra.minkinenergy** 0.1 \#cut on kinetic energy 
+* **FairShip2Fedra.minkinenergy** 0.03\#cut on kinetic energy 
 * **FairShip2Fedra.dosmearing** 1 \#applying smearing in angle
 * **FairShip2Fedra.useefficiencymap** 0 \#use angular efficiency map instead of fixed value
-* **FairShip2Fedra.maxtheta 1** \#maxangle
+* **FairShip2Fedra.maxtheta** 1 \#maxangle
 * **FairShip2Fedra.emuefficiency** 0.85 \#fixed value of efficiency in plates
 * **FairShip2Fedra.angres** 0.003 \#angular resolution
 
@@ -52,7 +53,7 @@ For simplicity, all spills in the simulation have the same number of protons, ev
 
 The next steps is to perfom tracking and vertexing according to FEDRA usual application \(see FEDRA basic workflow section for details\). \(Mis\)Alignment for now is not simulated, so we just have to launch:
 
-* makescanset....
+* makescanset -set=2.0.0.0 -dzbase=175 -suff=cp.root -dz=-1315
 * emtra -set=1.0.0.0 -new -v=2
 * ln -s b000001.0.0.0.trk.root linked\_tracks.root
 * root -l charm\_vertexing.C \(copied from $MACROS-SHIP/FEDRA\) 
@@ -60,6 +61,8 @@ The next steps is to perfom tracking and vertexing according to FEDRA usual appl
 The vertex file contain only a vtx tree. I am not saving anymore EdbVertexRec \(or EdbPVRec\) objects due to crash when the files are too big. The tree should contain all the information to analyze and draw the reconstructed vertices.
 
 Currently tracking and vertices are performed in four different quarters. Tracking is performed locally on lxplus, and is done consecutively. Tracks files are stored in subfolders reconstruction\_output/firstquarter \(secondquarter, thirdquarter,fourthquarter\), then vertexing is performed on parallel with HTCondor.
+
+Added a script to perform also tracking on HTCondor, helps avoiding crashes for memory
 
 ## Create MC vertex log
 
