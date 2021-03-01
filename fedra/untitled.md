@@ -28,3 +28,14 @@ If we have a vertex, this function will return the pointer to the vertex If not,
 
 Note: it requires a lot of time, why? Check if is ProbVertex or the combination before -&gt; use  clock\(\)
 
+
+
+## Vertex Probability
+
+Probability of the vertex is computed from the prob\(\) method of the associated Vertex instance \(libVt++ class\). The probability is computed as CERN\_prob\(chi2\(\), ndf\(\)\), where
+
+ndf\(\) = 2\*ntracks\(\)-3  
+
+
+A track can belong to multiple vertices in the initial stage. Later, it will be associated to the vertex with the highest rank, computed as 10\*ntracks + probability.
+
