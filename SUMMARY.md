@@ -34,6 +34,7 @@
 
 * [FLUKA](other-software/fluka.md)
 * [ELOG](other-software/elog.md)
+* [Other software notes and warnings](other-software/other-software-notes-and-warnings.md)
 * [Useful code structures](other-software/useful-code-structures.md)
 * [Ubuntu useful commands](other-software/ubuntu-useful-commands.md)
 * [Anaconda](other-software/anaconda.md)
