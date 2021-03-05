@@ -36,5 +36,5 @@ This add-on is used to check the fog level of an emulsion. It is a good estimato
 Be careful about paths in the configuration file. I once put as path "fog.txt", without any path information: it was saved in the LASSO folder! This is not ideal
 {% endhint %}
 
-The window will produce three plots, describing the grain density, in top and bottom layer of emulsion. The three plots represent single cluster grain density, multiple cluster grain density, and all cluster grain density. The unit is grains/\(micron^3\). I was told that a density larger than 10 grains/\(micron^3\) is bad for reconstruction.
+The window will produce three plots, describing the grain density, in top and bottom layer of emulsion. The three plots represent single cluster grain density, multiple cluster grain density, and all cluster grain density. The unit is grains/\(micron^3\). I was told that a density larger than 10 grains/\(micron^3\) is bad for reconstruction. There is also an option to draw "color" plots, representing in arbitrary units how much "dark" the grains are.
 
