@@ -16,7 +16,7 @@ Create a folder like this /ship/CHARM2018/CH1R1/b000001
 
 * mkdir p001
 * Create a symbolic link to the data folder \(actual path depends from scanned brick\): 'ln -s /mnt/data/../.../P01/tracks.raw.root 1.0.0.0.raw.root'
-* Check raws with `check_raw.C` default script
+* Check raws with `check_raw.C` default script and thickness.C from /ship/CHARM2018/macros/thickness.C
 
 ## Create a ScanSet object
 
