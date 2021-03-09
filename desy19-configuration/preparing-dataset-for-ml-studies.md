@@ -29,7 +29,53 @@ The background is provided from real data, which especially for the first plates
 
 ## Dataset construction algorithm
 
-The algorithm follows the steps designed by Maria 
+The algorithm follows the steps designed by Maria during her thesis.
 
 
+
+A dataset containing the base-tracks for shower candidate is produced, then provided as input to a Random Forest classifier.
+
+There are two versions, one for simulation csv and the other for data csv
+
+Lettura\_csv analyses the ML output and it produces histograms
+
+### Dataset preparation from simulation
+
+The scripts need to be launched in the following order \(Concat\_dataframe.py is launched twice\):
+
+1. Proiezioni.py
+2. Inizio\_sciame.py
+3. Rect.py
+4. Rect\_crescenti.py
+5. Taglio\_Theta.py
+6. Concat\_dataframe.py
+7. Ricerca\_new.py
+8. Concat\_dataframe.py
+9. Random\_Forest\_Ishower.py
+
+Proiezioni computes the "next" variables with the projections of the coordinates in the next plate. Inizio\_sciame provides a list of shower injectors. After this, a 1 cm x 1 cm selection in the transverse plane is performed \(Rect.py\). A pyramid is built with increasing rectangles with slope 140 micron and intercept 500 micron. Taglio Theta provides selections in angle and impact parameter. Concat dataframes merges files from different showers \(it is called twice\). Ricerca new actually does the final dataset building, with the selection over the projects. Random Forest Ishower finally does training and test over showers.
+
+### Dataset preparation from data
+
+The scripts need to be launched in the following order \(Concat\_dataframe.py is launched twice\):
+
+1. Proiezioni\_Theta.py
+
+Between 1 and 2, produce "Inizio\_candidati\_sciami.csv" Segments with the same TrackID within first three plates with theta &lt;= 50 mrad. Take last segment of the track
+
+1. Data\_rect.py
+2. Data\_rect\_crescenti.py
+3. Data\_taglio\_Theta.py
+4. Concat\_dataframe.py
+5. Ricerca\_complete.py
+6. Concat\_dataframe.py
+7. Random\_Forest\_Ishower.py
+
+The scripts work as the previous ones, but using as input data instead  of True Monte Carlo information. 
+
+### Energy measurement and histogram production
+
+Let us assume we are analyzing a true Monte Carlo simulation. First, we need to launch Lunghezza sciami ricostruiti RF, which collects events according to their classification \(11, 00, 10, 01\). 
+
+Then, the produced file can be read with Istogramma\_pyroot.py, to produce histograms. Finally Erec.py provides an estimation of energy resolution \(without the calibration step, we assume to already have the parameters\)
 
