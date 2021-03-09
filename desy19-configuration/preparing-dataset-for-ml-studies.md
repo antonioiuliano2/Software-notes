@@ -27,3 +27,9 @@ The background is provided from real data, which especially for the first plates
 
 
 
+## Dataset construction algorithm
+
+The algorithm follows the steps designed by Maria 
+
+
+
