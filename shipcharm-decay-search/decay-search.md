@@ -48,5 +48,11 @@ new selections
 
 `root -l selection_decaysearch_sim.C`
 
+\`\`
+
+## Silver and Golden events
+
+During our first study of CHARM1-RUN6 candidates, we called "silver events" the events with at least one secondary vertex \(dsvtx.vtx2\_vid.size&gt;=1\), while "golden events" require at least two vertices
+
 
 
