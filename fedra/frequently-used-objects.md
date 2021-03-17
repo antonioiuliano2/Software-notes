@@ -28,7 +28,17 @@ Location in fedra: /fedra/src/libEbase/EdbSegP.h Class where base tracks are sto
 * Fit information \(from linking\): Chi2\(\), Prob\(\) 
 * MC information \(if available\): MCEvt\(\), MCTrack\(\). Set with   SetMC\( int mEvt, int mTrack \)
 
-  \*\*\*\*
+
+
+### Pattern: EdbPattern
+
+Location in fedra: /fedra/src/libEdr/EdbPattern.h
+
+Container of segments, usually one for plate. After affine transformations are applied, they can be built together in a single brick \(EdbPVRec instance, usually\). The brick is then used for volume tracks or shower reconstruction. Please check the function TrackSetBT\(\) at /fedra/src/libScan/EdbScanTracking.cxx to check the details of the procedure.
+
+An important note: when patterns are added in TrackAssembler::AddPattern\(\), a covariance matrix is computed: this allow to perform operations and to know track chi squared even if segments errors are not known \(i.e. simulation\). The segment covariance matrix is computed assuming angular degradation, according to "Sigma0" and "Degrad" parameters provided in track.rootrc. See also SetErrors\(\) method
+
+\*\*\*\*
 
 \*\*\*\*
 
