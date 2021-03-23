@@ -51,10 +51,16 @@ This operations are now done from the usual ScanSet interface with shower\_recon
 * **showerrec.env:** showerrec.rootrc
 * **showerrec.EdbDebugLevel:** 1
 
+I have just discovered that NPropagation does not actually use the Plate Number, but the z position, assuming a reasonable dz:
+
+`if (dZ>(eAlgoParameterNPropagation*1273.0)+650.0) continue;`
+
+therefore, if a plate is missing, NPropagation needs to be increased, even if the plate is excluded by the EdbScanSet.
+
 A tree called **Shower.root** should be produced. This contains the information about the segments contained in the shower and the ouput of the neural network.
 
 {% hint style="info" %}
-The condition "eN1==1&&eN2==1&&s1.eFlag&gt;=0&&s2.eFlag&gt;=0" is necessary to select the best ranked base-tracks. Otherwise we have multiple base-tracks for the same micro-track, increasing unphysically our data sample with the combinations!
+The condition "eN1==1&&eN2==1&&s1.eFlag&gt;=0&&s2.eFlag&gt;=0" is necessary to select the best ranked base-tracks \(only in case of data, not from simulation\). Otherwise we have multiple base-tracks for the same micro-track, increasing unphysically our data sample with the combinations!
 {% endhint %}
 
 

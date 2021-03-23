@@ -14,7 +14,9 @@ Location in fedra: /fedra/src/libEbase/EdbScanSet.h
 * Relative DZ between plates: GetDZP2P\(plate 1, plate 0\)
 * Relative affine matrix between plates: GetAffP2P\(plate1, plate0\)
 
+### Conditions: EdbScanCond
 
+This class contains precious information about data condition, and the assumed position and angular resolution are used to compute the **covariance matrix** of base-tracks, by using **Sigma0** e **Degrad** from track.rootrc in EdbScanCond:EdbScanCond::FillErrorsCov\(\). It is therefore done during tracking, couples in cp files have NOT Covariance Matrix at all \(be careful of errors\).
 
 ## Tracking and Vertexing
 
@@ -36,7 +38,7 @@ Location in fedra: /fedra/src/libEdr/EdbPattern.h
 
 Container of segments, usually one for plate. After affine transformations are applied, they can be built together in a single brick \(EdbPVRec instance, usually\). The brick is then used for volume tracks or shower reconstruction. Please check the function TrackSetBT\(\) at /fedra/src/libScan/EdbScanTracking.cxx to check the details of the procedure.
 
-An important note: when patterns are added in TrackAssembler::AddPattern\(\), a covariance matrix is computed: this allow to perform operations and to know track chi squared even if segments errors are not known \(i.e. simulation\). The segment covariance matrix is computed assuming angular degradation, according to "Sigma0" and "Degrad" parameters provided in track.rootrc. See also SetErrors\(\) method
+An important note: when patterns are added in TrackAssembler::AddPattern\(\), a covariance matrix is computed: this allow to perform operations and to know track chi squared even if segments errors are not known \(i.e. simulation\). Chisquare of volume track is computed instead in EdbTrackP::FitTrackKFS.
 
 \*\*\*\*
 
