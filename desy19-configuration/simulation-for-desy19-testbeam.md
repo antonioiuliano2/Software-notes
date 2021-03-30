@@ -18,7 +18,7 @@ The simulation is launched in the following way:
 python $FAIRSHIP/macro/run_simScript.py --desy19 nrun --PG --pID 11 -n nevents -o outputdir
 ```
 
-with nrun going from 1 to 8
+with nrun going from 1 to 8. We usually launch 360 events in 2 runs \(training and test runs\)
 
 ## Run configurations
 
