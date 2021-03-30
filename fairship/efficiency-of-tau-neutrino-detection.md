@@ -72,3 +72,9 @@ signalpdgs = {411, 431, 4122, 421, 4132, 4232, 4332, 441};
 
 Events are not separated for decay channels, and they are all treated as the tau-&gt;1mu channel. However, the muon which is looked for at the identification step is the primary muon, not the muon from charm decay. Indeed, detecting the primary muon is proof enough that is background, and not signal \(assuming the muon to be connected to the primary vertex\).
 
+### Phi angle
+
+Recently, phi angle between tracks has been added to provide further separation between tau neutrino signal and background from muon neutrino with charm production, where the primary muon was not detected. The phi angle between the tau/charmed hadron and the hadron system allows to separate the two components, since primary lepton and hadron system are back to back.
+
+ To exclude the track from the muon in the background case, the track with the largest phi angle must be excluded
+
