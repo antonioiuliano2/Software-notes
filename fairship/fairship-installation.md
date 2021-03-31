@@ -97,7 +97,9 @@ root -l
 >>#include "TMCProcess.h  
 >>.x mymacro()`
 
-## Checking geometry output  Event display can be launched in the following way:
+## Checking geometry output  
+
+Event display can be launched in the following way:
 
 `python -i $FAIRSHIP/macro/eventDisplay.py -f simulationfile.root -g geofile.root`
 
