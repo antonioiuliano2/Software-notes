@@ -51,3 +51,31 @@ Without copying symbolic links:
 rsync --progress -avhe ssh /usr/local/  XXX.XXX.XXX.XXX:/BackUp/usr/local/
 ```
 
+## Mounting directory
+
+Add source path and target path within **/etc/fstab**
+
+Create an empty folder in target path. Then, from root launch 
+
+```text
+mount -a
+```
+
+## Changing permissions
+
+Usually, you can add all permissions of a folder and subfolders to everyone by launching
+
+```text
+chmod -R ugo+rwx /path/to/folder
+```
+
+"r" is reading permissions, "x" is execution and "w" is writing \(i.e. changing files or creating new ones\).
+
+"u" is the users who owns the files, "g" is his group and "o" are all the other users. For example, to remove writing permission to all users outside the file owner's group:
+
+```text
+chmod -R o-w /path/to/folder/
+```
+
+
+
