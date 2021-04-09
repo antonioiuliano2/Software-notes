@@ -8,7 +8,7 @@ The code which currently does it is
 
 {% embed url="https://github.com/antonioiuliano2/macros-ship/blob/master/FEDRA/fromFairShip2Fedra.C" caption="fromFairShip2Fedra.C" %}
 
-We launch it with $MACROSSHIP/FEDRA/fromFairShip2Fedra\("simfile.root"\). Parameters should be read from a .rootrc file. A directory b000001 containing empty subdirectories p001...p057 should be prepared. At the end of the scripts, these directories will be filled with converted couples trees.
+We launch it with $MACROSDESY/FEDRA/fromFairShip2Fedra.C\("simfile.root"\). Parameters should be read from a .rootrc file. A directory b00000i \(i=1,2...8\) containing empty subdirectories p001...p057 should be prepared. At the end of the scripts, these directories will be filled with converted couples trees.
 
 #### Default .rootrc parameters:
 
@@ -22,6 +22,8 @@ We launch it with $MACROSSHIP/FEDRA/fromFairShip2Fedra\("simfile.root"\). Parame
 * **FairShip2Fedra.useefficiencymap** 0 \#use angular efficiency map instead of fixed value
 * **FairShip2Fedra.emuefficiency** 0.85 \#fixed value of efficiency in plates
 * **FairShip2Fedra.angres** 0.003 \#angular resolution
+
+Copy scanset.sh and track.rootrc files from $MACROSDESY/FEDRA/track.rootrc and $MACROSDESY/FEDRA/scanset.sh in the b00000i folder. Launch scanset.sh \(check dz and number of plates!\)
 
 Then, Track reconstruction is performed with **emtra**, as usual by FEDRA. A text file is also produced, to be used as input for the shower reconstruction interface. See next section for details.
 
