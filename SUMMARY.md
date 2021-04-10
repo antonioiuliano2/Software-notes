@@ -63,3 +63,7 @@
 * [PulseUI](software-installation/pulseui.md)
 * [Software branches and versions](software-installation/software-branches-and-versions.md)
 
+---
+
+* [List of mistakes](list-of-mistakes.md)
+
