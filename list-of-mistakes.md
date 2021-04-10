@@ -26,6 +26,18 @@ Often, I use counters which are related to each events: the number of hits in a 
 
 It stands to reason that the counter **must be resetted** to 0 at the start of the loop, and containers cleared \(usually Clear\(\) function or something similar\). A good way to remind myself to be done and to create a section of the code, identified by some comments, which does that. A class should have its own dedicated function to this aim.
 
+### Copy and conversion errors
+
+This is difficult to spot, so it is recommended to always check that the output of your copy and conversion is what you expect. 
+
+A common mistake is between "float" and "double" numbers, since FEDRA uses float, while FairShip uses a double. At best, you reduce the precision from a double to a float \(it is usually higher than our experimental precision, so the effect is minimal\), but at worst you make the output **total jibberish.** This often happens to ROOT TTrees, when converting between ROOT and Python: someone with a very weird sense of humour decided to call the decimal values in Python "float", even if they have the precision of C "double" and not C "float" numbers. 
+
+Luckily, numpy helps us, so always try to use the builtin types **np.float32** \(for C float\) and **np.float64** \(for C double\) when you need to interface your data between a ROOT TTree and a Pandas dataframe \(for most case, it is safer to use the automatic utilities, like RDataframe, root\_numpy, etc. Sometimes, unfortunately, I cannot, since I need to handle weird customized objects like the FairShip or FEDRA ones\). Please check the  following list of numpy types \(on a side note, int is actually C long, you should use **np.intc**, but for integer numbers the problem usually does not present\):
+
+[https://numpy.org/doc/stable/user/basics.types.html](https://numpy.org/doc/stable/user/basics.types.html)
+
+
+
 ## ROOT specific mistakes
 
 ### Wrong TRandom3 seed or initialization
