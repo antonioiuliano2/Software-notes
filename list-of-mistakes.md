@@ -58,7 +58,7 @@ and I should consider the weights in efficiency counters \(I then divide to the 
 
 Be careful with statistical errors for weighted efficiencies. The error is always given by the **actual number of simulated events** \(If I used 1000 events in my simulation, the error in the efficiency is the same even if the events represent 10000, 1000000 or more physical events. Instead, an absolute error in the expected yield  scales with the weight, since I apply error propagation to a product with a constant\).
 
-### Not giving the function name for chi squared to RooFit
+###  RooFit chi squared :Not giving the function name
 
 RooFit is a powerful tool for fits and p.d.f. computing, but it is a bit harder to use than standard ROOT fits. I have read that simpler toolkits cause people to make more mistakes. I disagree, the more something is counterintituive, the easier it becomes to make a blunder, due to a misunderstanding in the code structure.
 
