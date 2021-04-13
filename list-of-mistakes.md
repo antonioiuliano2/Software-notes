@@ -26,6 +26,10 @@ Often, I use counters which are related to each events: the number of hits in a 
 
 It stands to reason that the counter **must be resetted** to 0 at the start of the loop, and containers cleared \(usually Clear\(\) function or something similar\). A good way to remind myself to be done and to create a section of the code, identified by some comments, which does that. A class should have its own dedicated function to this aim.
 
+{% hint style="info" %}
+Always check that you are using the correct function to empty your container. Some classes, such as TObjArray, effectively uses Clear\(\) to delete all elements from within. Other classes, such as TEventList, use Clear\(\) only for the title, instead you need to call Reset\(\) to empty it!
+{% endhint %}
+
 ### Copy and conversion errors
 
 This is difficult to spot, so it is recommended to always check that the output of your copy and conversion is what you expect. 
