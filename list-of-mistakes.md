@@ -6,7 +6,10 @@ description: 'Errare è umano, perseverare è diabolico'
 
 There are scientific errors, and there are mistakes/blunders. We can only evaluate the first, but we of course need to avoid the latter. However, there is no perfection, and I cannot live in paranoia forever. Instead, I have to admit that I make mistakes, yes sometime stupid mistakes, and I should list them. In this way, I will be reminded to avoid them.
 
+But first, remember the two most important rules:
 
+1. **DO NOT PANIC**
+2. **HAVE FUN** 
 
 ## General programming mistakes
 
