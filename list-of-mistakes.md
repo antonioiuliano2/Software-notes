@@ -6,6 +6,16 @@ description: 'Errare è umano, perseverare è diabolico'
 
 There are scientific errors, and there are mistakes/blunders. We can only evaluate the first, but we of course need to avoid the latter. However, there is no perfection, and I cannot live in paranoia forever. Instead, I have to admit that I make mistakes, yes sometime stupid mistakes, and I should list them. In this way, I will be reminded to avoid them.
 
+## Hardware and Lab behaviour
+
+### Respect the dark room
+
+The emulsion dark room is the place where emulsions are prepared \(before the data run\) and developed \(after the data run\). It is scary to work there, and I really prefer to do it as less as possible, but when there is the need I am preparerd to go there. It stands to quite obvious reason that emulsions are fragile there, so **leave all light sources behind:** turn off the phone \(better to leave it outside the room if possible\), remove smart watches, torches, etc. Remember the time I scared my supervisor \(luckily when all the emulsions were safe in another room\). In general, adopt much extra cautionl in all times I go there
+
+### Oil must not go inside the miscroscope stage
+
+Self-explaining. Scanning oil must go on the scanning stabe, but **not outside it**. If it goes inside the motors of the moving table....never happened before, but this is a warning I have been given, so I write it here
+
 ## General programming mistakes
 
 ### Using = instead of == for logic comparison
@@ -93,4 +103,20 @@ myframe->chiSquare(pdfname, histname, nFitparam)
 where nFitparam is the number of fitted parameters for the function. **I do not recommend to launch it in the way chiSquare\(nFitparam\).** It becomes easier to mess up, if multiple functions are drawn \(i.e. the total distribution and the single components\).
 
 Just a final note: even for unbinned fits, the chiSquare is computed from the binned data in the plotted histograms.
+
+
+
+## 
+
+
+
+
+
+
+
+
+
+
+
+
 
