@@ -46,6 +46,7 @@
 * [Proton beam](shipcharm-decay-search/proton-beam.md)
 * [Vtx Identification](shipcharm-decay-search/info-valerio-vtx-identification.md)
 * [BDT](shipcharm-decay-search/bdt.md)
+* [Analysis of proton interactions and vz fit](shipcharm-decay-search/analysis-of-proton-interactions-and-vz-fit.md)
 * [Decay search](shipcharm-decay-search/decay-search.md)
 * [Post decay search operations](shipcharm-decay-search/post-decay-search-operations.md)
 * [Selections for Matching with Pixel from Christopher Betancourt](shipcharm-decay-search/selections-for-matching-with-pixel-from-chris.md)
