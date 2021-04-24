@@ -47,5 +47,13 @@ Processing emulsion data allows to reconstruct the tracks in the single emulsion
 
 Processing can be done with GPU or CPU. Using GPU is faster, but it should be avoided when scanning large angles \(larger than 0.78 rad\), otherwise it might lose efficiency. Check the angle parameters each time, and take into accounts that parameters from GPU and CPU are defined in different fields.
 
+Parameters used for DESY19:
+
+trk\_lim\_len = 2. 12.5
+
+trk\_lim\_theta = 0. 1.
+
+\(for future scans, remember to clearly **ask desired angular region**.
+
 Other important parameter is the **threshold, with must be the same** used during the scan. Remember to check that.
 
