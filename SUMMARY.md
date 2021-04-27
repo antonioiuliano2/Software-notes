@@ -68,3 +68,7 @@
 
 * [List of mistakes](list-of-mistakes.md)
 
+## FOOT
+
+* [Vertexing improvement](foot/vertexing-improvement.md)
+
