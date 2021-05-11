@@ -79,9 +79,44 @@ and
 
 These scripts activate the commands for linking and alignment.
 
+### Affine parameter file structure
+
+The alignment results are stored in an AFF.par file, for example
+
+named 6.10.0.0.6.9.0.0.aff.par
+
+```text
+ZLAYER 	 0 	 -1306.780151 0.000000 0.000000
+AFFXY 	 0 	 1.00078 -0.00145571 0.0011822 1.00174 -430.349 1040.46
+#(AFFXY LAYER a11 a12 a21 a22 b1 b2)
+AFFTXTY 	 0 	 1 0 0 1 0 0
+SHRINK 	 0 	 1.000000
+```
+
 ### Global reports
 
 To check the plots of the reports from the different steps, I have added a global check alignment script, to check quickly the alignment in all the plates from the same brick.
+
+### Reproduce residuals
+
+To reproduce the position residuals from the al.root file, there are also the couples stored there in a tree.
+
+6.10.0.0.6.9.0.0.al.root
+
+The positions of the couples are already **corrected** with the affine transformation matrix:
+
+* s1 is the plate downstream \(plate 10, corrected to 9\)
+* s2 is the plate upstream \(plate 9, not corrected\)
+
+To have them at the same position and plot the residuals, the difference to be computed is:
+
+```text
+s2.eX - (s1.eX + dz * s1.eTX) , s2.eY - (s1.eY + dz * s1.eTY)
+```
+
+with **dz** the Z distance between  the two plates, computed from the alignment and stored in the aff.par file
+
+
 
 ## Tracking
 
@@ -101,6 +136,8 @@ and the script `check_tr.C` can be used to check the efficiency and results. Par
 * **DTmax:** maximum angular distance, same procedure as DRmax
 * **Sigma0:** parameters at 0 angles \(x y TX TY\)
 * **Degrad:** angular degradation of parameters: S = S0 _\(1 + eDegrad_Ang\)
+
+
 
 ## Vertexing
 
