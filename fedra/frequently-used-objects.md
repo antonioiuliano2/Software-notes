@@ -30,6 +30,22 @@ Location in fedra: /fedra/src/libEbase/EdbSegP.h Class where base tracks are sto
 * Fit information \(from linking\): Chi2\(\), Prob\(\) 
 * MC information \(if available\): MCEvt\(\), MCTrack\(\). Set with   SetMC\( int mEvt, int mTrack \)
 
+#### Couples tree
+
+For each basetrack **s** appropriate microtracks **s1** and **s2** are saved. Note that it is possible that one microtrack from the one side is in agreement with two or more microtracks on the other side, in this case more then 1 couple \(basetracks\) will be stored \(see eN1,eN1tot variables\). This method permit not to loose any information and to perform additional selections after linking.
+
+There are the following superbranches in the tree:
+
+* **cp** - "coupling" parameters
+  * eCHI2P - Chi of the couple. This is the main agreement criteria
+  * eN1tot - number of couples where participating this microtrack
+  * eN1 - the rank of the couple for this microtrack, changing from 1 to eN1tot, 1 is the best
+  * eN2, eN2tot - the same for the second microtrack
+  * eID1, eID2, eCHI2 - do not important
+* **s1** - the first microtrack of the couple \(on the one side\)
+* **s2** - the second microtrack \(other side\)
+* **s** - the basetrack
+
 
 
 ### Pattern: EdbPattern
