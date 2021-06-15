@@ -86,22 +86,24 @@ Then, the produced file can be read with Istogramma\_pyroot.py, to produce histo
 To speed up times by reconstructing the 360 showers in parallel, I have developed a procedure which uses HTCondor submission jobs \(see HTCondor section in other sofware\). The procedure is now as follows:
 
 1. Launch "Proiezioni.py"
-2. Submit HTCondor script "PreReco.sub" \(calling "PreReco.sh"\) 
-3. Merge dataframes with "Concat\_dataframe.py"
-4. Submit HTCondor script "Ricerca\_new.sub" \(calling "Ricerca\_new.sh"\)
-5. Merge dataframes with "Concat\_dataframe.py"
-6. Launch "Random\_Forest\_Ishower.py"
+2. Launch "Inizio\_sciame.py"
+3. Submit HTCondor script "PreReco.sub" \(calling "PreReco.sh"\) 
+4. Merge dataframes with "Concat\_dataframe.py"
+5. Submit HTCondor script "Ricerca\_new.sub" \(calling "Ricerca\_new.sh"\)
+6. Merge dataframes with "Concat\_dataframe.py"
+7. Launch "Random\_Forest\_Ishower.py"
 
 Note: the python scripts now have input options with parsearg: check first the options by starting the help: for example "python Proiezioni.py -h"
 
 For data the workflow is the same, only file names change:
 
 1. Launch "Proiezioni\_Theta.py"
-2. Submit HTCondor script "PreReco\_Data.sub" \(calling "PreReco\_Data.sh"\) 
-3. Merge dataframes with "Concat\_dataframe.py"
-4. Submit HTCondor script "Ricerca\_complete.sub" \(calling "Ricerca\_complete.sh"\)
-5. Merge dataframes with "Concat\_dataframe.py"
-6. Launch "Random\_Forest\_Ishower.py"
+2. Launch "Inizio\_sciame.py"
+3. Submit HTCondor script "PreReco\_Data.sub" \(calling "PreReco\_Data.sh"\) 
+4. Merge dataframes with "Concat\_dataframe.py"
+5. Submit HTCondor script "Ricerca\_complete.sub" \(calling "Ricerca\_complete.sh"\)
+6. Merge dataframes with "Concat\_dataframe.py"
+7. Launch "Random\_Forest\_Ishower.py"
 
 **File Locations:**
 
