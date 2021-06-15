@@ -79,3 +79,33 @@ Let us assume we are analyzing a true Monte Carlo simulation. First, we need to 
 
 Then, the produced file can be read with Istogramma\_pyroot.py, to produce histograms. Finally Erec.py provides an estimation of energy resolution \(without the calibration step, we assume to already have the parameters\)
 
+
+
+## HTCondor workflow
+
+To speed up times by reconstructing the 360 showers in parallel, I have developed a procedure which uses HTCondor submission jobs \(see HTCondor section in other sofware\). The procedure is now as follows:
+
+1. Launch "Proiezioni.py"
+2. Submit HTCondor script "PreReco.sub" \(calling "PreReco.sh"\) 
+3. Merge dataframes with "Concat\_dataframe.py"
+4. Submit HTCondor script "Ricerca\_new.sub" \(calling "Ricerca\_new.sh"\)
+5. Merge dataframes with "Concat\_dataframe.py"
+6. Launch "Random\_Forest\_Ishower.py"
+
+Note: the python scripts now have input options with parsearg: check first the options by starting the help: for example "python Proiezioni.py -h"
+
+For data the workflow is the same, only file names change:
+
+1. Launch "Proiezioni\_Theta.py"
+2. Submit HTCondor script "PreReco\_Data.sub" \(calling "PreReco\_Data.sh"\) 
+3. Merge dataframes with "Concat\_dataframe.py"
+4. Submit HTCondor script "Ricerca\_complete.sub" \(calling "Ricerca\_complete.sh"\)
+5. Merge dataframes with "Concat\_dataframe.py"
+6. Launch "Random\_Forest\_Ishower.py"
+
+**File Locations:**
+
+* **$DESYMACROS/condor\_scripts/** \(for HTCondor scripts\);
+* **$DESYMACROS/Dataset\_preparation\_ML\_analysis/RUN3\_simulazioni** \(scripts for Monte Carlo\)
+* **$DESYMACROS/Dataset\_preparation\_ML\_analysis/RUN3\_Data** \(scripts for real data\) 
+
