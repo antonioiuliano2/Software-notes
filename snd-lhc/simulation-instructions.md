@@ -2,9 +2,9 @@
 
 ## Simulations
 
-### Neutrino GENIE simulations
+### Produced neutrino spectra from FLUKA
 
-Neutrino fluxes have been provided by Francesco Cerutti \(CERN FLUKA  team\), who simulated the proton interactions at LHC in FLUKA and scored the neutrinos. They have been forwarded to me by Annarita. All the files have been download from her link to my EOS folders.
+Neutrino fluxes have been provided by Francesco Cerutti \(CERN FLUKA  team\), who simulated the proton interactions at LHC in FLUKA and scored the neutrinos. They have been forwarded to me by Annarita. All the files have been download from her link to my EOS folders. They can be accessed at "**/eos/user/a/aiulian/sim\_snd/Generate\_Genieinput/NeutrinoFiles**"
 
 Information provided by LHC Fluka simulation team:
 
@@ -15,25 +15,40 @@ Information provided by LHC Fluka simulation team:
 * tau \(anti\)neutrinos were scored at 22.18 m and then projected to z = 483.86 cm
 * for normalization purposes, the provided tau \(anti\)neutrino population comes from 385,720,000 p-p collisions, the electron \(anti\)neutrino population comes from 56,000,000 p-p collisions.
 
+### Generation of neutrino interactions in GENIE
+
 The first step to launch the simulation is to set the GENIE environment:
 
 `export GALGCONF=yourpath/config/`
 
 This environment extends the energy range to the LHC one.
 
+{% hint style="info" %}
+The update to GENIE3 by Simona leads to a different configuration folder. Therefore, it is important that the configuration folder is set correctly. It should be the same as the defaulg config folder with this GENIE version, with the only modifications in CommonDecay.xml and CommonParam.xml files, which can be accessed at /eos/user/a/aiulian/sim\_snd/Generate\_Genieinput/Genie3\_0\_6config/
+
+\(need to access to lxplus with CERN credentials\)
+{% endhint %}
+
 I usually have a bash script with this command already configured for my location \(lxplus, local machine\).
 
-If the cross section splines are not present, they need to be produced. This must also done if the target material changes. Currently for the TP we use "W 95%: Ni 3%: Cu 2%". 1000741840\[0.95\],1000280580\[0.03\],1000290630\[0.02\]. The command to produce the spline is :
+If the cross section splines are not present, they need to be produced. This must also done if the target material changes. Currently for the TP we use "W 95%: Ni 3%: Cu 2%". 1000741840\[0.95\],1000280580\[0.03\],1000290630\[0.02\]. I have labelled this configuration "tungstenTP"in the code. The command to produce the splines is :
 
 ```bash
-python /afs/cern.ch/work/a/aiuliano/public/macros-snd/makeSNDGenieEvents.py --MS -t tungstenTP --nupdg 16 -o ./
+python /afs/cern.ch/work/a/aiuliano/public/SNDLHCBuild/sndsw/macro/makeSNDGenieEvents.py spline --nupdg "nupdg" -t "tungstenTP" -o "outputfolder"
 ```
 
-Then,  we need to actually launch `gevgen` from a script. Annarita has provided me a script example, which I have then modified to adapt it to a common interface with the FairShip one. I launch it with the following command:
+Neutrino interactions are generated with the following command:
 
 ```bash
-python /afs/cern.ch/work/a/aiuliano/public/macros-snd/makeSNDGenieEvents.py --FS -t tungstenTP --nupdg 16 -p CCDIS -n 100000 -o ./
+python /afs/cern.ch/work/a/aiuliano/public/SNDLHCBuild/sndsw/macro/makeSNDGenieEvents.py sim --nupdg "nupdg" -p "process" -n "nevents" -o "outputfolder"
 ```
+
+where:
+
+* nupdg is the neutrino pdgcode;
+* process is the neutrino interaction process we want to generate \(CCDIS, CharmCCDIS, NCDIS...\)
+* nevents is the number of neutrino interactions to generate
+* outputfolder is the path of the output folder where the produced files will be stored
 
 We need to provide in the code as input the cross section file and neutrino flux file. \(flux sections are stored as histograms, with the same notation used in FairShip\).
 
@@ -49,7 +64,7 @@ python $SNDSW/macro/run_simScript.py --shiplhc --Genie -f inputfile -n 10000 -o 
 
 Then the simualtion and geometry files are produced, same as FairShip simulations produced by GenieGenerator.
 
-### Genie simulations in acceptance
+## Extra study: Genie simulations in acceptance
 
 Due to close timelines for the TPs, the GENIE simulations used by Martina for background studies have not been propagated to sndsw. To ensure that only the component of the spectrum within acceptance has been considered, the flux has been selected from Francesco's files to be within detector acceptance, with the following file:
 
