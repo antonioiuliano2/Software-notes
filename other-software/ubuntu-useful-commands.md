@@ -47,6 +47,8 @@ cat file1.csv file2.csv > allfiles.csv
 
 Without copying symbolic links:
 
+Note: A trailing slash on a source path means "copy the contents of this directory". Without a trailing slash it means "copy the directory".
+
 ```text
 rsync --progress -avhe ssh /usr/local/  XXX.XXX.XXX.XXX:/BackUp/usr/local/
 ```
