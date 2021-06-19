@@ -16,7 +16,8 @@ The **shiplhc** folder is the one dedicated to SND@LHC. It is made of the follow
 
 Each component of the SND@LHC detector has its own geometry class.
 
- The ConstructGeometry\(\) function contains the required geometry objects and commands which describe our geometry.
+ The ConstructGeometry\(\) function contains the required geometry objects and commands which describe our geometry. The geometry employs classes and methods from ROOT TGeo \([https://root.cern/manual/geometry/](https://root.cern/manual/geometry/)\)  
+
 
 ## Event display
 
