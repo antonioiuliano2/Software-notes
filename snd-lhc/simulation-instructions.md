@@ -54,25 +54,19 @@ We need to provide in the code as input the cross section file and neutrino flux
 
 This produces the GENIE simulation file, which is used as input for Geant4 \(GenieGenerator\) simulation.
 
-### New: extraction of interacting neutrinos from FLUKA simulations
-
-In SHiP and during preparation of SND@LHC first proposals, we propagated the neutrinos from the collision point, by looping over GENIE neutrino interactions and generating a random phi angle \(theta was generated according to the p-pt distribution\). However, due to the high distance covered by particles before arriving to SND@LHC detector from the collision points \(480 m\), the production point of neutrinos cannot be neglected \(we cannot assume them to come from the origin\).
-
-Therefore, we now use the positions directly from the FLUKA simulations. First, among all the neutrinos produced and stored in the FLUKA simulation file, we need to select the subsample of interacting neutrinos. The neutrinos most probable to interact are selected via **hit or miss Monte Carlo**, according to the ratio between neutrino energy distribution in GENIE \(i.e. interacting neutrinos\) over the distribution from FLUKA \(i.e. produced neutrinos\). 
-
-This step is launched with the following command, by providing as input the GENIE and FLUKA .root simulation files. It will update the GENIE file, adding to it the TTree of interacting neutrinos:
-
-```bash
-python $SNDSW/macro/extract_interacting_neutrinos.py --geniepath geniesimfile --flukapath flukasimfile
-```
-
 ### Geant4 simulation
 
-Geant4 simulation is performed from the GenieGenerator, exactly the same used in FairShip. We just need to call the SND@LHC geometry and the right input file:
+Geant4 simulation is performed to propagate the particles produced from the neutrino interaction in the SND@LHC detector geometry.
+
+The generation is called from the GenieGenerator, exactly the same used in FairShip \(See FairShip simulation section for more details\). We just need to call the simulation script and provide the right input file:
 
 ```bash
 python $SNDSW/macro/run_simScript.py --shiplhc --Genie -f inputfile -n 10000 -o outputfolder
 ```
+
+* input file is the file from the Genie simulation
+* -n sets the number of events to generate
+* -o sets the output folder where to store simulation results
 
 Then the simualtion and geometry files are produced, same as FairShip simulations produced by GenieGenerator.
 
