@@ -15,6 +15,7 @@
 * [Introduction to sndsw](snd-lhc/introduction-to-sndswd.md)
 * [Sndsw geometry](snd-lhc/sndsw-geometry.md)
 * [Simulation Instructions](snd-lhc/simulation-instructions.md)
+* [Access simulation output](snd-lhc/access-simulation-output.md)
 
 ## LASSO <a id="lasso-scanning-and-processing"></a>
 
