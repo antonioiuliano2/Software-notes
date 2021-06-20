@@ -96,10 +96,55 @@ Geometrical parameters from the **$SNDSW/geometry/shipLHC\_geom\_config.py** fil
 
 This script is the one actually responsible for building the geometry, and it is the one directly called by simulation macros, like **$SNDSW/macro/run\_simScript.py**
 
- ****
+It is useful to list here the accessors from the FairMCPoint, they are the methods you usually have to call in your analysis script:
 
-   
+```cpp
+/** Accessors */
+UInt_t GetEventID() const { return fEventId; }
+/// event identifier
+Int_t GetTrackID() const { return fTrackID; }
+Double_t GetPx() const { return fPx; }
+Double_t GetPy() const { return fPy; }
+Double_t GetPz() const { return fPz; }
+Double_t GetTime() const { return fTime; }
+Double_t GetLength() const { return fLength; }
+Double_t GetEnergyLoss() const { return fELoss; }
+void Momentum(TVector3& mom) const { mom.SetXYZ(fPx, fPy, fPz); }
+Int_t GetDetectorID() const { return fDetectorID; };
+Double_t GetX() const { return fX; };
+Double_t GetY() const { return fY; };
+Double_t GetZ() const { return fZ; };
+void Position(TVector3& pos) const { pos.SetXYZ(fX, fY, fZ); }
+```
 
+The TrackID allows to match the hit in the detector with the particle which left it. Information about the  particles are stored in **$SNDSW/shipdata/ShipMCTrack:**
+
+```cpp
+/**  Accessors  **/
+    Int_t    GetPdgCode()  const { return fPdgCode; }
+    Int_t    GetMotherId() const { return fMotherId; }
+    Double_t GetPx()       const { return fPx; }
+    Double_t GetPy()       const { return fPy; }
+    Double_t GetPz()       const { return fPz; }
+    Double_t GetStartX()   const { return fStartX; }
+    Double_t GetStartY()   const { return fStartY; }
+    Double_t GetStartZ()   const { return fStartZ; }
+    Double_t GetStartT()   const { return fStartT; }
+    void SetProcID(Int_t i) { fProcID = i; }
+    Int_t GetProcID()      const { return fProcID; }
+    TString GetProcName()  const { return TMCProcessName[fProcID]; }
+    Double_t GetMass()     const;
+    Double_t GetEnergy()   const;
+    Double_t GetPt()       const { return TMath::Sqrt(fPx*fPx+fPy*fPy); }
+    Double_t GetP() const { return TMath::Sqrt(fPx*fPx+fPy*fPy+fPz*fPz); }
+    Double_t GetRapidity() const;
+    void MultiplyWeight(Double_t w) {fW = fW*w;}
+    void SetWeight(Double_t w) {fW = w;}
+    Double_t GetWeight()   const;
+    void GetMomentum(TVector3& momentum);
+    void Get4Momentum(TLorentzVector& momentum);
+    void GetStartVertex(TVector3& vertex);
+```
 
 ## Event display
 
