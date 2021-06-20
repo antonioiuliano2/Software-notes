@@ -12,7 +12,7 @@
 
 ## SND@LHC
 
-* [Introduction to sndswd](snd-lhc/introduction-to-sndswd.md)
+* [Introduction to sndsw](snd-lhc/introduction-to-sndswd.md)
 * [Sndsw geometry](snd-lhc/sndsw-geometry.md)
 * [Simulation Instructions](snd-lhc/simulation-instructions.md)
 

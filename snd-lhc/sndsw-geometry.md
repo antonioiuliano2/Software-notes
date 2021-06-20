@@ -16,6 +16,13 @@ The **shiplhc** folder is the one dedicated to SND@LHC. It is made of the follow
 
 Each component of the SND@LHC detector has its own geometry class.
 
+Each detector is defined by a C++ class, with both header \(.h\) and script \(.cxx\) file in the same folder. It inherits from one of the two following classes, provided by FairROOT:
+
+* **FairModule**: Defines a geometry element which does not produce MC points \(all passive volumes\)
+* **FairDetector**: Defines a geometry element with active volumes \(e.g. a detector\), it contains extra fuctions for MC simulations.
+
+Basic class structure is very similar for all detectors, we will cover here only the most important methods that must be customized for your class.
+
  The **ConstructGeometry\(\)** function contains the required geometry objects and commands which describe our geometry. The geometry employs classes and methods from ROOT TGeo \([https://root.cern/manual/geometry/](https://root.cern/manual/geometry/)\). The following information are needed:
 
 * Material and medium definitions
@@ -70,7 +77,24 @@ TGeoTranslation *fT = new TGeoTranslation(fTx, fTy, fTz); top -> AddNode(fBoxVol
 
 The number 1 between fBoxVol and fT is the number of the replica. Replicas allow to instantiate many identical volumes in different positions, for example detector planes.
 
+### Processing MonteCarlo hit points \(FairMCPoints\)
 
+The **ProcessHits\(\)** method defined in the detector class tells the MC which information you want to be saved. It presents very similar implementations between classes. A significant difference is how the VolumeID is defined: by default, it adds the information from the replica number of the last volume to the mother volumes.
+
+Each FairShip detector must have also a **DetPoint c**lass, to store the information from propagation of particles in the detector, during MC simulation: momentum, position, energy deposition... This class inherits from the **FairMCPoint** class
+
+## Other geometry files
+
+It is recommended to put all numerical parameters in the **$SNDSW/geometry/shipLHC\_geom\_config.py** file, instead of directly in the code which builds the detector. This gives two advantages:
+
+* It is easier to check parameters and to debug them
+* Changing a parameter does not require re-compiling the code \(Notice: you still need to relaunch the alibuild command, to ensure the file is copied from the work directotry to the build directory\).
+
+The parameters are stored as attributes of each detector, and defined along with their units
+
+Geometrical parameters from the **$SNDSW/geometry/shipLHC\_geom\_config.py** file are then passed to the various detector classes by the **$SNDSW/python/shipLHC\_conf.py** script
+
+This script is the one actually responsible for building the geometry, and it is the one directly called by simulation macros, like **$SNDSW/macro/run\_simScript.py**
 
  ****
 
