@@ -78,6 +78,10 @@ File sequence \(in src/\*\):
 
 appl/emrec/emtra.cpp -&gt; libScan/EdbScanTracking.cxx \(also look for EdbTrackAssembler\)
 
+{% hint style="info" %}
+To access track ID in a EdbTrackP, use yourtrack-&gt;Track\(\) and not yourtrack-&gt;GetSegment\(1\)-&gt;Track\(\). The latter is affected by reset of the selection when a cut is applied in reading the input tree.
+{% endhint %}
+
 #### Accessing tracks
 
 See **src/libEIO/EdbDataSet.cxx** for an example on how to access the linked\_tracks.root file \(ReadTracksTree\). This function is used for vertexing and track display \(macro/check\_vertex.C, modified in my macro charm\_vertexing in my Git repository, to add info to output vertex tree\).
