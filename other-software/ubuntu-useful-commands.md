@@ -79,5 +79,15 @@ chmod -R ugo+rwx /path/to/folder
 chmod -R o-w /path/to/folder/
 ```
 
+## Screening
 
+Useful when connecting to ssh and launching long jobs, or not wanting to lose history of your session.
+
+Use screen or tmux.
+
+In lxplus, remember to renew permissions with kinit your@CERN.CH -l 24h00m
+
+Detach tmux session with ctrl-b + d
+
+recover your session with tmux a -t 0 \(0 being session number\)
 
