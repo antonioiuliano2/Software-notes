@@ -137,6 +137,10 @@ and the script `check_tr.C` can be used to check the efficiency and results. Par
 * **Sigma0:** parameters at 0 angles \(x y TX TY\)
 * **Degrad:** angular degradation of parameters: S = S0 _\(1 + eDegrad_Ang\)
 
+{% hint style="info" %}
+Segments with negative xy coordinates are not tracked. Need to inspect the source code for the reason. For now, beware of negative x or y coordinates.
+{% endhint %}
+
 
 
 ## Vertexing
