@@ -102,7 +102,7 @@ Location in fedra: /fedra/src/libEdr/EdbVertex.h Class for vertex reconstruction
 
 EdbVTA is the object returned by GetVTA\(i\). Declared also in EdbVertex.h. It describes Vertex-track association:
 
-* Zpos\(\) returns 0 for end track, 1 for begin track; 
+* Zpos\(\) returns 0 for end track, 1 for begin track \(stored in TTree in branch named "incoming"\); 
 * Imp\(\) returns impact parameter; 
 * Dist\(\) returns distance from vertex to nearest track point; 
 * GetTrack\(\) and GetVertex\(\) return track and vertex objects from the association; 
