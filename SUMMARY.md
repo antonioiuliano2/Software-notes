@@ -16,6 +16,7 @@
 * [Sndsw geometry](snd-lhc/sndsw-geometry.md)
 * [Simulation Instructions](snd-lhc/simulation-instructions.md)
 * [Access simulation output](snd-lhc/access-simulation-output.md)
+* [FEDRA reconstruction and csv conversion](snd-lhc/fedra-reconstruction-and-csv-conversion.md)
 
 ## LASSO <a id="lasso-scanning-and-processing"></a>
 
