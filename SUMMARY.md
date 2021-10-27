@@ -18,7 +18,7 @@
 * [Access simulation output](snd-lhc/access-simulation-output.md)
 * [FEDRA reconstruction and csv conversion](snd-lhc/fedra-reconstruction-and-csv-conversion.md)
 
-## LASSO <a id="lasso-scanning-and-processing"></a>
+## LASSO <a href="lasso-scanning-and-processing" id="lasso-scanning-and-processing"></a>
 
 * [Scanning and processing](lasso-scanning-and-processing/scanning-and-processing.md)
 * [Add-ons](lasso-scanning-and-processing/add-ons.md)
@@ -69,15 +69,16 @@
 * [PulseUI](software-installation/pulseui.md)
 * [Software branches and versions](software-installation/software-branches-and-versions.md)
 
----
+***
 
 * [List of mistakes](list-of-mistakes.md)
 
 ## FOOT
 
+* [Introduction](foot/introduction.md)
+* [Tracking in FOOT sections](foot/tracking-in-foot-sections.md)
 * [Vertexing improvement](foot/vertexing-improvement.md)
 
 ## Experimental /Temporary
 
 * [SNDSW neutrino studies](experimental-temporary/sndsw-neutrino-studies.md)
-
