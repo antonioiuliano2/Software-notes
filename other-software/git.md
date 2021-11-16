@@ -18,21 +18,21 @@ Simply use
 
 `git clone repolink`
 
-it will create a folder with the same name of the repository \(you can add a different name as second argument if you wish\)
+it will create a folder with the same name of the repository (you can add a different name as second argument if you wish)
 
 ## Commit changes
 
 ### Check differences
 
-It is a good practice to have a check of our changes, before committing them. We can do it with 
+It is a good practice to have a check of our changes, before committing them. We can do it with&#x20;
 
 `git diff`
 
-or better \(GUI-based\)
+or better (GUI-based)
 
 `git difftool`
 
-\(I usually choose "meld" as difftool software, but it is a matter of taste\)
+(I usually choose "meld" as difftool software, but it is a matter of taste)
 
 For jupyter notebooks:
 
@@ -50,9 +50,9 @@ Multiple files can be added in the same commit. It is often useful to group the 
 
 ### Pushing changes to repository
 
-Until you push them to an online repository \(GitHub, GitLab...\) they will be only in your local computer.
+Until you push them to an online repository (GitHub, GitLab...) they will be only in your local computer.
 
-Always first **pull** your repository \(even if you think there are no changes, it does not hurt to check\)
+Always first **pull** your repository (even if you think there are no changes, it does not hurt to check)
 
 _git pull_
 
@@ -60,7 +60,7 @@ Then you can launch the push
 
 _git push_
 
-\_\_
+__
 
 ## Branches
 
@@ -72,7 +72,7 @@ move to an existing branch
 
 _git checkout mybranch_
 
-and merge \(or rebase, with only difference the chronology of changes\) some branches with each other
+and merge (or rebase, with only difference the chronology of changes) some branches with each other
 
 _git merge other branch_
 
@@ -80,5 +80,15 @@ Finally, I need to delete branches I do not use anymore:
 
 _git branch -d oldbranch_
 
+__
 
+## Cherry picking
+
+Git command cherry-pick allows to apply only one commit to the code. The commit can come from whichever branch, and it can be identified with git log.
+
+Example:
+
+git cherry-pick 02e641bd62b6efe1924eb008413f2e57f4e9a996
+
+Be careful that this does not cause conflict with your master branch
 
