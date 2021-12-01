@@ -33,7 +33,17 @@ Two files will be created:
 * brick21.csv, containing all the information about the couples
 * brick21vertices.csv, containing the vertices and tracks ID from recosntruction
 
+## Summary of all bash scripts commands to do
 
+The main idea is that the previous operations should be performed for all bricks, via .sh commands:
+
+* Create folders b0000{11..14, 21..24,31..34,41..44,51..54}/p001...p060
+* copy 2FEDRA.rootrc and check the settings;
+* source preparebricks.sh
+* source doreco.sh
+* source csvconversion.sh
+* source addvertexinfo.sh
+* hadd vertextree\_allbricks.root \*/vertextrree.root&#x20;
 
 
 
