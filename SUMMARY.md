@@ -15,10 +15,11 @@
 * [Introduction to sndsw](snd-lhc/introduction-to-sndswd.md)
 * [Sndsw geometry](snd-lhc/sndsw-geometry.md)
 * [Simulation Instructions](snd-lhc/simulation-instructions.md)
+* [MuonDIS simulation](snd-lhc/muondis-simulation.md)
 * [Access simulation output](snd-lhc/access-simulation-output.md)
 * [FEDRA reconstruction and csv conversion](snd-lhc/fedra-reconstruction-and-csv-conversion.md)
 
-## LASSO <a href="lasso-scanning-and-processing" id="lasso-scanning-and-processing"></a>
+## LASSO <a href="#lasso-scanning-and-processing" id="lasso-scanning-and-processing"></a>
 
 * [Scanning and processing](lasso-scanning-and-processing/scanning-and-processing.md)
 * [Add-ons](lasso-scanning-and-processing/add-ons.md)
