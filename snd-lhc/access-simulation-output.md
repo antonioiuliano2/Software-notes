@@ -30,7 +30,7 @@ The positions of the volumes are in the global sndsw reference system
 In order to analyze the produced simulation file, a script needs to be written to access the **cbmsim** output TTree. Each entry of this tree is an event (in this case, a neutrino interaction), and it contains:
 
 * A TClonesArray with the produced particles, objects of the **ShipMCTrack** class
-* TClonesArrays with the **FairMCPoints** left by the particle in each detector (each detector has a different branch: EmulsionDetPoint, ScifiDetPoint, MuFilterPoint). To save memory, emulsion hits are disabled by default. They can activated by setting c.EmulsionDet.PassiveOption = 1 in **$SNDSW/geometry/shipLHC\_geom**_**\_**_**config.py **before launching the simulation
+* TClonesArrays with the **FairMCPoints** left by the particle in each detector (each detector has a different branch: EmulsionDetPoint, ScifiDetPoint, MuFilterPoint). To save memory, emulsion hits are disabled by default. They can activated by setting c.EmulsionDet.PassiveOption = 1 in **$SNDSW/geometry/shipLHC\_geom**_**\_**_**config.py** before launching the simulation
 
 Accessing this information in a Python interface in sndsw environment is quite straightforward, thanks to the PyROOT interface. It is enough to loop into the TTree and access the branches:
 
@@ -74,6 +74,54 @@ ROOT.gInterpreter.ProcessLine('typedef double Double32_t')
 ```
 
 If you do not do that, it will corrupt **any branch with double variable**
+
+****
+
+## Checking geometry overlaps
+
+Currently, there are too many SciFi volumes, therefore default checkoverlaps leads to memory errors. Need to apply the following function:
+
+def checkOverlaps():
+
+sGeo = ROOT.gGeoManager
+
+for n in range(1,6):
+
+&#x20;   Hscifi = sGeo.FindVolumeFast('ScifiVolume'+str(n))
+
+&#x20;   removalList = \[]
+
+&#x20;   for x in Hscifi.GetNodes():
+
+&#x20;         if x.GetName().find('Scifi')==0: removalList.append(x)
+
+&#x20;   for x in removalList: Hscifi.RemoveNode(x)
+
+sGeo.SetNmeshPoints(10000)
+
+sGeo.CheckOverlaps(0.1)  # 1 micron takes 5minutes
+
+sGeo.PrintOverlaps()
+
+\# check subsystems in more detail
+
+for x in sGeo.GetTopNode().GetNodes():
+
+&#x20;  x.CheckOverlaps(0.0001)
+
+&#x20;  sGeo.PrintOverlaps()
+
+
+
+Inspecting geometry values also helps:
+
+python -i run\_simSND.py -n 0 –PG,
+
+&#x20;
+
+emu = modules\["EmulsionDet"]
+
+emu. GetConfParF("EmulsionDet/TotalWallZDim")
 
 ****
 
