@@ -27,6 +27,7 @@
 ## FEDRA
 
 * [FEDRA software](fedra/fedra-software.md)
+* [Raw data format](fedra/raw-data-format.md)
 * [Basic workflow](fedra/basic-workflow.md)
 * [Frequently used objects](fedra/frequently-used-objects.md)
 * [Momentum measurement](fedra/momentum-measurement.md)
