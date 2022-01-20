@@ -23,7 +23,19 @@ python $SNDSW/macro/getGeoInformation.py -g geofile.root -v myvolume -l nlevels
 
 where **nlevels** repretents the required depth to inspect the hierarchy volume (i.e. daughters, granddaughters volumes, etc.).
 
-The positions of the volumes are in the global sndsw reference system
+The positions of the volumes are in the global sndsw reference system.
+
+Position of a node can be accessed from its path, with the function local2Global(path).
+
+Example:
+
+```python
+local2Global("/cave_1/Detector_0/volTarget_1/Wall_0/Row_0/Brick_0/Emulsion_0")
+```
+
+&#x20;
+
+It will return a dictionary with position information
 
 ## Reading simulation file
 
