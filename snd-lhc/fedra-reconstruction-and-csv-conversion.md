@@ -35,6 +35,8 @@ Two files will be created:
 
 ## Summary of all bash scripts commands to do
 
+Bash scripts should be found in macro\_snd GitHub, copy them into your main conversion folder. Check that paths are set properly.
+
 The main idea is that the previous operations should be performed for all bricks, via .sh commands:
 
 * Create folders b0000{11..14, 21..24,31..34,41..44,51..54}/p001...p060
