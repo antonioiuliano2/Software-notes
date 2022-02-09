@@ -4,7 +4,7 @@ description: for emulsion data analysis
 
 # FEDRA software
 
-Official wiki page \(reserved to OPERA people\):
+Official wiki page (reserved to OPERA people):
 
 {% embed url="http://operaweb.lngs.infn.it/operawiki/index.php/FEDRA" %}
 
@@ -12,5 +12,8 @@ Official wiki page \(reserved to OPERA people\):
 
 Link alla repository SVN con gli ultimi commit:
 
-[http://emulsion.na.infn.it/viewvc/fedra/trunk/](http://emulsion.na.infn.it/viewvc/fedra/trunk/)
+{% embed url="http://emulsion.na.infn.it/viewvc/fedra/trunk" %}
 
+Link alla documentazione con la struttura, creata con doxygen (ospitata nella mia GitPages):
+
+https:://antonioiuliano2.github.io
