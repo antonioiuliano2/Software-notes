@@ -165,6 +165,7 @@ Scalar branches (i.e. one number for vertex):
 
 * **n:** vertex molteplicity (accessed with N());
 * **vx,vy,vz:** coordinates of reconstructed vertex (accessed with VX(), VY(), VZ());
+* **vCOV:** covariance matrix of vertex position (stored as TMatrixD)
 * **meanvx,meanvy,meanvz:** mean point of starting tracks (accessed with X(), Y(),Z());
 * **maxaperture;** maximum angle between tracks in the vertex (computed with MaxAperture());
 * **probability**: probability of vertex from fit (accessed with V()->prob());
