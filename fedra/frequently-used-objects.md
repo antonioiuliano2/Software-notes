@@ -121,9 +121,9 @@ This is the main utility for storing data and pass them to reconstruction. The i
 
 To recognize the various plates, a set of patterns needs to be defined. It can be filled with a set of tracks (see Init() method of check\_vertex for an example), and then the pattern can be filled with any data, and also drawn with EdbEDA.
 
-### LOG
+### EdbLog
 
-Print messages, of various gravity (verbose level)
+Print messages, of various gravity (verbose level set in gEdbDebugLevel)
 
 To suppress them:
 
