@@ -127,5 +127,5 @@ Print messages, of various gravity (verbose level set in gEdbDebugLevel)
 
 To suppress them:
 
-\#define EVERBOSE 0
+gEDBDEBUGLEVEL = 0;
 
