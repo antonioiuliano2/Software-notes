@@ -57,6 +57,8 @@ In order to avoid too long waits, it is convenient to optimize the alignment par
 
 As with the linking, check the report b000001.0.0.0.align.pdf to verify the presence of peaks in xy residuals and angle. If alignment is bad, reset the affine transformations by adding a row in AFF/\*aff.par with the identity transformation (1.,0.,0.,1.,0.,0.) to reset the alignment iterations.
 
+Fine alignment does not use DZ parameter, which can lead to absurd values! at the beginning.&#x20;
+
 Note: thetadens plot by default has **no uniform binning!** Interpreation may be misleading&#x20;
 
 ### Alignment parameters
