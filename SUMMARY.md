@@ -9,6 +9,7 @@
 * [FairShip simulation](fairship/fairship-simulation.md)
 * [Efficiency of tau neutrino detection](fairship/efficiency-of-tau-neutrino-detection.md)
 * [Geant4 interface](fairship/geant4-interface.md)
+* [Display tricks](fairship/display-tricks.md)
 
 ## SND@LHC
 
