@@ -41,7 +41,7 @@
 * [ELOG](other-software/elog.md)
 * [Git](other-software/git.md)
 * [HTCondor](other-software/htcondor.md)
-* [Other software notes and warnings](other-software/other-software-notes-and-warnings.md)
+* [ROOT stuff](other-software/other-software-notes-and-warnings.md)
 * [Useful code structures](other-software/useful-code-structures.md)
 * [😀 Linux useful commands](other-software/ubuntu-useful-commands.md)
 * [Anaconda](other-software/anaconda.md)
