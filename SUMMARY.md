@@ -46,6 +46,7 @@
 * [😀 Linux useful commands](other-software/ubuntu-useful-commands.md)
 * [Anaconda](other-software/anaconda.md)
 * [Latex tricks](other-software/latex-tricks.md)
+* [JSON](other-software/json.md)
 
 ## SHiPcharm Decay Search
 
