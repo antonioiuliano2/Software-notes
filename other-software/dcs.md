@@ -38,4 +38,4 @@ Standard execution with ROOT then works
 
 ### Paho-mqtt
 
-C++/Python Library to connect to the MQTT server. Our server is located into
+C++/Python Library to connect to the MQTT server. Our server can be accessed from my aiulian lxplus account with the [https://github.com/antonioiuliano2/macros-snd/blob/master/dcs\_monitoring/sndmqtt\_testconnection.py](https://github.com/antonioiuliano2/macros-snd/blob/master/dcs\_monitoring/sndmqtt\_testconnection.py), by modifying the on\_message function
