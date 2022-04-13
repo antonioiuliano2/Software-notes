@@ -16,43 +16,40 @@ Option `--CharmdetSetup 1` activates charm cross section geometry, while `--Char
 
 Only the most useful options have been explained here. For the complete list of available options please refer to the related scripts.
 
-No particular cuts are usually done with the respect to the Default FairShip phyisics options. However, by default for hit with kinetic energy lower than `100 MeV` the software will NOT save the MCTrack, to avoid memory consumption. If tracks with lower energy need to be studied, this threshold can be lowered in the simulation script. To do that, put `MCTracksWithEnergyCutOnly = False` in `macro/run_simScript.py` and launch the simulation with `-F` option \(deepcopy\).
+No particular cuts are usually done with the respect to the Default FairShip phyisics options. However, by default for hit with kinetic energy lower than `100 MeV` the software will NOT save the MCTrack, to avoid memory consumption. If tracks with lower energy need to be studied, this threshold can be lowered in the simulation script. To do that, put `MCTracksWithEnergyCutOnly = False` in `macro/run_simScript.py` and launch the simulation with `-F` option (deepcopy).
 
 FairShip used cuts are shown in gconfig/SetCuts.C. Energy thresholds for interactions are usually 1 MeV
 
-Charm production simulations are done from `macro/run_simScript.py`. Example syntax:  
+Charm production simulations are done from `macro/run_simScript.py`. Example syntax:\
 `python $FAIRSHIP/macro/run_simScript.py --charm 1 -A charmonly --CharmdetSetup 1 -f Cascadefile -n 1000 -o outputfolder`
 
-My **current** simulation configuration \(charsim branch\):
+My **current** simulation configuration (charsim branch):
 
 `python /afs/cern.ch/work/a/aiuliano/public/SHIPBuild/FairShip/macro/run_simScript.py --charm 1 -A charmonly --CharmdetSetup 1 -f $INPUTFILE --CharmTarget 1 --TrackingCharm -n $NEVENTS -i $STARTEVENT -o $OUTPUTDIR/simulation/$ProcId`
 
 Useful options:
 
-* `--charm 1`: activates `charmdet` configuration instead of SHiP standard \(both
+*   `--charm 1`: activates `charmdet` configuration instead of SHiP standard (both
 
-  for charm cross section and muon flux measurements\)
+    for charm cross section and muon flux measurements)
+*   `-A charmonly`: activates
 
-* `-A charmonly`: activates
+    charm production simulation
+*   `-f`: input file with charm vertices (if you have Kerberos configured (e.g.
 
-  charm production simulation
+    by default on `lxplus`), this will be taken directly
 
-* `-f`: input file with charm vertices \(if you have Kerberos configured \(e.g.
+    from `/eos/ship/data/Charm/Cascade-parp16-MSTP82-1-MSEL4-978Bpot.root` by
 
-  by default on `lxplus`\), this will be taken directly
-
-  from `/eos/ship/data/Charm/Cascade-parp16-MSTP82-1-MSEL4-978Bpot.root` by
-
-  default\)
-
+    default)
 * `-n`: number of events
-* `-o`: output of folder where geometry and output of simulation will be saved  
+* `-o`: output of folder where geometry and output of simulation will be saved &#x20;
 
 General POT simulations are done from `muonShieldOptimization/run_MufluxfixedTarget.py`. Example of syntax:
 
 `python $FAIRSHIP/muonShieldOptimization/run_MufluxfixedTarget.py --CharmdetSetup 1 -G -e 0.001 -n 1000 -o outputfolder`
 
-My **current** simulation configuration \(charsim branch\):
+My **current** simulation configuration (charsim branch):
 
 `python $FAIRSHIP/muonShieldOptimization/run_MufluxfixedTarget.py --CharmdetSetup 1 --CharmTarget 1 -G -e 0.1 -n $NEVENTS -o $OUTPUTFOLDER/$ProcId`
 
@@ -60,27 +57,25 @@ It is a derivation of the fixed target simulation used in SHiP, applied to `char
 
 Useful options:
 
-* `-e`: Energy cut for adding tracks to `Geant4` propagation \(choosing a high cut
+*   `-e`: Energy cut for adding tracks to `Geant4` propagation (choosing a high cut
 
-  allows to save memory for larger simulations\)
-
+    allows to save memory for larger simulations)
 * `-n`: Number of events
 * `-o`: output of folder where geometry and output of simulation will be saved
-* `-r`: number of run \(can be used as folder naming if `-o` option is not used\)
-* `-f` : force overwriting of directory \(DANGEROUS: if used in a wrong
+* `-r`: number of run (can be used as folder naming if `-o` option is not used)
+*   `-f` : force overwriting of directory (DANGEROUS: if used in a wrong
 
-    directory, it will delete it. DO NOT USE IT together with `-o` option\)  
+    &#x20; directory, it will delete it. DO NOT USE IT together with `-o` option) &#x20;
 
 Different options for proton generation:
 
-* `-V`: default one, proton interactions generated with `Pythia` and `EvtGen` is
+*   `-V`: default one, proton interactions generated with `Pythia` and `EvtGen` is
 
-  used for decays
-
+    used for decays
 * `-P`: both proton interactions and decays handled with `Pythia`
 * `-G`: most basic simulation: one 400 GeV proton directly sent to `Geant4`
 
-Details can be found here: 
+Details can be found here:&#x20;
 
 {% embed url="https://cds.cern.ch/record/2280572." %}
 
@@ -88,7 +83,7 @@ Details can be found here:
 
 All simulations use `Geant4` for propagation. IMPORTANT: Both `-V` and `-P` generate all interactions in target. Due to small dimensions of target used in `charmdet` measurement, many protons pass through without interacting. To correctly simulate surviving protons and their tracks in detectors, use `-G` option.
 
-For any question or doubt about these simulations, contact Thomas Ruf \([mailto:thomas.ruf@cern.ch](mailto:mailto:thomas.ruf@cern.ch)\) or Antonio Iuliano \([mailto:antonio.iuliano@cern.ch](mailto:mailto:antonio.iuliano@cern.ch)\)
+For any question or doubt about these simulations, contact Thomas Ruf ([mailto:thomas.ruf@cern.ch](mailto:mailto:thomas.ruf@cern.ch)) or Antonio Iuliano ([mailto:antonio.iuliano@cern.ch](mailto:mailto:antonio.iuliano@cern.ch))
 
 
 
@@ -96,68 +91,66 @@ For any question or doubt about these simulations, contact Thomas Ruf \([mailto:
 
 First, **charm** simulation: each event produced two charmed hadrons, charm and anti-charm. Their IDs depends on what was passed to Geant4 within the simulation:
 
-* **Default configuration**, charmed hadrons, decay daughters and other primaries passed from Pythia to Geant4: the first charmed hadron has MCTrackID 1 and MCMotherID 0, the other primary particles have MCMotherID -1, the ID of the second charmed hadron is not fixed \(it has be to looked from its pdgcode\). Charm decay daughters can contain **intermediate states;**
-* **Test configuration for charmed hadron's propagations \(--TrackingCharm\),** charmed hadrons and other primary particles passed from Pythia to Geant4: charmed hadrons have MCTrackIDs 1 and 2 \( and MCMotherID 0\), other primaries have MCMotherID -1. Charm decay daughters should not contain **intermediate states;**
-* **Proton background simulation \(G4 only\):** a single 400-GeV proton is passed to Geant4 for propagation and interaction. The produced particles have mother ID 0. Need to select ProcID 23 to study daughters of hadronic inelastic interactions.
+* **Default configuration**, charmed hadrons, decay daughters and other primaries passed from Pythia to Geant4: the first charmed hadron has MCTrackID 1 and MCMotherID 0, the other primary particles have MCMotherID -1, the ID of the second charmed hadron is not fixed (it has be to looked from its pdgcode). Charm decay daughters can contain **intermediate states;**
+* **Test configuration for charmed hadron's propagations (--TrackingCharm),** charmed hadrons and other primary particles passed from Pythia to Geant4: charmed hadrons have MCTrackIDs 1 and 2 ( and MCMotherID 0), other primaries have MCMotherID -1. Charm decay daughters should not contain **intermediate states;**
+* **Proton background simulation (G4 only):** a single 400-GeV proton is passed to Geant4 for propagation and interaction. The produced particles have mother ID 0. Need to select ProcID 23 to study daughters of hadronic inelastic interactions.
 
-#### Making charm \(and beauty\) hadron cascades
+#### Making charm (and beauty) hadron cascades
 
-The `macro/MakeCascade.py`script is a stand-alone simulation \(i.e. it not uses TGeo either TVirtualMC\) with a tuned version of Pythia6. It will simulate the production of charm or beauty hadrons, also simulating cascade production from hadrons. It has the following options:
+The `macro/MakeCascade.py`script is a stand-alone simulation (i.e. it not uses TGeo either TVirtualMC) with a tuned version of Pythia6. It will simulate the production of charm or beauty hadrons, also simulating cascade production from hadrons. It has the following options:
 
 * `-n` for number of events to simulate;
-*  `-m` to choose between charm and beauty production \(default charm\);
-* `-E` for beam energy in GeV \(default 400\);
+* &#x20;`-m` to choose between charm and beauty production (default charm);
+* `-E` for beam energy in GeV (default 400);
 * `-t` name of output file;
-* `-s` for seed \(by default it uses current time\);
-* `-P` to store all particles produced together with charm \(mostly needed in our emulsion reconstruction studies\);
+* `-s` for seed (by default it uses current time);
+* `-P` to store all particles produced together with charm (mostly needed in our emulsion reconstruction studies);
 
-Also, it is not an option, but it uses the fraction of proton in nucleus to simulate interactions on proton or neutron in Pythia: by default it uses molybednum \(0.43\), but I often change it to lead \(0.40\).
+Also, it is not an option, but it uses the fraction of proton in nucleus to simulate interactions on proton or neutron in Pythia: by default it uses molybednum (0.43), but I often change it to lead (0.40).
 
-Moreover, in very small targets the cascade leads to unphysical peaks at the end of the target \(in the following FairShip simulation\). To avoid that, I select only primary charm `k==1` from the produced tree, given `k` an integer number representing cascade depth
+Moreover, in very small targets the cascade leads to unphysical peaks at the end of the target (in the following FairShip simulation). To avoid that, I select only primary charm `k==1` from the produced tree, given `k` an integer number representing cascade depth
 
 The script `macro/makeDecay.py` makes the charm hadron decays, to save muon and neutrino spectra. I have added a modified version to compare the spectra with `k==1` and `k>1 (in charmsim branch)`. Attention: Ds are not correctly handled by Pythia6, which produces more hadrons than expected, makeDecay will report the difference at the end, usually a factor 7.7/10.6. The comparison of neutrino fluxes is done by **$SHIPMACROS**/testscripts/neutrino\_fluxes\_cascade.C
 
-{% embed url="https://github.com/antonioiuliano2/macros-ship/blob/master/testscripts/neutrino\_fluxes\_cascade.C" %}
+{% embed url="https://github.com/antonioiuliano2/macros-ship/blob/master/testscripts/neutrino_fluxes_cascade.C" %}
 
-\*\*\*\*
+****
 
 ### Simulations for muon flux measurements
 
-* For full simulation, proton \(400 GeV\) on SHiP muflux target, plus detector setup:
+*   For full simulation, proton (400 GeV) on SHiP muflux target, plus detector setup:
 
-  `python  run_MufluxfixedTarget.py -e ecut -P --CharmdetSetup 0`
+    `python  run_MufluxfixedTarget.py -e ecut -P --CharmdetSetup 0`
 
-  more options available \(boosting di-muon BR, di-muon cross sections,
+    more options available (boosting di-muon BR, di-muon cross sections,
 
-  charmonium, charm, ...\), see `--help`
+    charmonium, charm, ...), see `--help`
+*   For fast simulation, with muons from external file:
 
-* For fast simulation, with muons from external file:
+    \`python  run\_simScript.py --MuonBack -n 1000 --charm=1 --CharmdetSetup=0 -f
 
-  \`python  run\_simScript.py --MuonBack -n 1000 --charm=1 --CharmdetSetup=0 -f
+    inputFile`, where`inputFile\`:
 
-  inputFile`, where`inputFile\`:
+    `/eos/experiment/ship/data/Mbias/background-prod-2018/pythia8_Geant4_10.0_withCharmandBeauty0_mu.root`
 
-  `/eos/experiment/ship/data/Mbias/background-prod-2018/pythia8_Geant4_10.0_withCharmandBeauty0_mu.root`
+    (+ 66 more files)
+*   For digitization:
 
-  \(+ 66 more files\)
+    \`python runMufluxDigi.py -f ship.conical.FixedTarget-TGeant4.root -g
 
-* For digitization:
+    geofile\_full.conical.FixedTarget-TGeant4.root\`→
 
-  \`python runMufluxDigi.py -f ship.conical.FixedTarget-TGeant4.root -g
+    `ship.conical.FixedTarget-TGeant4_dig.root` Track reconstruction & analysis use
 
-  geofile\_full.conical.FixedTarget-TGeant4.root\`→
-
-  `ship.conical.FixedTarget-TGeant4_dig.root` Track reconstruction & analysis use
-
-  `drifttubeMonitoring.py`, will automatically detect if it is MC data.
+    `drifttubeMonitoring.py`, will automatically detect if it is MC data.
 
 ## Simulation for neutrino interactions
 
 {% hint style="info" %}
-`run_simScript.py` has a cut on kinetic energy, by default set at 100 MeV, to avoid to produce too heavy files \(space is precious\). Particles with lower energy are produced, but only the hits are saved \(we lose `MCTrack` information\). This can be changed at line 33, by setting MCTracksWithHitsOnly = False and                                                             MCTracksWithHitsOrEnergyCut = True
+`run_simScript.py` has a cut on kinetic energy, by default set at 100 MeV, to avoid to produce too heavy files (space is precious). Particles with lower energy are produced, but only the hits are saved (we lose `MCTrack` information). This can be changed at line 33, by setting MCTracksWithHitsOnly = False and                                                             MCTracksWithHitsOrEnergyCut = True
 {% endhint %}
 
-Neutrino interactions are simulated with GENIE MonteCarlo software, then the produced particles are sent to Geant4 for propagation.  
+Neutrino interactions are simulated with GENIE MonteCarlo software, then the produced particles are sent to Geant4 for propagation.\
 Starting from the 2018 spectra produced by Thomas, they can be found in:
 
 * /eos/experiment/ship/data/Mbias/background-prod-2018/pythia8\_Geant4\_charm\_nu\_1.0.root
@@ -173,21 +166,21 @@ In this file you can find 1D histogram of neutrino momentum, along with 2D histo
 
 Most of this material here is credit to Annarita.
 
-First \(and important!\), we need to set Genie User Decay Settings, to tell Genie not to make tau leptons and charmed hadrons decay, because we want to let Geant4 decay them.
+First (and important!), we need to set Genie User Decay Settings, to tell Genie not to make tau leptons and charmed hadrons decay, because we want to let Geant4 decay them.
 
 This is set in UserPhysicsOption.xml, setting the option DecayParticlewithCode = pdgcode, as false, with pdg codes for charmed hadrons:
 
-* ± 421    
-* ± 411  
+* ± 421   &#x20;
+* ± 411 &#x20;
 * ± 431
-* 4122  
-* 4112  
-* 4212  
-* 4222  
+* 4122 &#x20;
+* 4112 &#x20;
+* 4212 &#x20;
+* 4222 &#x20;
 
 and for tau leptons:
 
-* ± 16  
+* ± 16 &#x20;
 
 Export GXMLPATH variable with the path of the modified UserPhysicsOptions.xml will tell Genie your request.
 
@@ -195,7 +188,7 @@ If you do not have splines, you have to create them by launching
 
 `gmkspl -p #nu -t 1000822040[0.014], 1000822060[0.241], 1000822070[0.221], 1000822080[0.524] -n 500 -e 400 -o out_file_name.xml`
 
-I am currently using Annarita splines. Actually Genie manual does not recommend that, but to use official splines if no particular physical requests are asked. I did not see any difference last time I checked with the official splines. I will probably use official splines for future generations \(not current ones\)
+I am currently using Annarita splines. Actually Genie manual does not recommend that, but to use official splines if no particular physical requests are asked. I did not see any difference last time I checked with the official splines. I will probably use official splines for future generations (not current ones)
 
 Launch Genie simulations with:
 
@@ -205,15 +198,15 @@ Convert the output in gst format:
 
 `gntpc -i gntp.0.ghep.root -f gst --message-thresholds $GENIE/config/Messenger_laconic.xml"`
 
-All these operations are written in macro/makeGenieEvents.py Usage: &gt; python -i &gt; makeEvent\(100\) &gt; makeNtuples\(\).
+All these operations are written in macro/makeGenieEvents.py Usage: > python -i > makeEvent(100) > makeNtuples().
 
-Input neutrino fluxes have been produced by Thomas, in the main proton on target simulation \(the same which produces the muon spectra\). The most recent ones are from 2018 and are in the following folder:
+Input neutrino fluxes have been produced by Thomas, in the main proton on target simulation (the same which produces the muon spectra). The most recent ones are from 2018 and are in the following folder:
 
-/eos/experiment/ship/data/Mbias/background-prod-2018/pythia8\_Geant4\_10.0\_withCharm\_nu.root \(10 GeV cut\)
+/eos/experiment/ship/data/Mbias/background-prod-2018/pythia8\_Geant4\_10.0\_withCharm\_nu.root (10 GeV cut)
 
-/eos/experiment/ship/data/Mbias/background-prod-2018/pythia8\_Geant4\_1.0\_withCharm\_nu.root \(1 GeV cut\)
+/eos/experiment/ship/data/Mbias/background-prod-2018/pythia8\_Geant4\_1.0\_withCharm\_nu.root (1 GeV cut)
 
-Both files are weighted to correspond to 1 proton spill \( $$4 \times 10^{13}$$ protons on target\).
+Both files are weighted to correspond to 1 proton spill ( $$4 \times 10^{13}$$ protons on target).
 
 {% hint style="info" %}
 2021 Update: I am currently producing the interactions in a tungsten target. Since tungsten was not in the official splines, I have produced the splines manually.
@@ -231,8 +224,8 @@ python $FAIRSHIP/macro/run_simScript.py --Genie -f nufluxfile.root -n nevents -o
 
 It will use the information about neutrino interaction from the Genie simulation to do the following steps:
 
-1. From p-pt association \(2D spectra\) and random generation of phi angles, obtain kinematic information of event.
-2. Place the interactions in the target \(z randomly generated, x and y propagated from target according to angles\)
+1. From p-pt association (2D spectra) and random generation of phi angles, obtain kinematic information of event.
+2. Place the interactions in the target (z randomly generated, x and y propagated from target according to angles)
 3. Compute a weight of the event, according to the density of material.
 4. Pass the weighted event to Geant4 for usual propagation and save of MC information
 
@@ -242,7 +235,7 @@ $$
 R=L\sigma = I \frac{\rho l N_A}{A} \sigma = I \frac{wN_A}{A}\sigma
 $$
 
-Indeed, we expect more interactions in more dense material \(i.e. many in the lead, few in emulsion and very few in air gaps\), but if you do not use the weight you will see the positions uniformly distributed there! Therefore, when plotting the hits always use weighted histograms. Weight is the same for all particles of the same events, so you can use MCTrack\[0\].GetWeight\(\) to find it
+Indeed, we expect more interactions in more dense material (i.e. many in the lead, few in emulsion and very few in air gaps), but if you do not use the weight you will see the positions uniformly distributed there! Therefore, when plotting the hits always use weighted histograms. Weight is the same for all particles of the same events, so you can use MCTrack\[0].GetWeight() to find it
 
 {% hint style="info" %}
 By default, FairShip will generate neutrino interactions in a vast z region, because many detectors study neutrino interactions as a background source. Usually, we want to study only the interactions happening in the detector. We then set GenieGen positions as:
@@ -254,11 +247,11 @@ But this mostly depends on what we want to study and it should be kept under con
 
 ## Simulation for muon background
 
-Muon background is simulated with `--MuonBack` option from `macro/run_simScript.py`. It takes as input the muon fluxes produced by Thomas and stored in 67 large ROOT files \($N$ a number from 0 to 66\):
+Muon background is simulated with `--MuonBack` option from `macro/run_simScript.py`. It takes as input the muon fluxes produced by Thomas and stored in 67 large ROOT files ($N$ a number from 0 to 66):
 
 /eos/experiment/ship/data/Mbias/background-prod-2018/pythia8\_Geant4\_10.0\_withCharmandBeauty$N$000\_mu.root
 
-They are weighted, according to the production computing facility. The weights are transferred to the `run_simScript` simulation and are to be included in the histogram maps. Included weights, the muons correspond to the protons from one spill \( $$4 \times 10^{13}$$ protons on target\). 
+They are weighted, according to the production computing facility. The weights are transferred to the `run_simScript` simulation and are to be included in the histogram maps. Included weights, the muons correspond to the protons from one spill ( $$4 \times 10^{13}$$ protons on target).&#x20;
 
 An excellent example of script to produce muon flux maps is the `macro/flux_map.py` script.
 
@@ -266,7 +259,7 @@ An excellent example of script to produce muon flux maps is the `macro/flux_map.
 
 ## Checking geometry of a simulation
 
-Every FairShip simulation produces a geometry file \(named \`geofile\*.root\`\), along with the simulation tree file. This allows to check the status of the geometry at the time the simulation has been performed.
+Every FairShip simulation produces a geometry file (named \`geofile\*.root\`), along with the simulation tree file. This allows to check the status of the geometry at the time the simulation has been performed.
 
 ### Launching the Event Display
 
@@ -276,7 +269,7 @@ FairShip itself uses an event display with the following syntax:
 python -i $FAIRSHIP/macro/eventDisplay.py -f simulationfile.root -g geofile.root
 ```
 
-Which opens a display of the whole detector, and it additionally offers a display of the events from the simulationfile. Being very slow, it is often useful to check the vislvl option in the script, at the following position \(line 1061\):
+Which opens a display of the whole detector, and it additionally offers a display of the events from the simulationfile. Being very slow, it is often useful to check the vislvl option in the script, at the following position (line 1061):
 
 ```python
 fMan.Init(1,4,10) # default Init(visopt=1, vislvl=3, maxvisnds=10000), ecal display requires vislvl=4
@@ -298,23 +291,23 @@ Positions in FairShip reference system and half-dimensions of all mother volumes
 
 ### Checking overlaps and extrusions
 
-Changes in positions and/or dimensions of geometrical volumes may cause overlapping between two volumes or extrusions of a daughter node with respect to its mother node \(i.e., it exits from the region covered by the mother volume\). 
+Changes in positions and/or dimensions of geometrical volumes may cause overlapping between two volumes or extrusions of a daughter node with respect to its mother node (i.e., it exits from the region covered by the mother volume).&#x20;
 
-Luckily, there is an automated tool to provide this check, and it should be launched as much frequently as possible \(and ALWAYS before opening a pull request to ShipSoft master repository\). At the start of `macro/run_simScript.py,` simply set debug flag to 2 instead of 0. It will report the magnetic fields at the start of the program, while at the end it will perform the overlap/extrusion check.
+Luckily, there is an automated tool to provide this check, and it should be launched as much frequently as possible (and ALWAYS before opening a pull request to ShipSoft master repository). At the start of `macro/run_simScript.py,` simply set debug flag to 2 instead of 0. It will report the magnetic fields at the start of the program, while at the end it will perform the overlap/extrusion check.
 
 ### Backward-compatibility check
 
-FairShip is not only used for launching simulations, but also for analyzing the results of them \(providing reconstruction, even if unluckily is not implemented in our subdetectors\). Therefore, after changing methods and attributes of some class, we must confirm that the program can still access old data without errors. To do that, follow this procedure, proposed by Thomas:
+FairShip is not only used for launching simulations, but also for analyzing the results of them (providing reconstruction, even if unluckily is not implemented in our subdetectors). Therefore, after changing methods and attributes of some class, we must confirm that the program can still access old data without errors. To do that, follow this procedure, proposed by Thomas:
 
-1. Launch a simulation, then reconstruction and analysis with the master FairShip version \(official repository\):
+1. Launch a simulation, then reconstruction and analysis with the master FairShip version (official repository):
 
-```text
+```
 python $FAIRSHIP/macro/run_simScript.py
 python $FAIRSHIP/macro/ShipReco.py -f ship.conical.Pythia8-TGeant4.root -g geofile_full.conical.Pythia8-TGeant4.root
 python -i $FAIRSHIP/macro/ShipAna.py -f ship.conical.Pythia8-TGeant4_rec.root -g geofile_full.conical.Pythia8-TGeant4.root
 ```
 
-2. Read the produced data with the new compiled FairShip version, by launching analysis and reconstruction:
+2\. Read the produced data with the new compiled FairShip version, by launching analysis and reconstruction:
 
 ```bash
 python -i $FAIRSHIP/macro/ShipAna.py -f ship.conical.Pythia8-TGeant4_rec.root -g geofile_full.conical.Pythia8-TGeant4.root
@@ -323,11 +316,9 @@ python $FAIRSHIP/macro/ShipReco.py -f ship.conical.Pythia8-TGeant4.root -g geofi
 
 ## Behaviour of neutral particles
 
-Usually, you do not want to analyze hits from neutral particles, since they are not detected. Concerning the simulation, no charge check is applied. Instead, particle hits are excluded only if **ELoss==0** , that means the particle hits are stored only if they leave a fraction of their energy in the detector. This is reasonable, since this is how in general a particle detector works. However, if the particle **stops** in the detector volume, it seems that all its energy is given to the volume, and ELoss is not 0 \(probably to avoid violating energy conservation?\). 
+Usually, you do not want to analyze hits from neutral particles, since they are not detected. Concerning the simulation, no charge check is applied. Instead, particle hits are excluded only if **ELoss==0** , that means the particle hits are stored only if they leave a fraction of their energy in the detector. This is reasonable, since this is how in general a particle detector works. However, if the particle **stops** in the detector volume, it seems that all its energy is given to the volume, and ELoss is not 0 (probably to avoid violating energy conservation?).&#x20;
 
-This means that you will encounter a small number of neutral \(photons, pi0, etc.\) MCPoint in your simulation. That common rule is to exclude them at the analysis, by using TPDGDatabase interface.
-
-
+This means that you will encounter a small number of neutral (photons, pi0, etc.) MCPoint in your simulation. That common rule is to exclude them at the analysis, by using TPDGDatabase interface.
 
 
 

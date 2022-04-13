@@ -2,7 +2,7 @@
 description: More I/O business
 ---
 
-# JSON
+# DCS
 
 ## Motivation
 
@@ -12,7 +12,7 @@ At the same time, the servers can set thresholds and send in general messages wi
 
 Thus, naturally the DCS server needs to communicate with json, through c++ software
 
-## JSONCPP
+### JSONCPP
 
 This C++ library allows both reading and writing json strings with c++ variables.
 
@@ -35,3 +35,7 @@ we need this one:
 ```
 
 Standard execution with ROOT then works
+
+### Paho-mqtt
+
+C++/Python Library to connect to the MQTT server. Our server is located into
