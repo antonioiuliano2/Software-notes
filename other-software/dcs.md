@@ -39,3 +39,32 @@ Standard execution with ROOT then works
 ### Paho-mqtt
 
 C++/Python Library to connect to the MQTT server. Our server can be accessed from my aiulian lxplus account with the [https://github.com/antonioiuliano2/macros-snd/blob/master/dcs\_monitoring/sndmqtt\_testconnection.py](https://github.com/antonioiuliano2/macros-snd/blob/master/dcs\_monitoring/sndmqtt\_testconnection.py), by modifying the on\_message function
+
+## DCS  Presenter
+
+The monitoring class, it stores the sensor data into a TTree. It is launched from lxplus via
+
+```bash
+python pyhon/sndmqtt_startconnection.py
+```
+
+and it will access the "monitoring channel", autosaving the TTree every 100 entries (about every 30 minutes). The saved TFile will have the date of creation, i.e. "dcs\_output\_20220421.root"
+
+### Format of dcs tree info
+
+The DCS Presenter store information into a TTree smstree, with the following variables:
+
+* **monitortime:** TDatime, storing the time when the monitor message was stored;
+* **coolingon:** A boolean, telling us if cooling system is active
+* **temp\[5]**: An array of temperatures (in °C)
+* **relhum\[5]:** An array of relative humidities (percentage);
+* **smk\[3]:** An array of booleans, will tell us if a smoke sensor has been triggered
+
+TDatime can be easily plotted, by filling a graph or histogram with the output of Convert() call, then the axis can be set as preferred:
+
+
+
+```cpp
+   mgr.GetXaxis()->SetTimeDisplay(1);
+   mgr.GetXaxis()->SetTimeFormat("%Y-%m-%d %H:%M");
+```
