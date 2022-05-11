@@ -36,6 +36,12 @@ Automatic bash script to create folder and the symbolic link to data folder:
 
 `source createlink.sh`
 
+Other useful option for makescanset:
+
+* **-refplate nplate**: choose referecence plate the set will built according to. By default, the first or last plate;
+* **-updateaff "aff"**: update set with affine transformation "aff", which must be manually written (for example, -updateaff 1 0 0 1 20 30);
+* **-updatesetaff refset:** update set with affine transformation from reference set "refset". It calls EdbScanSet::TransformBrick( EdbScanset \&ss) ****&#x20;
+
 ## Linking
 
 Linking is made to obtain basetracks from microtracks. Basetracks are chosen according to a chi-square minimization, using coordinates, angles and cluster number as input (reference FEDRA 2006).\
