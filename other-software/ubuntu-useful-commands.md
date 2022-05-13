@@ -104,3 +104,7 @@ If you try to have many files opened at once, you get error "Opened many files".
 ```
 ulimit -n 10000
 ```
+
+## Providing output and error logs
+
+Usually, when asking people for help with a bug, w
