@@ -107,4 +107,10 @@ ulimit -n 10000
 
 ## Providing output and error logs
 
-Usually, when asking people for help with a bug, w
+Usually, when asking people for help with a bug, we need to provide output file and error file:
+
+
+
+```
+exec 1>>"$logfile" 2>>"$errorfile"
+```
