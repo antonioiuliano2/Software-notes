@@ -23,6 +23,7 @@
 ## LASSO <a href="#lasso-scanning-and-processing" id="lasso-scanning-and-processing"></a>
 
 * [Scanning and processing](lasso-scanning-and-processing/scanning-and-processing.md)
+* [Microscope corrections](lasso-scanning-and-processing/microscope-corrections.md)
 * [Add-ons](lasso-scanning-and-processing/add-ons.md)
 
 ## FEDRA
