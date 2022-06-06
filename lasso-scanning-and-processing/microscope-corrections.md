@@ -6,11 +6,11 @@ These corrections need to be computed after the installation of a new microscope
 
 ### List of corrections
 
-1. flimgen
-2. cormtx (This is a correction of uneven magnification distortion along the field of view)
-3. slope (This is a correction of spherical distribution)
-4. flatview (Correction allowing to transfer the spherical field of view into a flat one)
-5. grainvol (Correction of grain volume/brightness)
+1. **flimgen**
+2. **cormtx** (This is a correction of uneven magnification distortion along the field of view)
+3. **slope** (This is a correction of spherical distribution)
+4. **flatview** (Correction allowing to transfer the spherical field of view into a flat one)
+5. **grainvol** (Correction of grain volume/brightness)
 
 ## Pixel size determination and flimgen
 
@@ -26,7 +26,7 @@ Make a test scan (**flimgen**) and convert into clusters
 
 ## Cormtx
 
-Create two directories: /bot and /top
+Create two directories: **/bot** and **/top**
 
 Launch copied files from previous directory
 
@@ -61,3 +61,37 @@ Example: (for top\_1)
 ```bash
 viewdist -f clust_raw.root -add=/top_1/correction_matrix.root
 ```
+
+Repeat until map converge
+
+Obtained files need to be moved to **C:\LASSO\_x64**, renaming them in order to replace already existing files.
+
+## Slope
+
+It is only a fast scan
+
+* launch **run.bat**
+* launch scans
+* launch **OpGrnProc.bat**
+* launch **fit.C:**
+
+```bash
+root -l grains.raw.root fit.C
+```
+
+## Flatview and grainvol
+
+They use the same scan:
+
+* copy folders
+* Scanning (measure glass, bottom, base and top, check light level, to have gray level about 190)
+* **OpGrainProc.bat**
+* **run\_flatview.bat**
+* **run\_grain\_vol.bat** (from folder 5.grainvol)
+* check plots with .C scripts
+* copy **flatview\_0.vfm** and **flatview\_1.vfm** in **C:\LASSO\_x64**
+* copy **grnvol\_mtx\_0.grv** and **grnvol\_mtx\_1.grv** in **C:\LASSO\_x64**
+
+### gfind
+
+copy fit values in **link\_corr**, **link\_cor\_0, link\_cor\_1**
