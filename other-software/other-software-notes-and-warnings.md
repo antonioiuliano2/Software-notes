@@ -65,5 +65,15 @@ Recreate the TFile object does everything you need (except you also need to dele
 Cheers,\
 Philippe.
 
+## Transparency
+
+Volumes are made transparent with SetFillColorAlpha(color, alpha).
+
+However, to actually see transparent volumes in the canvas, you need to set&#x20;
+
+`OpenGL.CanvasPreferGL = 1`
+
+in the .rootrc file or in your HOME path (or, if you prefer, in _`$ROOTSYS/etc/system.rootrc)`_
+
 
 
