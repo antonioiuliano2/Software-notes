@@ -10,7 +10,9 @@ Temperature and humidity sensors provide their data through JSON strings via MQT
 
 At the same time, the servers can set thresholds and send in general messages with the board to JSON.
 
-Thus, naturally the DCS server needs to communicate with json, through c++ software
+Thus, naturally the DCS server needs to communicate with json, through c++ software.
+
+The repository is [https://gitlab.cern.ch/sndlhc-daq/detectorcontrolsystem](https://gitlab.cern.ch/sndlhc-daq/detectorcontrolsystem)
 
 ### JSONCPP
 
@@ -38,7 +40,7 @@ Standard execution with ROOT then works
 
 ### Paho-mqtt
 
-C++/Python Library to connect to the MQTT server. Our server can be accessed from my aiulian lxplus account with the [https://github.com/antonioiuliano2/macros-snd/blob/master/dcs\_monitoring/sndmqtt\_testconnection.py](https://github.com/antonioiuliano2/macros-snd/blob/master/dcs\_monitoring/sndmqtt\_testconnection.py), by modifying the on\_message function
+C++/Python Library to connect to the MQTT server. Our server can be accessed from my aiulian lxplus account with [https://gitlab.cern.ch/sndlhc-daq/detectorcontrolsystem/-/blob/master/python/testsndmqtt\_connection.py](https://gitlab.cern.ch/sndlhc-daq/detectorcontrolsystem/-/blob/master/python/testsndmqtt\_connection.py), by modifying the on\_message function
 
 ## DCS  Presenter
 
@@ -67,4 +69,39 @@ TDatime can be easily plotted, by filling a graph or histogram with the output o
 ```cpp
    mgr.GetXaxis()->SetTimeDisplay(1);
    mgr.GetXaxis()->SetTimeFormat("%Y-%m-%d %H:%M");
+
 ```
+
+## Online monitoring
+
+### Storage of sensor data:
+
+Online monitoring is performed via tmux screens on lxplus.
+
+Important: writing permissions last 1 day. Once a day (twice, for safety), you should reconnect with kinit and your CERN credentials to the same lxplus you used with tmux (example. lxplus761);
+
+To launch a new monitoring session:
+
+* create a tmux session with tmux new -s dcsmonitorgraphs;
+* enter sndsw environment;
+* go to detectorcontrolsystem/python/ folder;
+* Launch python sndmqtt\_startconnection.py
+* Detach with ctrl-b d
+
+### Drawing graphs:
+
+Graphs are drawn with ROOT and stored in our webserver folder, accessible from snd-lhc-monitoring.web.cern.ch/dcsgraphsonline.html. To do them:
+
+* create a tmux session with tmux new -s startdrawingdcsgraphs;
+* enter sndsw environment;
+* go to detectorcontrolsystem/cplusplus\_scripts/ folder;
+* Launch source startdrawingmonitorgraphs.sh filename;
+
+Replace filename with the latest monitoring file, for example dcs\_output\_20220719.root
+
+### Updating web index
+
+Last, not forget to add a new link to the index, otherwise people cannot find the link to the new graph. Modify /eos/experiment/sndlhc/www/dcsgraphsonline.html accordingly.
+
+If you do not know how to write the file, please check [https://gitlab.cern.ch/sndlhc-daq/detectorcontrolsystem/-/blob/master/dcsgraphsonline.html](https://gitlab.cern.ch/sndlhc-daq/detectorcontrolsystem/-/blob/master/dcsgraphsonline.html) and [https://gitlab.cern.ch/sndlhc-daq/detectorcontrolsystem/-/blob/master/python/getlinks.py](https://gitlab.cern.ch/sndlhc-daq/detectorcontrolsystem/-/blob/master/python/getlinks.py)
+
