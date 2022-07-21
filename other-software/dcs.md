@@ -42,6 +42,26 @@ Standard execution with ROOT then works
 
 C++/Python Library to connect to the MQTT server. Our server can be accessed from my aiulian lxplus account with [https://gitlab.cern.ch/sndlhc-daq/detectorcontrolsystem/-/blob/master/python/testsndmqtt\_connection.py](https://gitlab.cern.ch/sndlhc-daq/detectorcontrolsystem/-/blob/master/python/testsndmqtt\_connection.py), by modifying the on\_message function
 
+### DIP and DIM
+
+This communication system is used to subscribe to information from the CV Temperature and Humidity sensor:
+
+[https://dim.web.cern.ch/](https://dim.web.cern.ch/)
+
+[https://readthedocs.web.cern.ch/display/DIP/](https://readthedocs.web.cern.ch/display/DIP/)
+
+The library used to retrieve the code is the python library pydim, installed according to&#x20;
+
+[http://lhcbdoc.web.cern.ch/lhcbdoc/pydim/index.html](http://lhcbdoc.web.cern.ch/lhcbdoc/pydim/index.html)
+
+Necessary prerequisite. Source this script:
+
+source configpydim.sh
+
+Then to acces and store the data launch
+
+python python/CVtemphumidity\_DIM\_SND\_readout.py
+
 ## DCS  Presenter
 
 The monitoring class, it stores the sensor data into a TTree. It is launched from lxplus via
