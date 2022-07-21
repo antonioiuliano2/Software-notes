@@ -14,6 +14,12 @@ Thus, naturally the DCS server needs to communicate with json, through c++ softw
 
 The repository is [https://gitlab.cern.ch/sndlhc-daq/detectorcontrolsystem](https://gitlab.cern.ch/sndlhc-daq/detectorcontrolsystem)
 
+Another sensor is provided by the CV department, via the DIM and DIP communication service
+
+
+
+## Required external libraries
+
 ### JSONCPP
 
 This C++ library allows both reading and writing json strings with c++ variables.
