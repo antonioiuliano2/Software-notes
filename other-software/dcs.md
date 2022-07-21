@@ -64,7 +64,7 @@ python python/CVtemphumidity\_DIM\_SND\_readout.py
 
 ## DCS  Presenter
 
-The monitoring class, it stores the sensor data into a TTree. It is launched from lxplus via
+The SMS monitoring class, it stores the sensor data into a TTree. It is launched from lxplus via
 
 ```bash
 python pyhon/sndmqtt_startconnection.py
@@ -115,7 +115,9 @@ Graphs are drawn with ROOT and stored in our webserver folder, accessible from s
 * create a tmux session with tmux new -s startdrawingdcsgraphs;
 * enter sndsw environment;
 * go to detectorcontrolsystem/cplusplus\_scripts/ folder;
-* Launch source startdrawingmonitorgraphs.sh filename;
+* Launch source startdrawingmonitorgraphs.sh smsfilename cvfilename;
+
+where smsfilename contains the TTree from SMS and cvfilename the one from CV sensor
 
 Replace filename with the latest monitoring file, for example dcs\_output\_20220719.root
 
