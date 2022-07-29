@@ -104,6 +104,20 @@ The linking report is produced automatically after a linking. A PDF contains the
 
 
 
-![](../.gitbook/assets/linking\_report\_p003.png)
+![Linking report example](../.gitbook/assets/linking\_report\_p003.png)
+
+## Alignment report
+
+It reports the alignment procedure between two plates. It starts with a coarse alignment, then it does a fine alignment on the results of the coarse one. Again, a PDF contains the most recent alignment reports, but any report can be accessed from the AFF/al.root file, by drawing the **report\_al** TCanvas. It contains the following plots:
+
+* 1 and 2 are the patterns of the base-tracks in the single films;
+* 3 is the Z distance between plates, vs the phi angle rotation, after coarse alignment. It is normal that z has not a clear peak, but **check that phi is well limited**;
+* 4 is the position residuals after coarse alignment;
+* 5 is the position residuals after fine alignment. **Check that there is a peak here**
+* 6 is the angular residuals after fine alignment**. Check for a clear peak here**
+* 7 is the theta density. The bins have not the same size!
+* 8 and 9 contains the distributions of matched base-tracks after alignment. For high number of base-tracks, they are not produced to save memory.
 
 &#x20;
+
+![Example of alignment report](../.gitbook/assets/alignment\_report\_p004\_p003.png)
