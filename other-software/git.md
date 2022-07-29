@@ -92,3 +92,20 @@ git cherry-pick 02e641bd62b6efe1924eb008413f2e57f4e9a996
 
 Be careful that this does not cause conflict with your master branch
 
+
+
+## GitHub Actions
+
+GitHub actions automate code options, for instance at every pull
+
+
+
+Did it for Doxygen reference of sndsw, following indications by Oliver and over here:
+
+{% embed url="https://github.com/marketplace/actions/doxygen-github-pages-deploy-action" %}
+
+gh-pages is a branch that can be published as the page, for example:
+
+{% embed url="https://antonioiuliano2.github.io/FairShip/" %}
+
+connects to the gh-pages branch of my FairShip repository
