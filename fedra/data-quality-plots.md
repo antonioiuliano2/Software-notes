@@ -84,3 +84,26 @@ This script is used to inspect the thickness of emulsion layers:
 
 ![Example of thickness plot](../.gitbook/assets/thickness\_p003.png)
 
+## Linking report
+
+Linking is the reconstruction of particle trajectories in a single emulsion film (base-tracks) from the trajectories in the bottom and top emulsion layers (micro-tracks). At this step, the shrinkage correction is applied.
+
+The linking report is produced automatically after a linking. A PDF contains the most recent linking reports, but any report can be accessed from the cp.root file, by drawing the **report** TCanvas. It contains the following plots:
+
+* 1 and 2 are the xy distributions in shrinkage correction sample, 1 (bottom) and 2 (top);
+* 3 and 4 are the theta angle distributions, 1 (bottom) and 2 (top);&#x20;
+* 5 is the position residuals for the shrinkage correction sample;
+* 6 is the angular residuals for the shrinkage correction sample;
+* 7 and 8 are the shrinakge corrections for bottom (7) and top (8) layers. **Always check that there is a clear peak in these two distributions**
+* 9 and 10 are the TX and TY residuals between bottom micro-tracks and base-tracks;
+* 11 and 12 are the TX and TY residuals between top micro-tracks and base-tracks;
+* 13 is the xy distribution of the produced couples;
+* 14 is the 2D angular distribution of the produced couples;
+* 15 is the chi squared distribution for the base-tracks fit. **It should have a clear peak before 1, then an asymmetric curve;**
+* 16 is the same, for high W base-tracks. All comments for 15 apply here.
+
+
+
+![](../.gitbook/assets/linking\_report\_p003.png)
+
+&#x20;
