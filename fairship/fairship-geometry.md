@@ -6,7 +6,7 @@ description: How the general structure works
 
 ## Introduction
 
-FairShip is built from the FairRoot software framework ([https://fairroot.gsi.de/](https://fairroot.gsi.de))
+FairShip is built from the FairRoot software framework ([https://fairroot.gsi.de/](https://fairroot.gsi.de/))
 
 &#x20;Geometry works with C++ classes for various subdetectors, using ROOT geometry definitions of volumes&#x20;
 
