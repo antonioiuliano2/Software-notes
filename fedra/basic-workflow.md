@@ -241,6 +241,9 @@ Scalar branches (i.e. one number for vertex):
     * flag 3: neutral, linked (has common tracks with other vertex, only if LinkedVertexes() has been called)
     * flag 4: charge, linked
     * flag 5: back neutral, linked
+    * flag -10: **discarded vertices (all tracks were associated to higher rank vertices).**&#x20;
+
+****
 
 Array branches (i.e. track properties):
 

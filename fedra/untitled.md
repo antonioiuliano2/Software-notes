@@ -38,3 +38,9 @@ ndf() = 2\*ntracks()-3\
 
 
 A track can belong to multiple vertices in the initial stage. Later, it will be associated to the vertex with the highest rank, computed as 10\*ntracks + probability.
+
+If all tracks from a vertex have been moved to a better vertex, the vertex becomes "empty" and without meaning -> its flag is then -10, which means good vertices to be analyzed **must have flag larger than 0.**&#x20;
+
+In high multiplicity environments, it may happen that tracks "disappear", due to having been associated to two vertices with flag -10, without finding a final vertex, even with low multiplicity. The, **still experimental, but used in sndsw simulation, RECOVERCHECKVTX()** function fixes this (see schematics of the issue):
+
+<figure><img src="../.gitbook/assets/Schema_recover_check_VTX.JPEG" alt=""><figcaption><p>Luckily I did this drawing at CERN XD</p></figcaption></figure>
