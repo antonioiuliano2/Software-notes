@@ -97,6 +97,15 @@ Also, if you change angular range, remember to change **ICUT** and **ThetaLimits
 
 After the linking, check the report b000001.0.0.0.link.pdf and verify that the shrinkage plots show some peaks.
 
+#### Couples ranking
+
+In the link.rootc file, the CPRankingAlg 0 will rank the couples **(EdbSegCouple)**, according to their **eCHI2P.** They are thus sorted, so for each microtrack we have a rank of the couples (eN1 and eN2).&#x20;
+
+* eN1 equal to 1 means this is the best couple for microtrack 1 (bot)
+* eN2 equal to 2 means this is the best couple for microtrack 2 (top)
+
+In the end, the base-track usually used **(EdbSegP),** is the one corresponding to the best couple for both micro-tracks (this is the reason eN1==1 and eN2==1 are in both alignment and tracking selections)
+
 ## Alignment
 
 It is one of the most delicate and important operations, because it allows to connect the different plates. Alignment is done with the command:
