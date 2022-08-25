@@ -97,6 +97,12 @@ Also, if you change angular range, remember to change **ICUT** and **ThetaLimits
 
 After the linking, check the report b000001.0.0.0.link.pdf and verify that the shrinkage plots show some peaks.
 
+
+
+#### From FEDRA TWiki
+
+In this case for the piece of raw scanning data (for example 1cm\*1cm scanned for the one emulsion plate) will be found all couples of microtracks satisfying to the CHI2 criteria. It is assumed that in one file there is 1 tree containing the data for one emulsion plate. All data in the couples tree are in the local **Plate Reference System**. It means that the Z-coord is local (0-300 microns) and affine transformations calculated (later) during the alignment procedure do not applied (them are conserved in par-files). One entry to the tree correspond to 1 basetrack. For each basetrack **s** appropriate microtracks **s1** and **s2** are saved. Note that it is possible that one microtrack from the one side is in agreement with two or more microtracks on the other side, in this case more then 1 couple (basetracks) will be stored (see eN1,eN1tot variables). This method permit not to loose any information and to perform additional selections after linking.
+
 #### Couples ranking
 
 In the link.rootc file, the CPRankingAlg 0 will rank the couples **(EdbSegCouple)**, according to their **eCHI2P.** They are thus sorted, so for each microtrack we have a rank of the couples (eN1 and eN2).&#x20;
