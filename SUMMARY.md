@@ -11,6 +11,12 @@
 * [Geant4 interface](fairship/geant4-interface.md)
 * [Display tricks](fairship/display-tricks.md)
 
+## SHiP at ECN3
+
+* [Neutrino yield](ship-at-ecn3/neutrino-yield.md)
+* [Muon flux](ship-at-ecn3/muon-flux.md)
+* [Geometry re-implementation](ship-at-ecn3/geometry-re-implementation.md)
+
 ## SND@LHC
 
 * [Introduction to sndsw](snd-lhc/introduction-to-sndswd.md)
@@ -19,6 +25,9 @@
 * [MuonDIS simulation](snd-lhc/muondis-simulation.md)
 * [Access simulation output](snd-lhc/access-simulation-output.md)
 * [FEDRA reconstruction and csv conversion](snd-lhc/fedra-reconstruction-and-csv-conversion.md)
+* [Reference RUN1 plate 6](snd-lhc/reference-run1-plate-6.md)
+* [Local reconstruction in cells](snd-lhc/local-reconstruction-in-cells.md)
+* [Lab operations](snd-lhc/lab-operations.md)
 
 ## LASSO <a href="#lasso-scanning-and-processing" id="lasso-scanning-and-processing"></a>
 
@@ -36,6 +45,7 @@
 * [Momentum measurement](fedra/momentum-measurement.md)
 * [Vertexing basics](fedra/untitled.md)
 * [Alignment tests](fedra/alignment-tests.md)
+* [Volume-track efficiency](fedra/volume-track-efficiency.md)
 
 ## Other software
 

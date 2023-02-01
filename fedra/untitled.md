@@ -44,3 +44,40 @@ If all tracks from a vertex have been moved to a better vertex, the vertex becom
 In high multiplicity environments, it may happen that tracks "disappear", due to having been associated to two vertices with flag -10, without finding a final vertex, even with low multiplicity. The, **still experimental, but used in sndsw simulation, RECOVERCHECKVTX()** function fixes this (see schematics of the issue):
 
 <figure><img src="../.gitbook/assets/Schema_recover_check_VTX.JPEG" alt=""><figcaption><p>Luckily I did this drawing at CERN XD</p></figcaption></figure>
+
+## LinkedVertexes()
+
+Vertices can be linked: that is, a track can start from a vertex and end to another vertex, acting as a bridge to another vertex.
+
+The number of linked vertices is returned by the EdbVertex::Nv() function. If this number is larger than 0, flag number is added by 3 (see vertex tree structure for vertex flag meaning)
+
+## Vertex Neighbor, VertexTuning()
+
+A single vertex with high multiplicity may be separated into many vertices with lower multiplicities. In this case, user can select vertex neighborhood - other vertices, tracks and segments, which passed close to a vertex (pointers to these objects will be stored in vertex object):
+
+```
+EdbVertexRec::VertexNeighbor( EdbVertex *v, RadMax, Dpat, ImpMax);
+```
+
+Where:
+
+* v is pointer to vertex;
+* RadMax is maximal track(segment) - vertex distance in X-Y plane;
+* DPat is number of adjacent patterns for selection;
+* ImpMax maximal impact parameter (for tracks only);
+
+Procedure:
+
+```
+EdbVertexRec::VertexNeighbor( RadMax, Dpat, ImpMax);
+```
+
+Will do it all for all existing vertices. They then can be tuned with:
+
+```
+EdbVertexRec::VertexTuning( int Criteria_type );
+```
+
+This procedure will work with pairs of vertexes in neighborhood and try to improve vertexing - remove worsest track (maximal impact or maximal chi2 contribution) from one vertex and add it to other. If new criteria for pair better that original one, we acccept new vertexes. If Criteria\_type=0, criteria is sum of vertexes average impact parameters, if Criteria\_type=1, criteria is sum of vertexes chi2.
+
+\

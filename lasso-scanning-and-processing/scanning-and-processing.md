@@ -59,7 +59,7 @@ Other important parameter is the **threshold, with must be the same** used durin
 
 ## GPU and CPU Processing
 
-Select which one (trackercpu or trackergpu), by commenting the other in the cfg file.
+Select which one (tracker\__cpu or tracker_\_gpu), by commenting the other in the cfg file.
 
 Remember: GPU is not reliable over 0.78
 
@@ -72,4 +72,55 @@ These values usually give inefficiencies at low angles, min\_density is best set
 For GPU it is sensed to have trk\_min\_link\_dens <= trk\_min\_track\_dens, otherwise the setting value will always be the one from trk\_min\_link\_dens.
 
 GPU works only with view\_cell\_size = 5. 5. 5.», other values are not good
+
+### Description of processing parameters
+
+#### Gpu parameters
+
+* trk\_source = grains (Do not change);
+* trk\_linker = gpu (Do not change);
+* trk\_lim\_len = 10. 45. : limiti in lunghezza raggi coppie. La differenza tra CPU e GPU è dovuta all'algoritmo;
+* trk\__lim\__theta = 0.0 0.78: angular limits for processing (in radiants);
+* trk\__gr\__err = 0.1 0.1 0.6; Increase or decrease bin numbers&#x20;
+* trk\_gr\_nsig =2.8; Used as resolution for histogram (related to parameter above);
+* trk\_slh\_effLen = 5. ; Set bin numbers (better not to change);
+* trk\_slh\_effLen2 = 20;  Set bin numbers (better not to change);
+* trk\_min\_link\_dens = 10;
+* trk\_min\_track\_dens = 20;
+* trk\_mip\_track\_dens = 30.; Controllo di qualità confronto; Score with respect to Minimum Ionizing Particle. Quanti grani produce una MIP?
+* trk\_min\_track\_len = 34.; Lunghezza misura di una microtraccia. Distanza fra primo e ultimo grano;
+* trk\_cut\_track\_score = -1.2 1; Limiti sullo score;
+* trk\_cref\_nsig = 4; esigma Xi tracks eTY {eNframes Top==0} Scor; angolo Theta
+
+trk\_min\_link\_dens ha senso solo per GPU
+
+Solo il linking è diverso fra GPU e CPU
+
+Raggi in CPU, Cilindri in GPU
+
+
+
+#### CPU parameters (commissioning)
+
+* trk\_source = grains (Do not change);
+* trk\_linker = blind (Do not change);
+* trk\_lim\_len = 2. 12.5 : limiti in lunghezza raggi coppie. La differenza tra CPU e GPU è dovuta all'algoritmo;
+* trk\__lim\__theta = 0.0 1.0: angular limits for processing (in radiants). CPU can process even at angles larger than 0.78;
+* trk\__gr\__err = 0.1 0.1 0.6; Increase or decrease bin numbers&#x20;
+* trk\_gr\_nsig =2.8; Used as resolution for histogram (related to parameter above);
+* trk\_slh\_effLen = 5. ; Set bin numbers (better not to change);
+* trk\_slh\_effLen2 = 20;  Set bin numbers (better not to change);
+* trk\_min\_track\_dens = 0;
+* trk\_mip\_track\_dens = 30.; Controllo di qualità confronto; Score with respect to Minimum Ionizing Particle. Quanti grani produce una MIP?
+* trk\_min\_track\_len = 17.; Lunghezza misura di una microtraccia. Distanza fra primo e ultimo grano;
+* trk\_cut\_track\_score = -1.2 1; Limiti sullo score;
+* trk\_cref\_nsig = 4; esigma Xi tracks eTY {eNframes Top==0} Scor; angolo Theta
+
+## ROOT conversion
+
+Conversion into ROOT data format is done with the FEDRA library. Command used: C:\LASSO\_x64\win32\EdbConv.exe -mode:OPERA\_MT .\tracks.obx\
+\
+It will use the FEDRA library file libEdb.dll from the folder of C:\LASSO\_x64\win32\\. So, if FEDRA is compiled again, file needs to be copied there.
+
+
 

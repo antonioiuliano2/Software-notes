@@ -97,6 +97,16 @@ Detach tmux session with ctrl-b + d
 
 recover your session with tmux a -t 0 (0 being session number)
 
+#### Kerberos notes
+
+To show all your active keys
+
+klist -A&#x20;
+
+To destroy all your active keys
+
+kdestroy -A
+
 ## Opening many files
 
 If you try to have many files opened at once, you get error "Opened many files". You can solve it by ulimit:

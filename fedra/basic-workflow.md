@@ -26,7 +26,7 @@ We can create an EdbScanSet with the command:
 
 `makescanset -set=1.0.0.0 -dzbase=175 -dz=-1300 -from-plate=29 -to_plate=1`
 
-It could be useful to save the default configuration in a scanset.txt file, customized with the plates to be analized.
+It could be useful to save the default configuration in a scanset.txt file, customized with the plates to be analized. Note: it is normal that dz is negative and dzbase is positive. dzbase is the thickness of the plastic base, dz is the distance between plates. Using negative dzbase fails the linking
 
 Global coordinates are defined taking one plate as reference, then applying the affine transformations to the others, with respect to the reference one. By default it is the last plate, if needed it can be changed by adding a '-refplate' option.
 
@@ -168,6 +168,8 @@ To check the plots of the reports from the different steps, I have added a globa
 
 ### Reproduce residuals
 
+The alignment report is produced by EdbPlateAlignment::ProduceReport()
+
 To reproduce the position residuals from the al.root file, there are also the couples stored there in a tree.
 
 6.10.0.0.6.9.0.0.al.root
@@ -186,6 +188,10 @@ s2.eX - (s1.eX + dz * s1.eTX) , s2.eY - (s1.eY + dz * s1.eTY)
 ```
 
 with **dz** the Z distance between  the two plates, computed from the alignment and stored in the aff.par file
+
+{% hint style="info" %}
+Update: it is more accurate to reproduce them as originally done by FEDRA. It uses layer corrections, applied to segments from the two plates (even if for s2 they are identical transformations). See procedure in  [https://github.com/antonioiuliano2/macros-snd/blob/master/FEDRA/alignmentresiduals.C](https://github.com/antonioiuliano2/macros-snd/blob/master/FEDRA/alignmentresiduals.C)
+{% endhint %}
 
 
 
@@ -272,4 +278,9 @@ The following branches are to be used only in vertices from MC simulations, no s
 * **MCTrackID\[itrk]:** true MCTrackID of each track (accessed with track->MCTrack());
 * **MCTrackPdgCode\[itrk]:** true MCTrack PdgCode of each track (accessed with track->Vid(0));
 * **MCMotherID\[itrk]:** true MCMotherID of each track (accessed with track->Aid(0));&#x20;
+
+{% hint style="info" %}
+When accessing by terminal with Scan, t.Aid\[0] does not work properly (it returns 0 or wrong values for second track onwards, probably due to be an array of array branch). It is set properly when vertexfile is read with the ReadVertexTree function. Track->Aid(0) then works as expected!\
+When doing Scan, please use MCMotherID instead
+{% endhint %}
 

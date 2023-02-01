@@ -10,9 +10,9 @@ description: I am tired of always googling them
 
 
 
-```text
-\SI{1.55}{\micro\metre}
 ```
-
-
+\SI{1.55}{\micro\metre}
+//the manual now recommends \qty, instead of \SI. It works similarly:
+\qty{1.55}{\micro\metre}
+```
 

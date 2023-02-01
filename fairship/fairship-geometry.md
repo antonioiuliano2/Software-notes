@@ -27,6 +27,28 @@ FairShip is built from the FairRoot software framework ([https://fairroot.gsi.de
 &#x20;As the design of the SHiP experiment has become more realistic, we have gradually replaced uniform magnetic fields with field maps. Please see [https://github.com/ShipSoft/FairShip/blob/master/field/README.md](https://github.com/ShipSoft/FairShip/blob/master/field/README.md) for details
 {% endhint %}
 
+## Geometry FAQ
+
+### TGeoShape composite crashes
+
+Check that the component names are registered with RegisterYourself()
+
+### TGeoVolume Issues
+
+#### White single volume
+
+It often happens that I am puzzled when a volume is white, and all replicas are brown.
+
+The answer is simple: no linecolor was set! Set linecolor to a value and it will fix it :)
+
+#### Bounding Box Not Valid
+
+some volume has 0 size!. Do some InspectShape()!
+
+#### Overlaps/Extrusions
+
+Use gGeoManager->CheckOverlaps() to check them gGeoManager->PrintOverlaps() to have more details.
+
 ## nutaudet geometry
 
 The `nutaudet` folder is the one dedicated to the $$\nu/i$$ SHiP detector. It is made of the following components:
@@ -53,7 +75,7 @@ Current configuration display, as of my git branch:
 
 [https://github.com/antonioiuliano2/FairShip/tree/nutaumergeAlexander](https://github.com/antonioiuliano2/FairShip/tree/nutaumergeAlexander)
 
-![Lateral view](../.gitbook/assets/nutaudet-end-of-june.png)
+![Lateral view](<../.gitbook/assets/nutaudet end of June.png>)
 
 #### Magnetic field
 

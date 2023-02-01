@@ -60,6 +60,18 @@ Then you can launch the push
 
 _git push_
 
+
+
+If you get security errors, such as:
+
+Permission denied (publickey). fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights and the repository exists
+
+You probably need to set a SSH keys on your github account (from settings).
+
+Create ssh key according to the guide [https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), and activate it on your machine. Then copy the line from the file into the github account page
+
 __
 
 ## Branches

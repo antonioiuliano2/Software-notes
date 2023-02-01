@@ -82,6 +82,14 @@ python $SNDSW/shiplhc/run_simSND.py --Genie -f inputfile -n 10000 -o outputfolde
 
 Then the simualtion and geometry files are produced, same as FairShip simulations produced by GenieGenerator.
 
+### Digitization
+
+
+
+```
+python $SNDSW/shipLHC/rundigiSND.py -f sndLHC.Genie-TGeant4.root -g geofile_full.Genie-TGeant4.root
+```
+
 ## Hit in the emulsion
 
 EmulsionDetPoints are the emulsion films. They are made active by setting

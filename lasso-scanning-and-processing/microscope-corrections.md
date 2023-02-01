@@ -95,3 +95,21 @@ They use the same scan:
 ### gfind
 
 copy fit values in **link\_corr**, **link\_cor\_0, link\_cor\_1**
+
+****
+
+{% hint style="info" %}
+**Note:** the last corrections (the 5th, in particular), should be performed with a sampling emulsion film from the OPERA experiment, not one with SND@LHC beam.
+{% endhint %}
+
+****
+
+****
+
+## Angular offset
+
+This correction cannot be applied before scanning, must be performed a posteriori.
+
+Each microscopes has not an exactly planar stage. Therefore, an angular offset can be observed, depending on the singolar microscope (about 10 mrad in TX and TY).
+
+The proposed solution to correct it is to analyze a plate scanned twice: first normally, second rotated of 180°.&#x20;

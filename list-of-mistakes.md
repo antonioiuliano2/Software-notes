@@ -127,6 +127,35 @@ Count along columns of x
 
 Self-explaining. Scanning oil must go on the scanning stabe, but **not outside it**. If it goes inside the motors of the moving table....never happened before, but this is a warning I have been given, so I write it here
 
+## FairShip/SNDSW
+
+### Check Simulation Messages!
+
+In general, always check if the output of the simulation has something unexepected. There may be something wrong in the simulation option, which could invalidate your data and months of analysis.
+
+It is pretty difficult to list all possible problems, but some examples:
+
+* Check if emulsions are active or not (default they are passive). Also, check if you need all tracks, or you can keep the cut at 100 MeV kinetic energy;
+* Check for not used volumes. Geant4 does not like that you define volumes in TGeo, but you never use them in your geometry;
+* Check field maps. Should they be present? Which ones? The nutaudet field map was present even months after we decided not to have a magnet in the neutrino detector anymore.
+* Check conversion option into FEDRA (smearing, efficiency, background contamination, etc.)
+
+In general, try to be as critical as possible for the simulation. Try to keep note of simulation time, files and conditions
+
+
+
+## FEDRA related stuff
+
+### Mixing up makescansets
+
+As our FEDRA reconstruction currently works, it reads the EdbScanSet stored in set.root files from the folder, to know which emulsion film numbers to process.
+
+It is **bad** if you try running makescanset while another process is running, since it will continue running with the new file numbers provided in the scanset. It is **especially horrid** if it is a emlink process, which does not update files, but it **recreates** them, basically destroying your hard work for couples and there after (since, you need to redo couples again).
+
+So, always check if processes are active in the same set, before launching makescanset. You simply need to launch **top**.&#x20;
+
+Also, it is useful to **keep screen instances separate** for separate bricks. Launching many cd commands to different folder everytime leads to bad surprises. Let us keep sources of mistakes to the absolute minimum, please.
+
 ##
 
 
