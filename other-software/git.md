@@ -121,27 +121,3 @@ gh-pages is a branch that can be published as the page, for example:
 {% embed url="https://antonioiuliano2.github.io/FairShip/" %}
 
 connects to the gh-pages branch of my FairShip repository
-
-
-
-## GIT-SVN
-
-Interface between git and svn
-
-Used to interface FEDRA with SNDDIST.
-
-Followed guide here:&#x20;
-
-[https://gist.github.com/rickyah/7bc2de953ce42ba07116](https://gist.github.com/rickyah/7bc2de953ce42ba07116)
-
-For now, just commit to svn and pass to git when needed. Local git changes (install.sh, etc. for now will remain on git). Need to test svn passage
-
-Basically, update git with svn changes by using `git rebase.`
-
-`You can also send commits to svn, but I would not do that (permissions?) git svn dcommit`
-
-`Need to solve merges, it will always replicates the same commits`
-
-``
-
-``

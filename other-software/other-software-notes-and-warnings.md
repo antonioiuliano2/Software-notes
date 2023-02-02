@@ -75,5 +75,12 @@ However, to actually see transparent volumes in the canvas, you need to set&#x20
 
 in the .rootrc file or in your HOME path (or, if you prefer, in _`$ROOTSYS/etc/system.rootrc)`_
 
+## TTree AutoSave, MaxTTreeSize
 
+Related to how often a TFile is written:
+
+* AutoSave(n>0): save each n entries;
+* AutoSave(n<0): save each n bytes;
+
+MaxTTreeSize, again in bytes.&#x20;
 
