@@ -18,8 +18,6 @@ Perform linking. Only one film at the time, thank you:
 
 `source linkingloop.sh 19 19`
 
-**ALWAYS PUT BOTH NUMBERS, even if it is the same number**
-
 **After there is no more linking process** perform alignment procedure. Two alignments can be performed in parallel, but they should be from different bricks (only one .set.root file can exist at the time)
 
 `source doallalign.sh 19 13`
@@ -38,7 +36,7 @@ alignment reports;
 
 (Use convert bash script to convert into png for easier access. Original ps files can then be deleted to save space)
 
-Fill the google document table with the quality report:
+Fill the google document table with the quality report;
 
 **Synchronize** data to EOS, with rsync (both raw and reconstructed data).
 
