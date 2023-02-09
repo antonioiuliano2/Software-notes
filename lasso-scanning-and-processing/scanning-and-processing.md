@@ -139,6 +139,24 @@ If microscope gets stuck, the only procedure to do is:
 * Restart LASSO;
 * Restart the scan. If a long time has passed (2 days), it is safer to remove the film and put it back, otherwise just check if there is oil;
 
+### More combinations than expected
+
+The tracks.obx and the converted tracks.raw.root are larger than expected, as in, more than 2 times larger than a similar film (same run, same brick position in the wall) on an another microscope.
+
+This was solved by fixing dyafram orientation.
+
+### Persistent pattern in screen
+
+The patterns observed may be dots, or continuous lines.
+
+You recognize them since they do not move with the emulsions, when you move the stage
+
+They may be due to the camera, or the microscope lens.
+
+You may be able study the pattern better by temporarily removing the "flatten" correction from the PAVICOM GUI, into "original" (but afterwards, **please put it back on**).
+
+Please turn off both stage and microscope computers, then check camera and microscope connections. Contact expert for guidance.
+
 ### LASSO GUI issues
 
 #### Cannot see microscope icon
