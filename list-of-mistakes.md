@@ -139,6 +139,16 @@ Check if residuals peaks are present, if chi square distributions are reasonable
 
 Still no idea how the track reconstruction handles multiple scattering (it depends on the option, 0 or 2 should not use it). However, providing the right X0 value (3504 for tungsten, instead of 5810 for lead) sure helps.
 
+### Mixing up makescansets
+
+As our FEDRA reconstruction currently works, it reads the EdbScanSet stored in set.root files from the folder, to know which emulsion film numbers to process.
+
+It is **bad** if you try running makescanset while another process is running, since it will continue running with the new file numbers provided in the scanset. It is **especially horrid** if it is a emlink process, which does not update files, but it **recreates** them, basically destroying your hard work for couples and there after (since, you need to redo couples again).
+
+So, always check if processes are active in the same set, before launching makescanset. You simply need to launch **top**. To find where a process was launched from, please use pwdx 47963
+
+Also, it is useful to **keep screen instances separate** for separate bricks. Launching many cd commands to different folder everytime leads to bad surprises. Let us keep sources of mistakes to the absolute minimum, please.
+
 ##
 
 ## FairShip/SNDSW
@@ -156,19 +166,7 @@ It is pretty difficult to list all possible problems, but some examples:
 
 In general, try to be as critical as possible for the simulation. Try to keep note of simulation time, files and conditions
 
-
-
-## FEDRA related stuff
-
-### Mixing up makescansets
-
-As our FEDRA reconstruction currently works, it reads the EdbScanSet stored in set.root files from the folder, to know which emulsion film numbers to process.
-
-It is **bad** if you try running makescanset while another process is running, since it will continue running with the new file numbers provided in the scanset. It is **especially horrid** if it is a emlink process, which does not update files, but it **recreates** them, basically destroying your hard work for couples and there after (since, you need to redo couples again).
-
-So, always check if processes are active in the same set, before launching makescanset. You simply need to launch **top**. To find where a process was launched from, please use pwdx 47963
-
-Also, it is useful to **keep screen instances separate** for separate bricks. Launching many cd commands to different folder everytime leads to bad surprises. Let us keep sources of mistakes to the absolute minimum, please.
+###
 
 ##
 
