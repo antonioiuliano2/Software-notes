@@ -145,11 +145,9 @@ As our FEDRA reconstruction currently works, it reads the EdbScanSet stored in s
 
 It is **bad** if you try running makescanset while another process is running, since it will continue running with the new file numbers provided in the scanset. It is **especially horrid** if it is a emlink process, which does not update files, but it **recreates** them, basically destroying your hard work for couples and there after (since, you need to redo couples again).
 
-So, always check if processes are active in the same set, before launching makescanset. You simply need to launch **top**. To find where a process was launched from, please use pwdx 47963
+So, always check if processes are active in the same set, before launching makescanset. You simply need to launch **top**. To find where a process was launched from, please use pwdx  followed by process ID
 
 Also, it is useful to **keep screen instances separate** for separate bricks. Launching many cd commands to different folder everytime leads to bad surprises. Let us keep sources of mistakes to the absolute minimum, please.
-
-##
 
 ## FairShip/SNDSW
 
