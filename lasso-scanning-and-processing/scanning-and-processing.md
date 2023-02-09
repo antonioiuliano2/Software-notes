@@ -122,5 +122,86 @@ Conversion into ROOT data format is done with the FEDRA library. Command used: C
 \
 It will use the FEDRA library file libEdb.dll from the folder of C:\LASSO\_x64\win32\\. So, if FEDRA is compiled again, file needs to be copied there.
 
+## Common errors and issue:
+
+### General
+
+When the microscope is stuck, start by checking the lights. Is the camera light green and beeping? Check the end lanes (fine corsa) lights. &#x20;
+
+Currently, resuming a stuck scanning is not supported.&#x20;
+
+If microscope gets stuck, the only procedure to do is:
+
+* Stop LASSO. If it does not stop, kill the PAVICOM GUI proess from task manager;
+* Close (or kill) the camera icon;
+* Copy the 4 log files in an error\_logs folder with the name of the stuck film;
+* Restart stage for safety;
+* Restart LASSO;
+* Restart the scan. If a long time has passed (2 days), it is safer to remove the film and put it back, otherwise just check if there is oil;
+
+### PAVProcModule.log error message
+
+#### Emulsion layer thickness check FAILED
+
+The microscope could not measure the emulsion thickness for this layer.&#x20;
+
+Check the number of clusters at different z positions.
+
+If it happesn for every view, check emulsion quality and initial thickness values.
+
+#### Many lines PopFoVHist timeout elapsed!
+
+This tells us that the microscope is stuck. It will continue to timeout, leading to many identical lines.
+
+If you see that the log is ending with this message repeated many times, please check the microscope.
+
+Unfortunately, to have an idea on why the microscope is stuck, it is necessary to check the other logs.
+
+
+
+### PAVCameraModule.log errors:
+
+#### Cannot start Camera, Resources already in use
+
+This means the camera was not closed correctly last time.
+
+Please check the processes in Task Manager, and kill it.
+
+If it does not work, the only solution is a computer reboot.
+
+#### ERROR \*\*\*\*\*\*\*\*\*\*\*\*\*\* number of grabbed images is too different from expected: (68 != 72)
+
+The camera could not acquire the expected images.
+
+It crashed and it tried to reboot, it usually reboots itself correctly, but that view may be lost.
+
+It may lead to a general crash of the camera and stop of the scanning
+
+### OpTraProc.log error message
+
+#### Warning: View skipped, too many clusters
+
+View was skipped because there are too many clusters.&#x20;
+
+Need to increase the limit in the cfg file, currently:\
+\
+clust\_lim=1100000
+
+#### WARNING: View skipped - Too many grains (581211 > 524288)
+
+View was skipped because there are too many grains.
+
+This is an hard limit on the GPU processing algorithms, 2^{19} grains.
+
+This limit cannot be increased, if scanning is needed, please increase cluster threshold for the scanning (two values for the two layers, they should be the same). Current values:
+
+clz\_thres=500 500
+
+### PAVGuide.log errors
+
+#### Module (0x2) is not ready
+
+Connection issues between stage and microscope PCs. Please, check the stage computer.
+
 
 
