@@ -139,6 +139,24 @@ If microscope gets stuck, the only procedure to do is:
 * Restart LASSO;
 * Restart the scan. If a long time has passed (2 days), it is safer to remove the film and put it back, otherwise just check if there is oil;
 
+### LASSO GUI issues
+
+#### Cannot set zero from coordinates correctly.
+
+The coordinates are not set in PAVICOM itself. It communicates them to the stage controller, which sets them in its card.&#x20;
+
+Try to reboot stage and LASSO. If the issue remains, it may be needed to contact an expert to test calibration and positions manually with the stage software.
+
+#### At maximum light level, still unable to obtain gray level 190
+
+The light is not powerful enough for the emulsion you are currently scanning (the fog and/or track density is too high).
+
+The solution is to increase the camera exposure time. Close LASSO, then increase number in:
+
+setFeatureValue=ExposureTime,INT,70
+
+Then reboot LASSO
+
 ### PAVProcModule.log error message
 
 #### Emulsion layer thickness check FAILED
