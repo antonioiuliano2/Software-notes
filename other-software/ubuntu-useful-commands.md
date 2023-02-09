@@ -107,6 +107,18 @@ To destroy all your active keys
 
 kdestroy -A
 
+#### Find from which folder a screen process is running
+
+In some cases, such as FEDRA scanset reconstruction, the folder a process is running from contains vital information about the process (in this case, the brick currently being analyzed).
+
+In this case, knowing a Process Id (PID, for example from **top**), you can find the current working directory of the process by launching (example for PID 47963:
+
+```
+pwdx 47963
+```
+
+It will return the working directory of the process
+
 ## Opening many files
 
 If you try to have many files opened at once, you get error "Opened many files". You can solve it by ulimit:
