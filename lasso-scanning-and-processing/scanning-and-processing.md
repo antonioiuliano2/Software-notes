@@ -141,6 +141,14 @@ If microscope gets stuck, the only procedure to do is:
 
 ### LASSO GUI issues
 
+#### Cannot see microscope icon
+
+LASSO cannot comunicate with the stage.
+
+Please close LASSO and the camera, then reboot the stage from the stage computer.
+
+If issue persists, check PAVGuide log.
+
 #### Cannot set zero from coordinates correctly.
 
 The coordinates are not set in PAVICOM itself. It communicates them to the stage controller, which sets them in its card.&#x20;
