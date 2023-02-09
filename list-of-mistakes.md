@@ -127,6 +127,20 @@ Count along columns of x
 
 Self-explaining. Scanning oil must go on the scanning stabe, but **not outside it**. If it goes inside the motors of the moving table....never happened before, but this is a warning I have been given, so I write it here
 
+## FEDRA reconstruction
+
+### Check quality plots
+
+Never take for granted that linking and alignment worked. Even if they worked for 56 films, they may not work for film 57!
+
+Check if residuals peaks are present, if chi square distributions are reasonable, etc. Opening many ROOT files is unfeasible, so I prepared png conversion tools for this purpose. Use them.
+
+### MCS correction
+
+Still no idea how the track reconstruction handles multiple scattering (it depends on the option, 0 or 2 should not use it). However, providing the right X0 value (3504 for tungsten, instead of 5810 for lead) sure helps.
+
+##
+
 ## FairShip/SNDSW
 
 ### Check Simulation Messages!

@@ -75,7 +75,7 @@ Current configuration display, as of my git branch:
 
 [https://github.com/antonioiuliano2/FairShip/tree/nutaumergeAlexander](https://github.com/antonioiuliano2/FairShip/tree/nutaumergeAlexander)
 
-![Lateral view](<../.gitbook/assets/nutaudet end of June.png>)
+![Lateral view](../.gitbook/assets/nutaudet-end-of-june.png)
 
 #### Magnetic field
 
