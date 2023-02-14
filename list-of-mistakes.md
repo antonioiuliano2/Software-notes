@@ -184,6 +184,10 @@ Of course, data are heavy, and many tests need to be discarded at some points, b
 
 Source code: GIT, GIT, GIT. Always keep repo synched, always put useful comment information;&#x20;
 
+Plots: keep always them in ROOT format, PNG cannot answer questions (picture and schematics are of course an exception).
+
+Heavy ROOT/CSV/Other data: write in your **private** notebook (and maybe in the latex folder) the paths and server locations.&#x20;
+
 Keep test code in repository too, even if it must go in a separate branch. Test must become production at some point;
 
 You need to be able to know about:
