@@ -164,7 +164,35 @@ It is pretty difficult to list all possible problems, but some examples:
 
 In general, try to be as critical as possible for the simulation. Try to keep note of simulation time, files and conditions
 
-###
+## Data reproducibility
+
+A fundamental part of the scientific method is being able to reproduce the plots you made.
+
+It seems obvious, but people may (and they will) ask you about plots you made 10 years ago, and they will expect you to:\
+
+
+* Be able to reproduce them;
+* Be able to change them and know why they changed (a.ka. source code);
+
+Of course, data are heavy, and many tests need to be discarded at some points, but **you must always keep and know about (in decreasing order of priority)**:\
+
+
+* Thesis material;
+* Paper material;
+* Note material;
+* Collaboration Meeting material;
+
+Source code: GIT, GIT, GIT. Always keep repo synched, always put useful comment information;&#x20;
+
+Keep test code in repository too, even if it must go in a separate branch. Test must become production at some point;
+
+You need to be able to know about:
+
+* Every **figure**;
+* Every **table**;
+* Every **measured value**
+
+You may ask: is it obvious? You writed the note/paper/thesis? #Remindme10years
 
 ##
 
