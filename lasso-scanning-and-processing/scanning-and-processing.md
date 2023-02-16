@@ -87,7 +87,7 @@ GPU works only with view\_cell\_size = 5. 5. 5.», other values are not good
 * trk\_slh\_effLen2 = 20;  Set bin numbers (better not to change);
 * trk\_min\_link\_dens = 10;
 * trk\_min\_track\_dens = 20;
-* trk\_mip\_track\_dens = 30.; Controllo di qualità confronto; Score with respect to Minimum Ionizing Particle. Quanti grani produce una MIP?
+* trk\_mip\_track\_dens = 30.; Controllo di qualità confronto; Score with respect to Minimum Ionizing Particle. Quanti grani produce una MIP? 30 grani/100 micron
 * trk\_min\_track\_len = 34.; Lunghezza misura di una microtraccia. Distanza fra primo e ultimo grano;
 * trk\_cut\_track\_score = -1.2 1; Limiti sullo score;
 * trk\_cref\_nsig = 4; esigma Xi tracks eTY {eNframes Top==0} Scor; angolo Theta
@@ -111,7 +111,7 @@ Raggi in CPU, Cilindri in GPU
 * trk\_slh\_effLen = 5. ; Set bin numbers (better not to change);
 * trk\_slh\_effLen2 = 20;  Set bin numbers (better not to change);
 * trk\_min\_track\_dens = 0;
-* trk\_mip\_track\_dens = 30.; Controllo di qualità confronto; Score with respect to Minimum Ionizing Particle. Quanti grani produce una MIP?
+* trk\_mip\_track\_dens = 30.; Controllo di qualità confronto; Score with respect to Minimum Ionizing Particle. Quanti grani produce una MIP?? 30 grani/100 micron
 * trk\_min\_track\_len = 17.; Lunghezza misura di una microtraccia. Distanza fra primo e ultimo grano;
 * trk\_cut\_track\_score = -1.2 1; Limiti sullo score;
 * trk\_cref\_nsig = 4; esigma Xi tracks eTY {eNframes Top==0} Scor; angolo Theta
