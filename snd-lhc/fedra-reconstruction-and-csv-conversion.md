@@ -1,10 +1,44 @@
+---
+description: >-
+  Specific notes for our configuration, keep track how what I did wrong and
+  right
+---
+
 # FEDRA reconstruction and csv conversion
+
+## Intro
+
+Always keep track of parameters. Always check if parameters change between bricks/walls/tests/other.&#x20;
+
+[https://github.com/antonioiuliano2/macros-snd/blob/master/run1analysis/recoparameters/firstlink.rootrc](https://github.com/antonioiuliano2/macros-snd/blob/master/run1analysis/recoparameters/firstlink.rootrc)
 
 ## Reconstruction procedure
 
 ### Making scanset
 
 `makescanset -set=21.0.0.0 -from_plate=60 -to_plate=1 -dz=-1315 -suff=cp.root`
+
+``
+
+### Linking notes for SND@LHC
+
+Due to high track density, trying to perform unique linking leads to failure.
+
+Therefore, two linking prodecure is used:
+
+1. Find shrinkage correction, requiring Theta > 0.05. Also, in a small central region, 2.5 cm x 2.5 cm. Shrinkage and angular corrections are computed
+2. Use shrinkage correction from previous computation. Shrinkage and angular correction computations are disabled (DoCorrectShrinkage and DoCorrectAngles are set to 0). All surface, all angles
+
+Note: even if the region is the same, it appears that there are more couples in firstlinking. However, checking the "good couples" (eCHI2P<2.4&\&s.eW>20&\&eN1<=1&\&eN2<=1&\&s1.eFlag>=0&\&s2.eFlag>=0), numbers become compatible, as tested with background check films linking.
+
+Also, global linking in nusrv1 required some ad-hoc changes:
+
+* DoubleFilterOut with cell 6, instead of 1 (not recommended in normal operation);
+* Increase maximum TTree size (safer change)
+
+However, testing in RUN0 standard linking did not lead to appreciable changes in track quality (b000431 test).
+
+
 
 ### Track and vertex reconstruction
 
