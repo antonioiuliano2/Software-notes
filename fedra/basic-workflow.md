@@ -298,5 +298,5 @@ Advantages:
 Disadvantages:
 
 * ... the merge messes up the IDs (vertexID, trackID...);
-* The parameters of EdbVertexRec MUST be the same used in vertexing (and if they are not stored, values WILL be different -> adding them in branch?). Now VX, VY and VZ are the same, but imp not? Check ScanCond?
+* The parameters of EdbVertexRec MUST be the same used in vertexing (and if they are not stored, values WILL be different -> adding them in branch?). If the values are the sames, however, VX, VY, VZ, IMP are exactly reproduced
 
