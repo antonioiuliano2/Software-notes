@@ -264,7 +264,7 @@ Array branches (i.e. track properties):
 * **incoming\[itrk]:** tell us if track ends or start at vertex (accessed with GetVTa(itrk)->ZPos()). 1-track start, 0-track end connect to the vertex
 * **nholes\[itrk];** number of holes for each track (accessed with track->N0());
 * **maxgap\[itrk]**: maximum gap between segments of each track (accessed with track->CheckMaxGap());
-* **impactparameter\[itrk]:** impact parameter of track with respect to vertex (accessed with vertex->GetVTa(itrk)->Imp());
+* **impactparameter\[itrk]:** impact parameter of track with respect to vertex (accessed with vertex->GetVTa(itrk)->Imp()); (note, IP is positive, and computed as in libvt++/VtDistance/distance-> See the distance() function).
 
 Arrays of FEDRA objects (as from linked\_tracks.root format)
 
@@ -283,4 +283,20 @@ The following branches are to be used only in vertices from MC simulations, no s
 When accessing by terminal with Scan, t.Aid\[0] does not work properly (it returns 0 or wrong values for second track onwards, probably due to be an array of array branch). It is set properly when vertexfile is read with the ReadVertexTree function. Track->Aid(0) then works as expected!\
 When doing Scan, please use MCMotherID instead
 {% endhint %}
+
+## ReadVertexTree
+
+ReadVertexTree is used to rebuild the vertices from the information in the TTree, just as ReadTracksTree is done for volume tracks.
+
+This was done to avoid saving all vertices as root objects, unfeasible for SHiP and SNDLHC vertices numbers (but still used in FOOT, for example).
+
+Advantages:
+
+* Easy to share and manipulate: ROOT TTrees
+* Can be easily merged in bigger files, but..
+
+Disadvantages:
+
+* ... the merge messes up the IDs (vertexID, trackID...);
+* The parameters of EdbVertexRec MUST be the same used in vertexing (and if they are not stored, values WILL be different -> adding them in branch?). Now VX, VY and VZ are the same, but imp not? Check ScanCond?
 
