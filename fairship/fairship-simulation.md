@@ -245,6 +245,8 @@ By default, FairShip will generate neutrino interactions in a vast z region, bec
 But this mostly depends on what we want to study and it should be kept under control
 {% endhint %}
 
+Also, remember to cut entries outside of Target, usually done with the cutsim.py code!
+
 ## Simulation for muon background
 
 Muon background is simulated with `--MuonBack` option from `macro/run_simScript.py`. It takes as input the muon fluxes produced by Thomas and stored in 67 large ROOT files ($N$ a number from 0 to 66):
