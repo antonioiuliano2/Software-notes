@@ -16,6 +16,7 @@
 * [Neutrino yield](ship-at-ecn3/neutrino-yield.md)
 * [Muon flux](ship-at-ecn3/muon-flux.md)
 * [Geometry re-implementation](ship-at-ecn3/geometry-re-implementation.md)
+* [Environment](ship-at-ecn3/environment.md)
 
 ## SND@LHC
 
