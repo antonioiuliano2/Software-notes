@@ -51,3 +51,10 @@ Again, a folder for each configuration
 
 Created a separate nu\_yield\_angles.C to check different angles
 
+## Neutrino Simulation
+
+Since GENIE changed, I would need to redo the splines.
+
+For now, still using old splines, and regenerating neutrino interactions with old GENIE.
+
+After SHiP approval, modernization should be performed (See Oliver discussion)
