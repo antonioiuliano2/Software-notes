@@ -158,6 +158,7 @@ In general, always check if the output of the simulation has something unexepect
 It is pretty difficult to list all possible problems, but some examples:
 
 * Check if emulsions are active or not (default they are passive). Also, check if you need all tracks, or you can keep the cut at 100 MeV kinetic energy;
+* Check for positions of generated volumes. I am TIRED of remaking simulations in a hurry because I did not change the GenieGen.SetPosition() default value again!
 * Check for not used volumes. Geant4 does not like that you define volumes in TGeo, but you never use them in your geometry;
 * Check field maps. Should they be present? Which ones? The nutaudet field map was present even months after we decided not to have a magnet in the neutrino detector anymore.
 * Check conversion option into FEDRA (smearing, efficiency, background contamination, etc.)
