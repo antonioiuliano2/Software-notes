@@ -185,4 +185,6 @@ The origin of B2 is the in bottom corner of the wall.
 
 During scanning, origin is taken at the top right edge of emulsion (from scanner point of view, bottom left on the pc monitor)
 
+Need to be sure if the gap between bricks in a wall is 0.5 cm or 0.5 mm**!!**
+
 &#x20;
