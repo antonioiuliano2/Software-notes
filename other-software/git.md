@@ -92,6 +92,14 @@ Finally, I need to delete branches I do not use anymore:
 
 _git branch -d oldbranch_
 
+### Rebase
+
+Rebase it is similar to merge, but it applies your commits over the source commits. It may be recommended if you want the commit history to be more clear.
+
+So you can git rebase origin/master to apply your commits over them :)
+
+For more information: [https://git-scm.com/docs/git-rebase](https://git-scm.com/docs/git-rebase)
+
 __
 
 ## Cherry picking
