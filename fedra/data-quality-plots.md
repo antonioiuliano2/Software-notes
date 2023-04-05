@@ -84,6 +84,12 @@ This script is used to inspect the thickness of emulsion layers:
 
 ![Example of thickness plot](../.gitbook/assets/thickness\_p003.png)
 
+{% hint style="info" %}
+In order to see eventual issues during scanning, it is **imperative** that the bin width match the view step: 770 micron x 565 micron. For OPERA emulsions, the number of bins used was 202 x 182. For SND@LHC, it is 300 x 350, but the width remains the same. Please remember it, it is important not to find white lines in the future.
+
+Antonio
+{% endhint %}
+
 ## Linking report
 
 Linking is the reconstruction of particle trajectories in a single emulsion film (base-tracks) from the trajectories in the bottom and top emulsion layers (micro-tracks). At this step, the shrinkage correction is applied.
