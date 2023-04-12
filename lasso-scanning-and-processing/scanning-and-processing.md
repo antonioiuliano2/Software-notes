@@ -247,5 +247,15 @@ clz\_thres=500 500
 
 Connection issues between stage and microscope PCs. Please, check the stage computer.
 
+### Scanning halted due to PC Restart
 
+Something happened that forced the PC to reboot.
+
+To know what happened, you can use Windows Event Viewer
+
+You can find  instructions here:
+
+{% embed url="https://www.windowscentral.com/how-find-reason-pc-shutdown-no-reason-windows-10" %}
+
+Basically, it amounts to check EventViewer - Windows Logs - System and Filter the Log according to the category
 
