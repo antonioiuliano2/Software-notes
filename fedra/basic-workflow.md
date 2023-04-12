@@ -40,7 +40,7 @@ Other useful option for makescanset:
 
 * **-refplate nplate**: choose referecence plate the set will built according to. By default, the first or last plate;
 * **-updateaff "aff"**: update set with affine transformation "aff", which must be manually written (for example, -updateaff 1 0 0 1 20 30);
-* **-updatesetaff refset:** update set with affine transformation from reference set "refset". It calls EdbScanSet::TransformBrick( EdbScanset \&ss) ****&#x20;
+* **-updatesetaff refset:** update set with affine transformation from reference set "refset". It calls EdbScanSet::TransformBrick( EdbScanset \&ss)&#x20;
 
 ## Linking
 
@@ -111,6 +111,26 @@ In the link.rootc file, the CPRankingAlg 0 will rank the couples **(EdbSegCouple
 * eN2 equal to 2 means this is the best couple for microtrack 2 (top)
 
 In the end, the base-track usually used **(EdbSegP),** is the one corresponding to the best couple for both micro-tracks (this is the reason eN1==1 and eN2==1 are in both alignment and tracking selections)
+
+#### Cell linking via HTCondor
+
+In order to be able to handle density up to 10,000 tracks/mm2, we need to process the cell in parallel, with better memory management and accuracy of reconstruction.
+
+This parallelization is performed with HTCondor.
+
+The code can be found here:&#x20;
+
+{% embed url="https://github.com/SND-LHC/emu_reco_analysis/blob/master/condor_scripts/condorlinking_second.sh" %}
+
+{% embed url="https://github.com/SND-LHC/emu_reco_analysis/blob/master/condor_scripts/condorlinking_first.sh" %}
+
+We also need to remember to copy the link.rootrc file **before** starting the HTCondor submission, since inserting the copy in the submission script created issues (it was done simultaneously by all scripts...)
+
+After the process, there is a script to check if files have been correctly created
+
+There is also an overlap, which is later removed by selecting only the couples within each cells. A final couples tree is finally created:
+
+[https://github.com/SND-LHC/emu\_reco\_analysis/blob/master/linkingmap/merge\_couplestrees.C](https://github.com/SND-LHC/emu\_reco\_analysis/blob/master/linkingmap/merge\_couplestrees.C)
 
 ## Alignment
 
@@ -255,7 +275,7 @@ Scalar branches (i.e. one number for vertex):
     * flag 5: back neutral, linked
     * flag -10: **discarded vertices (all tracks were associated to higher rank vertices).**&#x20;
 
-****
+
 
 Array branches (i.e. track properties):
 
