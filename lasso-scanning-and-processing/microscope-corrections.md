@@ -18,6 +18,8 @@ Stretching the image from the camera on two monitor screens, select a point, run
 
 Repeat the procedure for y axis. Divide the average value by the number of pixels: **Ny = 1728**&#x20;
 
+Check the results are 0.345 and 0.346
+
 Enter the resulting values in&#x20;
 
 &#x20;**Modules -> Processor -> img\_pixel\_size**
