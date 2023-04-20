@@ -32,6 +32,8 @@ Launch copied files from previous directory
 
 Select scan parameters x 90 y 70
 
+**img\_cor\_mat\_0 and img\_cor\_mat\_1 should be empty in first correction!**
+
 Set thickness of bot (top) with a distance of **10-15 μm** from base.&#x20;
 
 Make test scans, convert them into raw.root files
@@ -96,15 +98,15 @@ They use the same scan:
 
 copy fit values in **link\_corr**, **link\_cor\_0, link\_cor\_1**
 
-****
+
 
 {% hint style="info" %}
 **Note:** the last corrections (the 5th, in particular), should be performed with a sampling emulsion film from the OPERA experiment, not one with SND@LHC beam.
 {% endhint %}
 
-****
 
-****
+
+
 
 ## Angular offset
 
