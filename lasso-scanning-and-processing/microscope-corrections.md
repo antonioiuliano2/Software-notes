@@ -64,7 +64,7 @@ Example: (for bot\_1 from bot)
 viewdist -f=clust.raw.root -add=/home/scanner/sndlhc/cor_gen_MIC5/2.cormtx/bot/correction_matrix.txt
 ```
 
-Repeat until map converge
+Repeat until map converge. It may complain about EdbViewMatch::CalculateCorr: WARNING: null dxy: ic=43 i=367065 cx,cy: 397.868652 43.176414. This means nothing will be added as correction here. What is the reason?
 
 Obtained files need to be moved to **C:\LASSO\_x64**, renaming them in order to replace already existing files.
 
