@@ -52,7 +52,7 @@ send the correction map back to LASSO
 
 create folders bot\_1 and top\_1
 
-Fill these 2 maps in img\_cor\_mat\_0 and img\_cor\_mat\_1. Both the same file, bot if you scan top, top if you scan top
+Fill these 2 maps in img\_cor\_mat\_0 and img\_cor\_mat\_1. Both the same file, bot if you scan bot, top if you scan top
 
 Repeat the scan and conversion
 
