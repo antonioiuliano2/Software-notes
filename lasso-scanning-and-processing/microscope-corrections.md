@@ -58,10 +58,10 @@ Repeat the scan and conversion
 
 N.B. When building following maps, remember to build them **on top of previous corrections**!
 
-Example: (for top\_1)
+Example: (for bot\_1 from bot)
 
 ```bash
-viewdist -f clust_raw.root -add=/top_1/correction_matrix.root
+viewdist -f=clust.raw.root -add=/home/scanner/sndlhc/cor_gen_MIC5/2.cormtx/bot/correction_matrix.txt
 ```
 
 Repeat until map converge
