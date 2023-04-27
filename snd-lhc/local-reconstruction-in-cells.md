@@ -37,3 +37,15 @@ Cells must overlap (about 2.5 mm for 1 cm cell), at least during alignment and t
 Otherwise we lose a lot of tracks going from a cell to another!
 
 Passing tracks can be actually used to match overlapping cells together, so the corrections go smootly from a cell to another.
+
+
+
+## Cleaning
+
+Due to the high number of created files, please remove the files after the merge and quality check
+
+Monitor eos quota
+
+export EOS\_MGM\_URL=root://eospublic.cern.ch
+
+eos quota /eos/experiment/sndlhc
