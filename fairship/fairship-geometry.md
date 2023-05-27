@@ -49,6 +49,8 @@ some volume has 0 size!. Do some InspectShape()!
 
 Use gGeoManager->CheckOverlaps() to check them gGeoManager->PrintOverlaps() to have more details.
 
+Note: overlaps are often the reason for **unexplained missing MCPoints in a otherwise working detector volume**
+
 ## nutaudet geometry
 
 The `nutaudet` folder is the one dedicated to the $$\nu/i$$ SHiP detector. It is made of the following components:
@@ -105,7 +107,7 @@ The `charmdet` folder is the one dedicated to the SHiP-charm and SHiP-muonflux d
 * `Scintillator` class: drift tube trigger scintillators (i.e. S2);
 * `ReProcessAbsorber`
 
-``
+
 
 
 
