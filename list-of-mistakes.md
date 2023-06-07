@@ -93,6 +93,12 @@ and I should consider the weights in efficiency counters (I then divide to the t
 
 Be careful with statistical errors for weighted efficiencies. The error is always given by the **actual number of simulated events** (If I used 1000 events in my simulation, the error in the efficiency is the same even if the events represent 10000, 1000000 or more physical events. Instead, an absolute error in the expected yield  scales with the weight, since I apply error propagation to a product with a constant).
 
+### Integral() in an histogram with not enough range
+
+We **always** need to check if histogram has underflow and overflow.
+
+We must **never use Integral()** if an histogram has entries below or above range, otherwise only the ones in range are accounted for. Only bins in the bins range are considered.
+
 ### &#x20;RooFit chi squared :Not giving the function name
 
 RooFit is a powerful tool for fits and p.d.f. computing, but it is a bit harder to use than standard ROOT fits. I have read that simpler toolkits cause people to make more mistakes. I disagree, the more something is counterintituive, the easier it becomes to make a blunder, due to a misunderstanding in the code structure.
