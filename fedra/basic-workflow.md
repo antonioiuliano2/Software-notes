@@ -49,6 +49,8 @@ Linking is done with the command:
 
 `emlink -set=1.0.0.0 -new`
 
+Please check [EdbScanProc](https://twiki.cern.ch/twiki/bin/edit/SndLHC/EdbScanProc?topicparent=SndLHC.FedraWorkflow;nowysiwyg=0) class for details about linking and alignment
+
 #### Linking parameter file
 
 ```
@@ -223,6 +225,8 @@ It will perform global tracking between the different plates. Tracking is done w
 
 and the script `check_tr.C` can be used to check the efficiency and results. Parameters are in the 'track.rootrc' file
 
+Please check the EdbScanTracking::TrackSetBT() function for details
+
 ### Main parameters:
 
 * **readCPcut:** selection on segments to do the tracking;
@@ -233,6 +237,8 @@ and the script `check_tr.C` can be used to check the efficiency and results. Par
 * **DTmax:** maximum angular distance, same procedure as DRmax
 * **Sigma0:** parameters at 0 angles (x y TX TY)
 * **Degrad:** angular degradation of parameters: S = S0 _(1 + eDegrad_Ang)
+* **DoRealign:** use volume tracks to improve alignment transformations and update set.root file at the end
+*
 
 {% hint style="info" %}
 Segments with negative xy coordinates are not tracked. Need to inspect the source code for the reason. For now, beware of negative x or y coordinates.
