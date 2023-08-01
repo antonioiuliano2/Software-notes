@@ -56,9 +56,9 @@ Container of segments, usually one for plate. After affine transformations are a
 
 An important note: when patterns are added in TrackAssembler::AddPattern(), a covariance matrix is computed: this allow to perform operations and to know track chi squared even if segments errors are not known (i.e. simulation). Chisquare of volume track is computed instead in EdbTrackP::FitTrackKFS.
 
-****
 
-****
+
+
 
 ### **Track: EdbTrackP**
 

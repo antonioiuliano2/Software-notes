@@ -87,7 +87,7 @@ ROOT.gInterpreter.ProcessLine('typedef double Double32_t')
 
 If you do not do that, it will corrupt **any branch with double variable**
 
-****
+
 
 ## Checking geometry overlaps
 
@@ -135,5 +135,5 @@ emu = modules\["EmulsionDet"]
 
 emu. GetConfParF("EmulsionDet/TotalWallZDim")
 
-****
+
 

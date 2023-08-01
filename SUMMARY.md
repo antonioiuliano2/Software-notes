@@ -34,6 +34,7 @@
 
 * [Scanning and processing](lasso-scanning-and-processing/scanning-and-processing.md)
 * [Microscope corrections](lasso-scanning-and-processing/microscope-corrections.md)
+* [Calibration](lasso-scanning-and-processing/calibration.md)
 * [Add-ons](lasso-scanning-and-processing/add-ons.md)
 
 ## FEDRA

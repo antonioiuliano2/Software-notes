@@ -72,7 +72,7 @@ You probably need to set a SSH keys on your github account (from settings).
 
 Create ssh key according to the guide [https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), and activate it on your machine. Then copy the line from the file into the github account page
 
-__
+
 
 ## Branches
 
@@ -100,7 +100,7 @@ So you can git rebase origin/master to apply your commits over them :)
 
 For more information: [https://git-scm.com/docs/git-rebase](https://git-scm.com/docs/git-rebase)
 
-__
+
 
 ## Cherry picking
 
@@ -150,6 +150,5 @@ Basically, update git with svn changes by using `git rebase.`
 
 `Need to solve merges, it will always replicates the same commits`
 
-``
 
-``
+
