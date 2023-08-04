@@ -155,6 +155,14 @@ So, always check if processes are active in the same set, before launching makes
 
 Also, it is useful to **keep screen instances separate** for separate bricks. Launching many cd commands to different folder everytime leads to bad surprises. Let us keep sources of mistakes to the absolute minimum, please.
 
+### Adding vertex trees and analyzing them
+
+If you hadd vertex trees, you will have multiple tracks with the same TrackID (i.e., if you add 20 bricks, you will have 20 tracks with TrackID 0).
+
+Naturally, this messes up the vertex analysis, which usually **requires refitting the vertices with the same VERTEX\_PAR.**
+
+If TrackIDs are messed up, vertex->VX(), vertex->VY(), vertex->VZ(), among others, will be complete jibberish&#x20;
+
 ## FairShip/SNDSW
 
 ### Check Simulation Messages!
