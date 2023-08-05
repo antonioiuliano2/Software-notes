@@ -61,6 +61,7 @@
 * [Anaconda](other-software/anaconda.md)
 * [Latex tricks](other-software/latex-tricks.md)
 * [DCS](other-software/dcs.md)
+* [PDF annotations](other-software/pdf-annotations.md)
 
 ## SHiPcharm Decay Search
 
