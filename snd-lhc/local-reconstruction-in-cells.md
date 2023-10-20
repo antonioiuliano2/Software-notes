@@ -29,6 +29,7 @@ The procedure is:
 * Submit in condor [https://github.com/SND-LHC/emu\_reco\_analysis/blob/master/condor\_scripts/condorlinking\_second.sub](https://github.com/SND-LHC/emu\_reco\_analysis/blob/master/condor\_scripts/condorlinking\_second.sub)
 * Again, check files with [https://github.com/SND-LHC/emu\_reco\_analysis/blob/master/linkingmap/filecheck\_secondlinking.sh](https://github.com/SND-LHC/emu\_reco\_analysis/blob/master/linkingmap/filecheck\_secondlinking.sh). Eventually, rerun condor with [https://github.com/SND-LHC/emu\_reco\_analysis/blob/master/condor\_scripts/condorlinking\_second.sub](https://github.com/SND-LHC/emu\_reco\_analysis/blob/master/condor\_scripts/condorlinking\_second.sub)
 * Merge linked files with [https://github.com/SND-LHC/emu\_reco\_analysis/blob/master/condor\_scripts/merge\_cells.sub](https://github.com/SND-LHC/emu\_reco\_analysis/blob/master/condor\_scripts/merge\_cells.sub)
+* Create a symbolic link to the merged file with [https://github.com/SND-LHC/emu\_reco\_analysis/blob/master/run1analysis/recoparameters/create\_mergedcoupleslink\_miccern.sh](https://github.com/SND-LHC/emu\_reco\_analysis/blob/master/run1analysis/recoparameters/create\_mergedcoupleslink\_miccern.sh);
 
 ## Overlapping cells
 
