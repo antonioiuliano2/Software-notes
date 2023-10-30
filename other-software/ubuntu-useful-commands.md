@@ -136,3 +136,13 @@ Usually, when asking people for help with a bug, we need to provide output file 
 ```
 exec 1>>"$logfile" 2>>"$errorfile"
 ```
+
+
+
+## Time conflicts between Windows and Linux in dual-boot
+
+Ora solare/ora legale: Windows and Ubuntu report one or two hours differences with respect to each other: manually settting one breaks the other.
+
+**Reason**: they use two different time systems, Linux by default uses Universal Time Clock (UTC) and Windows uses Real Time Clock(RTC).&#x20;
+
+**Solution**: set them to use the same system, either UTC or RTC. I changed Linux to use RTC like Windows, following instructions here: [https://wiki.ubuntu-it.org/Installazione/PostInstallazione/ErroreOraWindows](https://wiki.ubuntu-it.org/Installazione/PostInstallazione/ErroreOraWindows)
