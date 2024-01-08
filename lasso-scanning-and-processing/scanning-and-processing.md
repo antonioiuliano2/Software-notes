@@ -57,7 +57,7 @@ trk\_lim\_theta = 0. 1.
 
 Other important parameter is the **threshold, with must be the same** used during the scan. Remember to check that.
 
-## GPU and CPU Processing
+### GPU and CPU Processing
 
 Select which one (tracker\__cpu or tracker_\_gpu), by commenting the other in the cfg file.
 
@@ -115,6 +115,24 @@ Raggi in CPU, Cilindri in GPU
 * trk\_min\_track\_len = 17.; Lunghezza misura di una microtraccia. Distanza fra primo e ultimo grano;
 * trk\_cut\_track\_score = -1.2 1; Limiti sullo score;
 * trk\_cref\_nsig = 4; esigma Xi tracks eTY {eNframes Top==0} Scor; angolo Theta
+
+## Dispatcher processing
+
+The Dispatcher is a recently added tool to LASSO to split the processing work between multiple modules, each analyzing a different module in parallel. The modules can belong to the same PC performing the scanning, or to another PC (like a micserver).
+
+For example, here is an example with 4 modules belonging to the same PC performing the scan:
+
+* go into localhost folder -> run **OpTraProc.bat** -> 4 module icons should appear
+* from the parent folder, launch **OpDispatc.bat** -> 1 module icon should appear
+* Launch PAVICOM.bat (is not need anymore to launch the camera first);
+* Set Parameters and start scanning as usual
+
+If needed, some of the processing parameters, such as the folder and the gfind ones, can be set from the GUI. Others, instead, must be set from the cfg (such as, correction paraemeters, for example). In that case:
+
+* change tmpl-OpTraProc.cfg
+* launch setup\_disp.bat
+
+For example, it is possible to change the number of dispatched modules, as well as the number of threads per module
 
 ## ROOT conversion
 
