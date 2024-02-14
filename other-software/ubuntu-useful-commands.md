@@ -146,3 +146,19 @@ Ora solare/ora legale: Windows and Ubuntu report one or two hours differences wi
 **Reason**: they use two different time systems, Linux by default uses Universal Time Clock (UTC) and Windows uses Real Time Clock(RTC).&#x20;
 
 **Solution**: set them to use the same system, either UTC or RTC. I changed Linux to use RTC like Windows, following instructions here: [https://wiki.ubuntu-it.org/Installazione/PostInstallazione/ErroreOraWindows](https://wiki.ubuntu-it.org/Installazione/PostInstallazione/ErroreOraWindows)
+
+
+
+## Find package directory
+
+Often, you need to provide the paths to an installed package, usually for compilation. However, you installed it with apt-get install, and you have **no idea** where it may be hidden. You can ask directly the package manager where it is located:
+
+```
+dpkg -L mypackagename
+```
+
+In Python modules, this is done with the attribute&#x20;
+
+```python
+coolestpythonmoduleever.__file__
+```
