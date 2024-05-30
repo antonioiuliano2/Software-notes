@@ -56,6 +56,7 @@
 * [Git](other-software/git.md)
 * [HTCondor](other-software/htcondor.md)
 * [ROOT stuff](other-software/other-software-notes-and-warnings.md)
+* [Openstack](other-software/openstack.md)
 * [Useful code structures](other-software/useful-code-structures.md)
 * [😀 Linux useful commands](other-software/ubuntu-useful-commands.md)
 * [Anaconda](other-software/anaconda.md)
