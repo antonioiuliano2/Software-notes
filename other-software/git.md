@@ -144,7 +144,7 @@ Followed guide here:&#x20;
 
 For now, just commit to svn and pass to git when needed. Local git changes (install.sh, etc. for now will remain on git). Need to test svn passage
 
-Basically, update git with svn changes by using `git rebase.`
+Basically, update git with svn changes by using `git svn rebase.`
 
 `You can also send commits to svn, but I would not do that (permissions?) git svn dcommit`
 
