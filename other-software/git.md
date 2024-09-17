@@ -100,6 +100,8 @@ So you can git rebase origin/master to apply your commits over them :)
 
 For more information: [https://git-scm.com/docs/git-rebase](https://git-scm.com/docs/git-rebase)
 
+Note, you will need to force push due to the changed history. **Please do it as the last step**, because it makes pull requests harder to review!
+
 
 
 ## Cherry picking
