@@ -5,6 +5,7 @@
 ## FairShip
 
 * [FairShip installation](fairship/fairship-installation.md)
+* [Software stack test build](fairship/software-stack-test-build.md)
 * [FairShip geometry](fairship/fairship-geometry.md)
 * [FairShip simulation](fairship/fairship-simulation.md)
 * [Efficiency of tau neutrino detection](fairship/efficiency-of-tau-neutrino-detection.md)
