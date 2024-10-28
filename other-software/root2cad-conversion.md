@@ -25,7 +25,7 @@ After some tests, I manage to have a working installation with node 18.20.0 (npm
 
 
 
-Then, it should work
+Then, it should work (do `nvm use 18` when you open a new terminal)
 
 ### Example of usage with FairShip/SNDSW Geometry
 
