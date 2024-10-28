@@ -64,6 +64,7 @@
 * [Latex tricks](other-software/latex-tricks.md)
 * [DCS](other-software/dcs.md)
 * [PDF annotations](other-software/pdf-annotations.md)
+* [ROOT2CAD Conversion](other-software/root2cad-conversion.md)
 
 ## SHiPcharm Decay Search
 
