@@ -84,3 +84,33 @@ Related to how often a TFile is written:
 
 MaxTTreeSize, again in bytes.&#x20;
 
+
+
+## Code Syntax (according to requests)
+
+## Auto
+
+CONSIDER whether `auto` can reduce verbosity by avoiding repeating types
+
+Use auto\* instead of TGeoBBox\*, for example;
+
+### Casts
+
+NEVER use C-style casts (e.g. `(TTree *)file->Get("some_tree")`;). INSTEAD, prefer `static_cast`, `dynamic_cast` (or if it's absolutely unavoidable `reinterpret_cast`), in that order.
+
+### Pointers
+
+Please use `nullptr`, `NULL` should not be used in modern code.
+
+### Definition
+
+Please don't define multiple things on the same line, this is unreadable.\
+Also, `Bool_t` should be initialised to `false`, not `0` for readability
+
+### Ternary statements
+
+TGeoBBox \*Absorber = (fDesign < 4) ? true : false
+
+### Etc.
+
+Remove trailing whitespace, single space between attribute and type
