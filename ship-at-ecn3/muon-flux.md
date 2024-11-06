@@ -58,3 +58,15 @@ The DIS interaction in Pythia has a Threshold, by default 2 GeV^2. The threshold
 {% endhint %}
 
 myPythia.SetPARP(2,...) provides the minimum Q^2 (transferred quadrimomentum) to generate the event. If the muons are too soft, the center-of-mass energy with the nucleon will be too small, \*\*making the generation crash\*\*. Either skip these muons, or lower the threshold (0.5 GeV^2 is a possibility)
+
+The output is two vectors:
+
+* InMuon: kinematics about the incoming muon, weight and cross section information;
+* Particles: Daughter from muon interaction
+
+### MuDIS vertex location and propagation in Geant4
+
+This is done with MuDISGenerator in FairShip.
+
+It will take the weight from the Pythia6 output file and insert it as the muon weight, then compute Mean Material Budget to provide the weight pho \* dL, inserted as the weight of daughter particles.
+
