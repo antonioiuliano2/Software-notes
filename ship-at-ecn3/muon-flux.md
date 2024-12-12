@@ -16,7 +16,7 @@ Prepared information of muon hits in 3 scoring planes:
 
 Analysis performed with script:
 
-[https://github.com/antonioiuliano2/macros-ship/blob/master/ecn3\_ship/loop\_eduardmuonfile.C](https://github.com/antonioiuliano2/macros-ship/blob/master/ecn3\_ship/loop\_eduardmuonfile.C)
+[https://github.com/antonioiuliano2/macros-ship/blob/master/ecn3\_ship/loop\_eduardmuonfile.C](https://github.com/antonioiuliano2/macros-ship/blob/master/ecn3_ship/loop_eduardmuonfile.C)
 
 After analysis, resulted TTrees and plots are stored in my EOS:
 
@@ -34,7 +34,7 @@ plotmuondensity(0) plots the muon density with large bins, and compute muon dens
 
 Starting from a datasets of muons crossing a scoring plane, the next step is to generate their Deep Inelastic Scattering (DIS) interactions, in order to have the products of this interactions.
 
-Currently, this step is doing with Pythia6, even if continuous work is being done to move forward to Pythia8. The script I am referring to is from [https://github.com/olantwin/muonDIS](https://github.com/olantwin/muonDIS), where I have then adapted for the input **pickle** format by Luis, into this code,[ makeMuonDISmod.py](https://github.com/antonioiuliano2/macros-ship/blob/master/muon\_background/makeMuonDISmod.py).
+Currently, this step is doing with Pythia6, even if continuous work is being done to move forward to Pythia8. The script I am referring to is from [https://github.com/olantwin/muonDIS](https://github.com/olantwin/muonDIS), where I have then adapted for the input **pickle** format by Luis, into this code,[ makeMuonDISmod.py](https://github.com/antonioiuliano2/macros-ship/blob/master/muon_background/makeMuonDISmod.py). The pickle files come from simulation of all muons from the full sample (\~around 400M events, corresponding to \~506M muons).
 
 An example of launching this code is the following:
 
@@ -69,4 +69,24 @@ The output is two vectors:
 This is done with MuDISGenerator in FairShip.
 
 It will take the weight from the Pythia6 output file and insert it as the muon weight, then compute Mean Material Budget to provide the weight pho \* dL, inserted as the weight of daughter particles.
+
+### Normalization of muons
+
+The 67 muon background files in /eos/experiment/ship/data/Mbias/background-prod-2018/, named pythia8\_Geant4\_10.0\_withCharmandBeauty\*\_mu.root, contain about 412 million events (with about 506 million muons).&#x20;
+
+These were obtained by merging/shuffling the results of three productions of muon background events. A muon background event was produced by generating a 400 GeV proton-nucleon interaction with Pythia, followed by cascade re-interaction, and passing it to Geant4 to transport through the target and hadron absorber, then saving the generated event parameters if at least one muon with energy above an energy cut "ecut" exited from the hadron absorber.
+
+&#x20;The three productions of muon background events were:&#x20;
+
+* Generation of minimum bias events,&#x20;
+* applying a 10 GeV ecut,&#x20;
+* and enhancing resonances (rho, omega, ...) by a factor 100.&#x20;
+
+There are 415726905 events, resulting from 65.041 billion PoT (protons on target). If one wants to normalize to an SPS SHiP spill of 5e13 PoT, each muon must be weighed by 768.75 (= 5e13 / 65.041e9). Some must be weighed by 7.6875, because they emerged from a chain started by an enhanced resonance. Generation of muons from charm, by forcing charm production at generator level in the proton-nucleon intraction. The number of events produced corresponds to 153.3 billion PoT. Charmed hadrons were decayed by Pythia. The weight for the same 1-spill normalization is 326.16 = 5E13 / 153.3E9. Similarly, it is sometimes 100 times smaller, 3.2616 (due to enhanced resonances). Generation of muons from beauty, as above, but charm replaced by beauty. 5336 billion PoT equivalent. The weight is 9.37 ( = 5E13 / 5336E9) or 100 times smaller.
+
+Useful references:&#x20;
+
+* /eos/experiment/ship/data/Mbias/background-prod-2018/README&#x20;
+* Description of the SHiP FixedTargetGenerator: CERN-SHiP-INT-2017-001 [https://cds.cern.ch/record/2280572/](https://cds.cern.ch/record/2280572/)&#x20;
+* Heavy Flavour Cascade Production in a Beam Dump: CERN-SHiP-NOTE-2015-009 [https://cds.cern.ch/record/2115534/](https://cds.cern.ch/record/2115534/)
 
