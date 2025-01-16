@@ -72,7 +72,7 @@ It will take the weight from the Pythia6 output file and insert it as the muon w
 
 ### Normalization of muons
 
-The 67 muon background files in /eos/experiment/ship/data/Mbias/background-prod-2018/, named pythia8\_Geant4\_10.0\_withCharmandBeauty\*\_mu.root, contain about 412 million events (with about 506 million muons).&#x20;
+The 67 muon background files in /eos/experiment/ship/data/Mbias/background-prod-2018/, named pythia8\_Geant4\_10.0\_withCharmandBeauty\*\_mu.root, contain about 412 million events (with about 506 million muons).  Events with **muons after hadron absorber,** Weights adjusted to **5E13 pot**
 
 These were obtained by merging/shuffling the results of three productions of muon background events. A muon background event was produced by generating a 400 GeV proton-nucleon interaction with Pythia, followed by cascade re-interaction, and passing it to Geant4 to transport through the target and hadron absorber, then saving the generated event parameters if at least one muon with energy above an energy cut "ecut" exited from the hadron absorber.
 
