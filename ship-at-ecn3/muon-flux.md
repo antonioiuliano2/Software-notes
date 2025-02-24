@@ -36,6 +36,17 @@ Starting from a datasets of muons crossing a scoring plane, the next step is to 
 
 Currently, this step is doing with Pythia6, even if continuous work is being done to move forward to Pythia8. The script I am referring to is from [https://github.com/olantwin/muonDIS](https://github.com/olantwin/muonDIS), where I have then adapted for the input **pickle** format by Luis, into this code,[ makeMuonDISmod.py](https://github.com/antonioiuliano2/macros-ship/blob/master/muon_background/makeMuonDISmod.py). The pickle files come from simulation of all muons from the full sample (\~around 400M events, corresponding to \~506M muons).
 
+Coordinates transfer from Luis system (meters, with offset in z) to FairShip (cm):\
+
+
+z -= 50
+
+z \*= 100
+
+x\*=100
+
+y\*=100
+
 An example of launching this code is the following:
 
 ```bash
