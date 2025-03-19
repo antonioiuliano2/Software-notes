@@ -66,6 +66,10 @@
 * [PDF annotations](other-software/pdf-annotations.md)
 * [ROOT2CAD Conversion](other-software/root2cad-conversion.md)
 
+***
+
+* [Disk usage management](disk-usage-management.md)
+
 ## SHiPcharm Decay Search
 
 * [Passing simulation to FEDRA](shipcharm-decay-search/passing-simulation-to-fedra.md)
