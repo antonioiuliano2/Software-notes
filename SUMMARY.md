@@ -11,6 +11,7 @@
 * [Efficiency of tau neutrino detection](fairship/efficiency-of-tau-neutrino-detection.md)
 * [Geant4 interface](fairship/geant4-interface.md)
 * [Display tricks](fairship/display-tricks.md)
+* [Pull request hints](fairship/pull-request-hints.md)
 
 ## SHiP at ECN3
 
