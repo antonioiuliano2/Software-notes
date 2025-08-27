@@ -18,6 +18,12 @@ The machine is only accessible from lxplus, and it uses my ssh key for access.
 
 Basically, create a path under the "fake" path /cvmfs/ship.cern.ch/. This naming is used to avoid confusion, when the package will be shipped to the CVMFS file system.
 
+First, make sure to have git-lfs installed and active, due to the need of copying large files such as field maps:
+
+```
+git lfs install
+```
+
 Then, clone the cvmfs\_release current master into the "release" with naming convention YY.MM (i.e. 24.09):
 
 ```bash
