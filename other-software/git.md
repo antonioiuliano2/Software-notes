@@ -116,6 +116,18 @@ Be careful that this does not cause conflict with your master branch
 
 
 
+## Debugging
+
+### Git bisect
+
+In a large collaboration It often happens to see a bug or a malfunction, but you have no idea where it came from, and when it started.
+
+Git contains an useful tool to check the build commit by commit, with a binary (as it is, a 1 vs 1 choice) search. Official documentation here:
+
+[**https://git-scm.com/docs/git-bisect**](https://git-scm.com/docs/git-bisect)
+
+Basically, you use git bisect good if the commit works, and git bisect bad if it is bugged. Git will automatically update the folder to different commits, until the source of the issue has been found.&#x20;
+
 ## GitHub Actions
 
 GitHub actions automate code options, for instance at every pull
