@@ -44,7 +44,7 @@ It gives you 3 canvases:
 7. and
 8. Z0 - the microtracks starting point distribution. The difference between up and down ones can give the approximate estimation of the real base thickness.
 
-![Example of raw\_z plot](../.gitbook/assets/check\_z.png)
+![Example of raw\_z plot](../.gitbook/assets/check_z.png)
 
 
 
@@ -59,7 +59,7 @@ It gives you 3 canvases:
 7. bidimensional angular distribution for down side. If emulsion was exposed to high intensity beam, and the data quality is reasonably good, one can note the hints to the beam peaks on this plot
 8. same as 7 for up side
 
-![Example of raw view plot](../.gitbook/assets/check\_view.png)
+![Example of raw view plot](../.gitbook/assets/check_view.png)
 
 #### Plot raw\_surf
 
@@ -72,7 +72,7 @@ It gives you 3 canvases:
 7. this parameter should give the idea about RMS of clusters distribution around the microtrack. For this valid most of comments given for item 5.
 8. same as 7 calculated by FEDRA tracking if it is applied
 
-![Example of raw data surf](../.gitbook/assets/check\_surf.png)
+![Example of raw data surf](../.gitbook/assets/check_surf.png)
 
 ### Thickness.C
 
@@ -82,7 +82,7 @@ This script is used to inspect the thickness of emulsion layers:
 * 3 shows the thickness 1D distributions for bottom layer (blue), top layer (red) and plastic base(black);
 * 4, 5 and 6 show the thickness maps for bottom layer (4), top layer (5) and plastic base (6):
 
-![Example of thickness plot](../.gitbook/assets/thickness\_p003.png)
+![Example of thickness plot](../.gitbook/assets/thickness_p003.png)
 
 {% hint style="info" %}
 In order to see eventual issues during scanning, it is **imperative** that the bin width match the view step: 770 micron x 565 micron. For OPERA emulsions, the number of bins used was 202 x 182. For SND@LHC, it is 300 x 350, but the width remains the same. Please remember it, it is important not to find white lines in the future.
@@ -110,7 +110,7 @@ The linking report is produced automatically after a linking. A PDF contains the
 
 
 
-![Linking report example](../.gitbook/assets/linking\_report\_p003.png)
+![Linking report example](../.gitbook/assets/linking_report_p003.png)
 
 ## Alignment report
 
@@ -120,10 +120,10 @@ It reports the alignment procedure between two plates. It starts with a coarse a
 * 3 is the Z distance between plates, vs the phi angle rotation, after coarse alignment. It is normal that z has not a clear peak, but **check that phi is well limited**;
 * 4 is the position residuals after coarse alignment;
 * 5 is the position residuals after fine alignment. **Check that there is a peak here**
-* 6 is the angular residuals after fine alignment**. Check for a clear peak here**
+* 6 is the angular residuals after fine alignmen&#x74;**. Check for a clear peak here**
 * 7 is the theta density. The bins have not the same size!
 * 8 and 9 contains the distributions of matched base-tracks after alignment. For high number of base-tracks, they are not produced to save memory.
 
 &#x20;
 
-![Example of alignment report](../.gitbook/assets/alignment\_report\_p004\_p003.png)
+![Example of alignment report](../.gitbook/assets/alignment_report_p004_p003.png)

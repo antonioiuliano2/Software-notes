@@ -165,7 +165,7 @@ It will show the tunnel with the detector and all components:
 
 Something like this should appear:
 
-![SND geometry event display](../.gitbook/assets/snddisplay\_withveto\_tunnelopened.png)
+![SND geometry event display](../.gitbook/assets/snddisplay_withveto_tunnelopened.png)
 
 ## Emulsion scanning reference system
 
@@ -185,6 +185,6 @@ The origin of B2 is the in bottom corner of the wall.
 
 During scanning, origin is taken at the top right edge of emulsion (from scanner point of view, bottom left on the pc monitor)
 
-Need to be sure if the gap between bricks in a wall is 0.5 cm or 0.5 mm**!!**
+Need to be sure if the gap between bricks in a wall is 0.5 cm or 0.5 m&#x6D;**!!**
 
 &#x20;

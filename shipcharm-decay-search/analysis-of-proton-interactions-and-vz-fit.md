@@ -28,7 +28,7 @@ All runs are re-scaled to the number of protons from the MonteCarlo simulation
 
 ### Merge the results
 
-After running all 6 notebooks, you will have a lot of ROOT files. We need to merge them into two unique files_, full\_vz.root_ and _with\_bkg\_full\_vz.root._ I have written a short bash macro for this:
+After running all 6 notebooks, you will have a lot of ROOT files. We need to merge them into two unique file&#x73;_, full\_vz.root_ and _with\_bkg\_full\_vz.root._ I have written a short bash macro for this:
 
 $SHIPMACROS/analisi\_charmdata/interaction\_vertices\_analysis/mergevz.sh
 
@@ -36,7 +36,7 @@ $SHIPMACROS/analisi\_charmdata/interaction\_vertices\_analysis/mergevz.sh
 
 We need now to compute the errors for the bin content, starting from the Poisson errors and propagate them according to all the performed scaled oprations. This is done by
 
-$SHIPMACROS/analisi\_charmdata/interaction\_vertices\_analysis/[charm\_analysis.py](https://github.com/antonioiuliano2/macros-ship/blob/master/analisi\_charmdata/interaction\_vertices\_analysis/charm\_analysis.py)
+$SHIPMACROS/analisi\_charmdata/interaction\_vertices\_analysis/[charm\_analysis.py](https://github.com/antonioiuliano2/macros-ship/blob/master/analisi_charmdata/interaction_vertices_analysis/charm_analysis.py)
 
 and a file _log\_charm\_errors.txt_ is produced. At the end of the file, a table of errors for the graph points is computed (currently 29, before 49, after we rebinned runs from CH3 to CH6 from 3 to 6). The table starts like this:
 

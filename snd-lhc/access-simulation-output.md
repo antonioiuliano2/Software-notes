@@ -2,7 +2,7 @@
 
 The simulation produces two files:
 
-* a geometry file, called **geofile\*.root (**full name depends on the simulation launched);
+* a geometry file, called **geofile\*.root (**&#x66;ull name depends on the simulation launched);
 * a file with the **cbmsim** TTree containing the hits in the detectors, called **ship\*.root**
 
 ## Inspecting geometry file
@@ -75,7 +75,7 @@ for(int ientry = 0;ientry<nentries;ientry++){
 } 
 ```
 
-* Example without sndsw environment: [https://github.com/antonioiuliano2/macros-snd/blob/master/tutorials/SNDLHC\_Reader.C](https://github.com/antonioiuliano2/macros-snd/blob/master/tutorials/SNDLHC\_Reader.C) and [https://github.com/antonioiuliano2/macros-snd/blob/master/tutorials/SNDLHC\_Reader.](https://github.com/antonioiuliano2/macros-snd/blob/master/tutorials/SNDLHC\_Reader.C)h files: here the methods are not called, but the information is retrieved directly from the TTree branches  containing the attributes.&#x20;
+* Example without sndsw environment: [https://github.com/antonioiuliano2/macros-snd/blob/master/tutorials/SNDLHC\_Reader.C](https://github.com/antonioiuliano2/macros-snd/blob/master/tutorials/SNDLHC_Reader.C) and [https://github.com/antonioiuliano2/macros-snd/blob/master/tutorials/SNDLHC\_Reader.](https://github.com/antonioiuliano2/macros-snd/blob/master/tutorials/SNDLHC_Reader.C)h files: here the methods are not called, but the information is retrieved directly from the TTree branches  containing the attributes.&#x20;
 
 ## Note about copying and cloning TTree
 

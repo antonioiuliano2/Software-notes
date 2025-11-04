@@ -132,7 +132,7 @@ After the process, there is a script to check if files have been correctly creat
 
 There is also an overlap, which is later removed by selecting only the couples within each cells. A final couples tree is finally created:
 
-[https://github.com/SND-LHC/emu\_reco\_analysis/blob/master/linkingmap/merge\_couplestrees.C](https://github.com/SND-LHC/emu\_reco\_analysis/blob/master/linkingmap/merge\_couplestrees.C)
+[https://github.com/SND-LHC/emu\_reco\_analysis/blob/master/linkingmap/merge\_couplestrees.C](https://github.com/SND-LHC/emu_reco_analysis/blob/master/linkingmap/merge_couplestrees.C)
 
 ## Alignment
 
@@ -236,7 +236,7 @@ Please check the EdbScanTracking::TrackSetBT() function for details
 * **DRmax**: maximum distance between points, check both in x,y and R
 * **DTmax:** maximum angular distance, same procedure as DRmax
 * **Sigma0:** parameters at 0 angles (x y TX TY)
-* **Degrad:** angular degradation of parameters: S = S0 _(1 + eDegrad_Ang)
+* **Degrad:** angular degradation of parameters: S = S0 _(1 + eDegra&#x64;_&#x41;ng)
 * **DoRealign:** use volume tracks to improve alignment transformations and update set.root file at the end
 *
 

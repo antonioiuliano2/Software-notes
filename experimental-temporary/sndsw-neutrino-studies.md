@@ -1,6 +1,0 @@
-# SNDSW neutrino studies
-
-
-
-### 
-
