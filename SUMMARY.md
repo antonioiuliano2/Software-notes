@@ -38,6 +38,7 @@
 * [Microscope corrections](lasso-scanning-and-processing/microscope-corrections.md)
 * [Calibration](lasso-scanning-and-processing/calibration.md)
 * [Add-ons](lasso-scanning-and-processing/add-ons.md)
+* [Server restart in case of blackout](lasso-scanning-and-processing/server-restart-in-case-of-blackout.md)
 
 ## FEDRA
 
