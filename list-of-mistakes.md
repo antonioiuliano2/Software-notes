@@ -133,6 +133,37 @@ Count along columns of x
 
 Self-explaining. Scanning oil must go on the scanning stabe, but **not outside it**. If it goes inside the motors of the moving table....never happened before, but this is a warning I have been given, so I write it here
 
+&#x20;
+
+### Overstressed disk
+
+On 10 February 2026, **we were on hurry** to transfer data from mic5 on continuous motion.
+
+The current experts on data transfers and rsync were not in the lab, so they asked me....
+
+Important: **mic5 was scanning plate 22\_RESCAN** in continous motion, on disk E:
+
+What I did:
+
+* Connect to mic3\_old;
+* Launch Far Manager and select the RUN1 W2 B3 folder for copy to Y: (needed for the rsync to EOS from nusrv1)
+* Started the copy of the folder (F5 copy)
+* See mic5 pc suddendly turn off and mic3\_old complain about disappeared source drive
+* Panic (well, that is more than a consequence)
+
+**No data was loss.**&#x20;
+
+Rebooted mic5 the first time said "error cannot be repaired". Starting again, it worked.
+
+I resumed the copy, I did NOT restart mic5 scanning.
+
+**Possible reason of the failure:** attempting to transfer huge data from E: to Y: while mic was scanning.
+
+**What do I need to know:** how to transfer data from E: to Y: safely (mic5 is continuously scanning...)\
+(for reference, my first-hand experience is only from the time data were converted directly to Y:)
+
+
+
 ## FEDRA reconstruction
 
 ### Check quality plots
@@ -184,14 +215,12 @@ In general, try to be as critical as possible for the simulation. Try to keep no
 
 A fundamental part of the scientific method is being able to reproduce the plots you made.
 
-It seems obvious, but people may (and they will) ask you about plots you made 10 years ago, and they will expect you to:\
-
+It seems obvious, but people may (and they will) ask you about plots you made 10 years ago, and they will expect you to:<br>
 
 * Be able to reproduce them;
 * Be able to change them and know why they changed (a.ka. source code);
 
-Of course, data are heavy, and many tests need to be discarded at some points, but **you must always keep and know about (in decreasing order of priority)**:\
-
+Of course, data are heavy, and many tests need to be discarded at some points, but **you must always keep and know about (in decreasing order of priority)**:<br>
 
 * Thesis material;
 * Paper material;
