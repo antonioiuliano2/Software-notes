@@ -244,7 +244,19 @@ Please check the EdbScanTracking::TrackSetBT() function for details
 Segments with negative xy coordinates are not tracked. Need to inspect the source code for the reason. For now, beware of negative x or y coordinates.
 {% endhint %}
 
+ngapmax is **not used** in new tracking method we use, TrackSetBT. What matter is DZGapMax, and we need to beware of the consequence on number of gaps. Assuming all plate distance 1315 micron, we have:
 
+`((ngaps_stuck+1) * 1315) > DZGapMax`
+
+Where ngaps\_stuck is the minimum number of gaps after which the track is not followed anymore.
+
+For **DZGapMax = 6000, ngaps\_stuck = 4 and we allow at maximum 3 consecutive holes** in our tracking algorithm. If the + 1 seems weird, please remember that with 1 hole, we have&#x20;
+
+DZGap = 2 \* 1315...
+
+Tracking probability formula (by Valeri):
+
+`(1 - (1-x)^4)^56`
 
 ## Vertexing
 
