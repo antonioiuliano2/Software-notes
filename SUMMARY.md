@@ -67,6 +67,7 @@
 * [DCS](other-software/dcs.md)
 * [PDF annotations](other-software/pdf-annotations.md)
 * [ROOT2CAD Conversion](other-software/root2cad-conversion.md)
+* [Geo Model](other-software/geo-model.md)
 
 ***
 
