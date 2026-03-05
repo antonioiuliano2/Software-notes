@@ -184,6 +184,12 @@ and for tau leptons:
 
 Export GXMLPATH variable with the path of the modified UserPhysicsOptions.xml will tell Genie your request.
 
+{% hint style="info" %}
+Current stack with new GENIE and ROOT versions requires Pythia8Decayer XML files, instead of Pythia6Decayer since Pythia6 support has been removed by ROOT. \
+The GXMLPATH needs to point to genie\_config folder in $FAIRSHIP/shipgen with these XML files. \
+The tau and the other particles are not decayed by GENIE in the default tune, so we do not need these UserPhysicsOptions anymore.
+{% endhint %}
+
 If you do not have splines, you have to create them by launching
 
 `gmkspl -p #nu -t 1000822040[0.014], 1000822060[0.241], 1000822070[0.221], 1000822080[0.524] -n 500 -e 400 -o out_file_name.xml`
@@ -194,6 +200,37 @@ Launch Genie simulations with:
 
 `gevgen -n Nevents -p neutrinocode -t targetcode -e 0.5,350 --run nrun -f neutrinofile,histoname --cross-sections splines --message-thresholds $GENIE/config/Messenger_laconic.xml --seed nseed`
 
+### gevgen\_fnal
+
+Difference with gevgen: we can provide target geometry as input. The steps are the following:
+
+Launch a dummy fairship simulation to obtain your geometry. I did a PG simulation: `python FairShip/macro/run_simScript.py --SND -n 1 -o ~/Simulations/test_simulations/prova PG --pID 13` Convert geometry in GDML file&#x20;
+
+```
+root [0] TFile * f = new TFile("geofile.root")
+root [1] TGeoManager * geo = (TGeoManager*) f->Get("FAIRGeom")
+root [2] geo->Export("geofile.gdml")
+```
+
+Export GXMLPATH to $FairShip/shipgen/genie\_config/ to use the Pythia8Decayer XML files
+
+Make the splines with this input geometry (neutrino flavours productions can be batched):
+
+`gmkspl -p 12,-12,14,-14,16,-16 -f geofile_ship_SNDactive.gdml -n 500 -e 400 -o xsec_nue.xml`&#x20;
+
+I may also try to generate the neutrino on free nucleons cross sections first, so they can be provided as input to any geometry and speed up spline generation for any geometry changes
+
+Generate with gevgen\_fnal:
+
+`gevgen_fnal -f "pythia8_Geant4_1.0_withCharm_nu.root,16[1016]" -g geofile_ship_SNDactive.gdml -t "SiliconTarget" -L "cm" -D "g_cm3" -n 100000 --cross-sections make_splines/xsec_nutau.xml`
+
+{% hint style="info" %}
+Since we did not provide any tune, default tune G18\_02a\_00\_000 is used.&#x20;
+
+If you wish to use a different tune, you will need to make splines for that tune first (--tune tunename)
+{% endhint %}
+
+\
 Convert the output in gst format:
 
 `gntpc -i gntp.0.ghep.root -f gst --message-thresholds $GENIE/config/Messenger_laconic.xml"`
