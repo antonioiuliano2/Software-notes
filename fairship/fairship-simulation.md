@@ -230,6 +230,15 @@ Since we did not provide any tune, default tune G18\_02a\_00\_000 is used.&#x20;
 If you wish to use a different tune, you will need to make splines for that tune first (--tune tunename)
 {% endhint %}
 
+From SNDSW TWiki!: \
+The top volume should be specified with a preceding + so that the geometry is recursively inspected. Any combination of volumes can be chosen using + to add a volume and - to "subtract" a volume. E.g., -t "+volTarget".
+
+Trying to use -t "+SiliconTarget" instead of -t "SiliconTarget" makes the simulation hangs at&#x20;
+
+`1774531736 NOTICE GROOTGeom : [n] <ROOTGeomAnalyzer.cxx::MaxPat`1774531736 NOTICE GROOTGeom : \[n] \<ROOTGeomAnalyzer.cxx::MaxPathLengthsFluxMethod (1042)> : Computing the maximum path lengths using the FLUX method`hLengthsFluxMethod (1042)> : Computing the maximum path lengths using the FLUX method`1774531736 NOTICE GROOTGeom : \[n] \<ROOTGeomAnalyzer.cxx::MaxPathLengthsFluxMethod (1042)> : Computing the maximum path lengths using the FLUX method
+
+P.S. after 20 minutes (i.e. at Tintin Matei slide), also the other started. So it is not critical, but it takes more time. Good to know, I am going to compare the outputs with + and without +
+
 \
 Convert the output in gst format:
 
