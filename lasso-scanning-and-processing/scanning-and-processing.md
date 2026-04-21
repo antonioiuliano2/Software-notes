@@ -175,7 +175,15 @@ You may be able study the pattern better by temporarily removing the "flatten" c
 
 Please turn off both stage and microscope computers, then check camera and microscope connections. Contact expert for guidance.
 
+#### Display Camera Glitching
+
+This is also often reported as display **flickering,** in general on mic5 it happens regularly (two/three times a year). Rebooting the scan pc usually fixes the issue. Let's check
+
 ### LASSO GUI issues
+
+#### Window does not appear
+
+Probably screen was swapped. Please check the WindowDisplay line in PAVICOM.cfg and comment it, then restart it.
 
 #### Cannot see microscope icon
 
