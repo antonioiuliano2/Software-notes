@@ -222,7 +222,7 @@ I may also try to generate the neutrino on free nucleons cross sections first, s
 
 Generate with gevgen\_fnal:
 
-`gevgen_fnal -f "pythia8_Geant4_1.0_withCharm_nu.root,16[1016]" -g geofile_ship_SNDactive.gdml -t "SiliconTarget" -L "cm" -D "g_cm3" -n 100000 --cross-sections make_splines/xsec_nutau.xml`
+`gevgen_fnal -f "pythia8_Geant4_1.0_withCharm_nu.root,16[1016]" -g geofile_ship_SNDactive.gdml -t "+SiliconTarget" -L "cm" -D "g_cm3" -n 100000 --cross-sections make_splines/xsec_nutau.xml`
 
 {% hint style="info" %}
 Since we did not provide any tune, default tune G18\_02a\_00\_000 is used.&#x20;
@@ -237,7 +237,7 @@ Trying to use -t "+SiliconTarget" instead of -t "SiliconTarget" makes the simula
 
 `1774531736 NOTICE GROOTGeom : [n] <ROOTGeomAnalyzer.cxx::MaxPat`1774531736 NOTICE GROOTGeom : \[n] \<ROOTGeomAnalyzer.cxx::MaxPathLengthsFluxMethod (1042)> : Computing the maximum path lengths using the FLUX method`hLengthsFluxMethod (1042)> : Computing the maximum path lengths using the FLUX method`1774531736 NOTICE GROOTGeom : \[n] \<ROOTGeomAnalyzer.cxx::MaxPathLengthsFluxMethod (1042)> : Computing the maximum path lengths using the FLUX method
 
-P.S. after 20 minutes (i.e. at Tintin Matei slide), also the other started. So it is not critical, but it takes more time. Good to know, I am going to compare the outputs with + and without +
+P.S. after 20 minutes  also the other started. So it is not critical, but it takes more time at the path lenghts computation.
 
 \
 Convert the output in gst format:
