@@ -33,3 +33,16 @@ Never delete actual data (even if may be wrong, deleted data can never be replac
 Both baobab and ncdu allow both to browse and delete files. Again, think before deleting anything **you would regret deleting**
 
 In general, never be over 90% quota occupancy. You may need space for large production in a blink of an eye.
+
+
+
+### Orphaned codes
+
+Lots of programs not written by myself, but left to me.&#x20;
+
+For those who we have lost, for the analyses we can yet save:
+
+* /eos/experiment/sndlhc/users/luarella/sf\_emu\_matching
+* Emil codes about Muon Radiography
+* Maria's ML codes about DESY Testbeam
+* Filips ANNDEA? Will be further developed?
