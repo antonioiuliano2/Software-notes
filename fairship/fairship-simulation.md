@@ -239,6 +239,10 @@ Trying to use -t "+SiliconTarget" instead of -t "SiliconTarget" makes the simula
 
 P.S. after 20 minutes  also the other started. So it is not critical, but it takes more time at the path lenghts computation.
 
+{% hint style="info" %}
+If volume name is not fount (i.e. -t "FakeVolumeName") gevgen\_fnal DOES NOT EXIT, and it is basically guaranteed to miss the small message "could not find top volume" in all the GENIE log text. Please check that the volume is found before launching a big simulation
+{% endhint %}
+
 \
 Convert the output in gst format:
 
