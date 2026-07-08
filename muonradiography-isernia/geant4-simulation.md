@@ -52,6 +52,8 @@ It can be done easily in HTCondor, since the output is simply a text file, and o
 
 ### Copy ISERNIA map file
 
+It contains the area of approx 5.5x6 km around the landfill with a 0.5x0.5 m step. The second file is a cruder version of this map with 1x1 m voxels that I used for all the simulations.
+
 The map files are originally in a GeoTiff format, then converted into plain csv data.
 
 {% hint style="info" %}
