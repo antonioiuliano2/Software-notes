@@ -64,9 +64,27 @@ Copy the "isernia.csv" and "map\_1m" files into the analysis folder
 
 The "filter\_map.C" script can be used to filter the map\_1m into a smaller version.
 
-The map is used to build voxels which becomes Geant4 volumes. The number of voxels is very high (24605889!), and try to visualize the geometry leads to a crash. It may be useful to create a branch with the reduced geometry for visual inspection.
+The map is used to build voxels which becomes Geant4 volumes. The number of voxels is very high (24605889!), and try to visualize the geometry leads to a crash. It may be useful to create a branch with the reduced geometry for visual inspection -> done, using filtered\_map (is this the region of the landfill?).
 
-In the meantime, the script yzprofile.cpp
+In the meantime, the script yzprofile.cpp make a zy profile of the map, with the detector position
+
+#### About the map\_1m file
+
+This is the "cruder" map version with 1 m x 1 voxel:
+
+* **Headers**: two lines, xmin and xmax, followed by ymin and ymax;
+* **Columns**: (x,y,z), where x and y are the voxel coordinates, and z is the height. It is currently filled in the geometry with the same density (standard rock, 2.65 g/cm3).
+
+The geometry is defined in **A01DetectorConstruction.cc** and the voxels in **VoxelParametrisation.cc.** There are 24,605,889 voxels in the whole file.
+
+The **filter\_map.C** script creates a cross section of the map, at the following coordinate ranges:
+
+* x in (431867.400 + 2454. + 100., 431867.400 + 2454. + 400.)
+* y in (4610136.370 + 2917., 4610136.370 + 2917. + 350.)
+
+The resulting file contains 105,651 voxels,  so a factor about 1./233 less. It is suited for visualization in Geant4 and export to gdml, also for testing different implementations of densities.&#x20;
+
+
 
 ### Launch simulation
 
