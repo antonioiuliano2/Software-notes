@@ -128,6 +128,17 @@ Git contains an useful tool to check the build commit by commit, with a binary (
 
 Basically, you use git bisect good if the commit works, and git bisect bad if it is bugged. Git will automatically update the folder to different commits, until the source of the issue has been found.&#x20;
 
+## Full restore branch to remote
+
+{% hint style="info" %}
+Will remove any local changes in your branch!
+{% endhint %}
+
+```bash
+git fetch origin
+git reset --hard origin/master
+```
+
 ## GitHub Actions
 
 GitHub actions automate code options, for instance at every pull
