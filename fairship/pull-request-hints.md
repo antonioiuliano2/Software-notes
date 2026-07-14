@@ -17,3 +17,7 @@ For new code, programs such as[ black ](https://github.com/psf/black)can fix for
 ### Operator spacing
 
 Check that there is \*\*always 1 space bedf
+
+## Stubs!
+
+static analysis really does not like seeing functions he does not know about in python (because defined in C++), we need to add a stub in `stubs/ROOT/__init__.pyi`
