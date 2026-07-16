@@ -44,4 +44,8 @@ Unire i layer durante l'importazione consente di traslarli tutti insieme, ma le 
 
 ## GeoReferenzazione
 
-Oltre alla semplice traslazione di un dato offset (dx, dy, dz), è presente in modo nativo in QGIS&#x20;
+Oltre alla semplice traslazione di un dato offset (dx, dy, dz), è presente in modo nativo in QGIS dal menu Layer.
+
+Si caricano i vettori dal file DXF della planimetria, e si possono selezionare alcuni punti di riferimento dal disegno. Quindi si forniscono le misure nel sistema di riferimento in uscita (per esempio, WGS 84 / EPSG 4326) e il sistema salverà la trasformazione effettuata. Possono essere anche salvati i punti di riferimento, attivati o disattivati dall'utente.
+
+La stessa trasformazione va fatta per il vettore delle etichette e il vettore del disegno.
