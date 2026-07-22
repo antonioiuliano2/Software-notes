@@ -77,8 +77,8 @@ python $SNDSW/shiplhc/run_simSND.py --Genie -f inputfile -n 10000 -o outputfolde
 ```
 
 * input file is the file from the Genie simulation
-* \-n sets the number of events to generate
-* \-o sets the output folder where to store simulation results
+* -n sets the number of events to generate
+* -o sets the output folder where to store simulation results
 
 Then the simualtion and geometry files are produced, same as FairShip simulations produced by GenieGenerator.
 
@@ -111,3 +111,22 @@ Due to close timelines for the TPs, the GENIE simulations used by Martina for ba
 {% embed url="https://github.com/antonioiuliano2/macros-snd/blob/master/nu_simulations/Acceptance1DSpectra.C" %}
 
 The selection is x within \[-47.6, -8] cm  and y within \[ 15.5, 55.1] cm (neutrino fluxes at the scoring plane, . An output file neutrinos\_SNDacceptance.root has been produced. This file is used for all the GENIE simulations, in the different processes and neutrino flavours, required for the TP of SND@LHC.
+
+
+
+### Environment for condor
+
+Better to put it into an external file, like this:
+
+```bash
+alienv load advsndsw/latest > nome_env.sh
+```
+
+Then Condor can just retrieve it, without trying (and often failing) to load the environment by itself:
+
+```bash
+source ${ADVSNDBUILD_DIR}/AdvSND_August2024_env.sh
+set -o nounset
+```
+
+Absolute bliss
