@@ -187,4 +187,22 @@ During scanning, origin is taken at the top right edge of emulsion (from scanner
 
 Need to be sure if the gap between bricks in a wall is 0.5 cm or 0.5 m&#x6D;**!!**
 
-&#x20;
+
+
+## Extended design  vs Baseline
+
+The two design configurations are described in the paper [https://arxiv.org/pdf/2602.21881](https://arxiv.org/pdf/2602.21881)
+
+The extended design requires to excavate lowering the detector positions (closer to the beam). The branch version is [https://github.com/SND-LHC/advsndsw/tree/AdvSND\_Aug2024](https://github.com/SND-LHC/advsndsw/tree/AdvSND_Aug2024)
+
+I have used this simulation to generate tau neutrino interactions:
+
+/eos/experiment/sndlhc/users/aiulian/ADVSND/August\_2024\_con\_scavo/2026\_07\_22\_nutau\_AdvSND\_August2024/
+
+The baseline version is the "recent" one, simulated by Eduard with this version:
+
+[https://github.com/SND-LHC/advsndsw/commit/592e58c71f0ded99d863b4a06b23cde75a16aacd](https://github.com/SND-LHC/advsndsw/commit/592e58c71f0ded99d863b4a06b23cde75a16aacd)
+
+&#x20;Eduard's simulation is here:
+
+/eos/experiment/sndlhc/MonteCarlo/AdvSND/TP\_2025/nu\_tau\_mock\_digi\_2/volume\_volAdvTarget/
