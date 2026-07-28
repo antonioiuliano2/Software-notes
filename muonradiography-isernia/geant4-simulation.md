@@ -107,13 +107,27 @@ First, add a line at the beginning of each file with the numbers of lines.
 
 Then, execute the Histo.C script in analysis to read the above files.
 
-### General notes and future work:
+This will make the plots on the sensitivity, according to traversed length and number of absorbed muons, at different angles.
+
+To make the plot of the segments, we first need to store the segments, obviously. So we need to uncomment the line in SteppingAction.
+
+## Split Voxels
+
+### Geometry
 
 Splitting voxels at landfill, only the upper part must be different from rock density (1.0 g/cm^3 instead of 2.6 g/cm^3).
 
 Geant4 does NOT allow two separate parameterization classes from the same logical volume. What I needed to do is to define a ComputeMaterial function to set the material according to voxel number. For information, check user guide [https://geant4.web.cern.ch/documentation/pipelines/master/bfad\_html/ForApplicationDevelopers/Detector/Geometry/geomPhysical.html?highlight=g4vpvparameterisation](https://geant4.web.cern.ch/documentation/pipelines/master/bfad_html/ForApplicationDevelopers/Detector/Geometry/geomPhysical.html?highlight=g4vpvparameterisation) and example `examples/extended/runAndEvent/RE02`
 
-The material at voxel parameterization is not part of the logical volume, so both the geant4 UI and the GDML will not report it. The only way to confirm the right material is to visualize the geometry (only the landfill part) and cross-check the fullsimulation at stepping actions log with a few number of muons.
+The material at voxel parameterization is not part of the logical volume, so both the geant4 UI and the GDML will not report it. The only way to confirm the right material is to visualize the geometry (only the landfill part) and cross-check the full simulation at stepping actions log with a few number of muons. Did that confirms that everyting worked.
+
+### Lengths and Absorbed muons
+
+Note that the condition of "absorbed" is NOT done by Geant4 directly, it is **hard-coded** in the SteppingAction code. The code was originally written for voxels of uniform density, so the length is simply multiplied by the density at the exit of the volume. Here, instead, the volume is made of voxels of different densities, so we need to multiply by the density **at each step**. After this change, I noticed the change in the number of absorbed muons.
+
+### General notes and future work:
+
+
 
 
 
