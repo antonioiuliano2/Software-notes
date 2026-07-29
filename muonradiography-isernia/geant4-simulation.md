@@ -48,7 +48,16 @@ copy or link the resulted csv file into the analysis folder
 
 Note: test file is 100k muons, sensible studies are done with 400 mil file
 
-It can be done easily in HTCondor, since the output is simply a text file, and order is not important. I have checked that already seeds are different (different productions have different entries)
+It can be done easily in HTCondor, since the output is simply a text file, and order is not important. I have checked that already seeds are different (different productions have different entries).
+
+The muon angles are stored as **zenith (theta)** and **azimuth (phi)** angles, which are not the angles with respect to the detector itself. The transformation to tx and ty is done via the following:
+
+* Tx = ctg (phi)
+* Ty = ctg (theta) / sin (phi)
+
+With max theta 90 degrees we exclude muons with negative Ty (i.e. coming from underground). Extending max theta to 180 gives us both directions.
+
+The file muprthsp is the same input file of the muons, with only the theta and phi columns (i.e., without the momentum as third column). It is used in Histo.C to draw the **clear sky** distribution.&#x20;
 
 ### Copy ISERNIA map file
 
