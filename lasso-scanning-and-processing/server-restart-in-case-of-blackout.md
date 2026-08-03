@@ -21,3 +21,7 @@ If they do not turn on, please check the multiplug (ciabatta).
 * Disconnect **all** not working plugs (from the same series):
 * Reconnect the ciabatta to the UPS;
 * Reconnect all the plugs one by one, check if power is back
+
+{% hint style="info" %}
+You can see that the multiplug is not operational if it display an "8" digit. When it works properly it display a "0" digit.
+{% endhint %}
