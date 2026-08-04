@@ -114,3 +114,16 @@ Useful options:
 * `-v`: name of the volume to expand (see list of volume daughters)
 * `-l`: 'depth' level of the subnode expansion (how many daughters are showed) &#x20;
 
+
+
+## Master to Main change
+
+Renamed the FairShip master branch to main for consistency with the other repos. If you want to rename your local branch, you need to follow these steps once:
+
+```bash
+git branch -m master main
+git fetch origin
+git branch -u origin/main main
+git remote set-head origin -a
+```
+
