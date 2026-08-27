@@ -262,6 +262,25 @@ Both files are weighted to correspond to 1 proton spill ( $$4 \times 10^{13}$$ p
 2021 Update: I am currently producing the interactions in a tungsten target. Since tungsten was not in the official splines, I have produced the splines manually.
 {% endhint %}
 
+### Actual neutrino flux (not histograms)
+
+Use a TTree/Ntuple with neutrino flux information, instead of histograms.
+
+Currently working with gsimple, Oliver and Matei are working on a aegir-genie standalone version.
+
+The converter scripts are as follows:
+
+* [https://github.com/antonioiuliano2/macros-ship/blob/master/neutrinos\_2025/shipGSimpleNtpConverter.cxx](https://github.com/antonioiuliano2/macros-ship/blob/master/neutrinos_2025/shipGSimpleNtpConverter.cxx)
+* [https://github.com/ShipSoft/FairShip/pull/1340](https://github.com/ShipSoft/FairShip/pull/1340)
+
+{% hint style="info" %}
+The neutrino flux is usually the merge of two production: mbias\_no\_charm and charm\_with\_cascade.
+
+Merging the two samples introduces a bias in the sequence (i.e. all events mbias, followed by charm\_cascade events). Before usage, they need to be **shuffled**, see the code provided by Oliver.\
+[https://github.com/ShipSoft/aegir-genie/blob/main/scripts/shuffle\_gsimple.C](https://github.com/ShipSoft/aegir-genie/blob/main/scripts/shuffle_gsimple.C)\
+Use the resulted Shuffled file in all simulations, for safety (it should matter only for small samples, not using the whole input file)
+{% endhint %}
+
 ### FairShip GenieGen simulation
 
 FairShip run\_simScript.py simulation with `-Genie` option launchs the `GenieGen` class in shipgen. The syntax is the following:
