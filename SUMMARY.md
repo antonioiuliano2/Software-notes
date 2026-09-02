@@ -7,6 +7,12 @@
 * [Coordinate system](muonradiography-isernia/coordinate-system.md)
 * [Geant4 Simulation](muonradiography-isernia/geant4-simulation.md)
 
+## New SHiP Computing Framework
+
+***
+
+* [Geometry](geometry.md)
+
 ## FairShip
 
 * [FairShip installation](fairship/fairship-installation.md)
