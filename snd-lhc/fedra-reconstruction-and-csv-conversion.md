@@ -8,6 +8,18 @@ description: >-
 
 ## Intro
 
+SNDSW setup loads FEDRA environment, by default the old CVFMS version.
+
+To load a custom FEDRA, setup FEDRA **before** entering the SNDSW environment:
+
+```
+source /cvmfs/sndlhc.cern.ch/SNDLHC-2025/Jan30/setUp.sh
+source /afs/cern.ch/work/yourfedrapath/setup_new.sh
+alienv enter --shellrc sndsw/latest
+```
+
+Thus, alienv will use the FEDRA pointed by the environment variables FEDRA\_ROOT.
+
 Always keep track of parameters. Always check if parameters change between bricks/walls/tests/other.&#x20;
 
 [https://github.com/antonioiuliano2/macros-snd/blob/master/run1analysis/recoparameters/firstlink.rootrc](https://github.com/antonioiuliano2/macros-snd/blob/master/run1analysis/recoparameters/firstlink.rootrc)
